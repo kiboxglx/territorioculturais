@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import PortfolioSection from '../components/PortfolioSection';
 import About from '../components/About';
+import PortfolioSection from '../components/PortfolioSection';
 import Methodology from '../components/Methodology';
+import ProjectShowcase from '../components/ProjectShowcase';
 import Services from '../components/Services';
-import ProjectShowcase from '../components/ProjectShowcase'; // This will be updated to show both sections
-import Proponent from '../components/Proponent';
 import Team from '../components/Team';
+import Proponent from '../components/Proponent';
+import GalleryPreview from '../components/GalleryPreview';
 import { motion } from 'framer-motion';
 
 const Home = ({ onOpenModal }) => {
@@ -45,14 +46,23 @@ const Home = ({ onOpenModal }) => {
         >
             <Navbar onContactClick={onOpenModal} />
 
-            <Hero onExploreClick={() => scrollToSection('portfolio-prev')} />
-            <PortfolioSection />
+            <Hero onExploreClick={() => scrollToSection('nossa-essencia')} />
+
             <About />
-            <Proponent />
-            <Team />
+
+            <PortfolioSection />
+
             <Methodology />
-            <Services />
+
             <ProjectShowcase />
+
+            <Services />
+
+            <Team />
+
+            <Proponent />
+
+            <GalleryPreview />
 
             <section id="futuro" className="snap-section flex flex-col relative overflow-hidden">
                 <div className="absolute inset-0 z-0">
