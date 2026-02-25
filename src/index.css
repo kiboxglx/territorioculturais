@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #11D4D4;
+  --color-charcoal: #1A2B2B;
+  --color-accent-gold: #FFD700;
+  --color-accent-red: #FF4B4B;
+  --font-playfair: 'Playfair Display', serif;
+  --font-manrope: 'Manrope', sans-serif;
+}
+
+:root {
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--color-charcoal);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  /* Allow natural scrolling unless specified */
+}
+
+body {
+  margin: 0;
+  display: block;
+  min-width: 320px;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-charcoal);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+section {
+  position: relative;
+  width: 100%;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-fade-in-up {
+  animation-name: fadeInUp;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+/* Utilities */
+.full-bleed-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(26, 43, 43, 0.4), rgba(26, 43, 43, 0.6), rgba(26, 43, 43, 0.9));
+}
+
+.snap-section {
+  min-height: 100vh;
+  width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  /* Changed from hidden to avoid clipping */
+  z-index: 1;
+}
+
+/* Specific adjustment for mobile where content might exceed vh */
+@media (max-width: 1024px) {
+  .snap-section {
+    height: auto;
+    min-height: 100vh;
+    padding: 100px 0;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Scrollbar for internal Pages */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1A2B2B;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #334b4b;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #11D4D4;
+}
+
+.marker-divider {
+  height: 4px;
+  width: 100%;
+  background-color: #00FF88;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+  margin: 1rem 0;
+  border-radius: 99px;
+  opacity: 0.8;
+}
