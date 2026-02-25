@@ -28,6 +28,7 @@ const Navbar = ({ onContactClick }) => {
             <nav className="hidden lg:flex gap-8 pointer-events-auto bg-charcoal/20 backdrop-blur-md px-6 py-3 rounded-full border border-white/10">
                 <a onClick={() => scrollToSection('inicio')} className="text-[10px] uppercase tracking-[0.3em] hover:text-primary transition-colors cursor-pointer text-white">Início</a>
                 <Link to="/portfolio" className="text-[10px] uppercase tracking-[0.3em] hover:text-primary transition-colors cursor-pointer text-white">Portfólio</Link>
+                <Link to="/galeria" className="text-[10px] uppercase tracking-[0.3em] hover:text-primary transition-colors cursor-pointer text-white">Galeria</Link>
                 <a onClick={() => scrollToSection('nossa-essencia')} className="text-[10px] uppercase tracking-[0.3em] hover:text-primary transition-colors cursor-pointer text-white">Quem somos</a>
                 <a onClick={() => scrollToSection('metodologia')} className="text-[10px] uppercase tracking-[0.3em] hover:text-primary transition-colors cursor-pointer text-white">Metodologia</a>
                 <a onClick={() => scrollToSection('servicos')} className="text-[10px] uppercase tracking-[0.3em] hover:text-primary transition-colors cursor-pointer text-white">Serviços</a>
