@@ -11,8 +11,8 @@ const ProjectCard = ({ project }) => (
         className="min-w-[300px] md:min-w-[350px] snap-center bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 group hover:border-primary/50 transition-all duration-500 flex flex-col overflow-hidden relative"
     >
         <div className="absolute top-4 right-4 z-20">
-            <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg backdrop-blur ${project.category === 'realized' ? 'bg-emerald-500/90 text-white' : 'bg-amber-500/90 text-white'}`}>
-                {project.category === 'realized' ? 'Realizado' : 'Em Captação'}
+            <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg backdrop-blur bg-primary/20 text-primary border border-primary/50`}>
+                Realizado
             </span>
         </div>
 
@@ -33,11 +33,13 @@ const ProjectCard = ({ project }) => (
             </div>
         </div>
 
-        <div className="p-6 flex flex-col flex-grow">
-            <h3 className="font-playfair text-lg mb-2 text-white group-hover:text-primary transition-colors line-clamp-1">{project.title}</h3>
-            <p className="text-[10px] text-white/50 mb-4 font-light font-manrope line-clamp-2 leading-relaxed">{project.description}</p>
-            <div className="mt-auto pt-4 border-t border-white/5">
+        <div className="p-6 flex flex-col grow bg-charcoal">
+            <h3 className="font-playfair text-2xl mb-1 text-white group-hover:text-primary transition-colors line-clamp-1">{project.title}</h3>
+            {project.subtitle && <span className="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-3 block">{project.subtitle}</span>}
+            <p className="text-[12px] text-white/70 mb-4 font-light font-manrope line-clamp-3 leading-relaxed">{project.description}</p>
+            <div className="mt-auto pt-4 border-t border-white/10 flex justify-between items-center">
                 <span className="text-[9px] font-bold uppercase tracking-widest text-primary">{project.incentiveLaw}</span>
+                <span className="text-[9px] text-white/30 uppercase tracking-widest flex items-center gap-1"><span className="material-symbols-outlined text-[10px]">check_circle</span> Concluído</span>
             </div>
         </div>
     </motion.div>
@@ -55,17 +57,17 @@ const ProjectSection = ({ title, projects, id }) => {
     if (projects.length === 0) return null;
 
     return (
-        <div id={id} className="mb-20 last:mb-0">
-            <div className="flex justify-between items-end mb-8">
+        <div id={id} className="">
+            <div className="flex justify-between items-end mb-12">
                 <div>
-                    <h2 className="font-playfair text-4xl text-white">{title}</h2>
-                    <div className="h-1 w-20 bg-primary mt-4"></div>
+                    <span className="text-primary uppercase tracking-[0.5em] text-xs font-bold mb-4 block font-manrope">Portfólio</span>
+                    <h2 className="font-playfair text-5xl md:text-6xl text-white">{title}</h2>
                 </div>
                 <div className="flex gap-2">
-                    <button onClick={() => scroll('left')} className="bg-white/5 border border-white/10 p-2 rounded-full hover:bg-white/10 text-white">
+                    <button onClick={() => scroll('left')} className="bg-white/5 border border-white/10 p-4 rounded-full hover:bg-white/10 text-white transition-colors">
                         <span className="material-symbols-outlined text-sm">chevron_left</span>
                     </button>
-                    <button onClick={() => scroll('right')} className="bg-white/5 border border-white/10 p-2 rounded-full hover:bg-white/10 text-white">
+                    <button onClick={() => scroll('right')} className="bg-white/5 border border-white/10 p-4 rounded-full hover:bg-white/10 text-white transition-colors">
                         <span className="material-symbols-outlined text-sm">chevron_right</span>
                     </button>
                 </div>
@@ -79,23 +81,15 @@ const ProjectSection = ({ title, projects, id }) => {
 
 const ProjectShowcase = () => {
     const realizedProjects = projects.filter(p => p.category === 'realized');
-    const upcomingProjects = projects.filter(p => p.category === 'upcoming');
 
     return (
-        <section id="eventos" className="snap-section bg-charcoal py-24">
-            <div className="container mx-auto px-8">
+        <section id="eventos" className="snap-section bg-charcoal py-32 relative overflow-hidden">
+            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+            <div className="container mx-auto px-8 relative z-10">
                 <ProjectSection
                     id="eventos-realizados"
                     title="Eventos Realizados"
                     projects={realizedProjects}
-                />
-
-                <div className="h-[1px] w-full bg-white/5 my-20" />
-
-                <ProjectSection
-                    id="proximos-eventos"
-                    title="Próximos Eventos"
-                    projects={upcomingProjects}
                 />
             </div>
         </section>

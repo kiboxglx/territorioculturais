@@ -2,7 +2,7 @@
 
 @theme {
   --color-primary: #11D4D4;
-  --color-charcoal: #1A2B2B;
+  --color-charcoal: #283618;
   --color-accent-gold: #FFD700;
   --color-accent-red: #FF4B4B;
   --font-playfair: 'Playfair Display', serif;
@@ -126,7 +126,7 @@ section {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #1A2B2B;
+  background: #283618;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {

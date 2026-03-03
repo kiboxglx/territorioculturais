@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import About from '../components/About';
-import PortfolioSection from '../components/PortfolioSection';
-import Methodology from '../components/Methodology';
-import ProjectShowcase from '../components/ProjectShowcase';
-import Services from '../components/Services';
-import Team from '../components/Team';
-import Proponent from '../components/Proponent';
-import GalleryPreview from '../components/GalleryPreview';
 import { motion } from 'framer-motion';
+
+// Componentes em Ordem do Croqui
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero'; // 01
+import About from '../components/About'; // 02
+import Services from '../components/Services'; // 03 (Refatorar depois para 2x2)
+import DestinoEstruturado from '../components/DestinoEstruturado'; // 04
+import Methodology from '../components/Methodology'; // 05 (MATC)
+import ProjectShowcase from '../components/ProjectShowcase'; // 06 (Eventos Realizados)
+import UpcomingEvents from '../components/UpcomingEvents'; // 07 (Próximos Eventos)
+import GalleryPreview from '../components/GalleryPreview'; // 08 (Galeria de Fotos)
+import ObservatorioDestaque from '../components/ObservatorioDestaque'; // 09 (Observatório)
+import Team from '../components/Team'; // 10 (Nossa Equipe)
+
+// Componentes retirados temporariamente para alinhar ao croqui exato: PortfolioSection, Proponent
 
 const Home = ({ onOpenModal }) => {
     const location = useLocation();
@@ -24,7 +29,6 @@ const Home = ({ onOpenModal }) => {
                     element.scrollIntoView({ behavior: 'smooth' });
                 }
             }, 100);
-            // Clear state to avoid scrolling on every render
             window.history.replaceState({}, document.title);
         }
     }, [location]);
@@ -46,24 +50,37 @@ const Home = ({ onOpenModal }) => {
         >
             <Navbar onContactClick={onOpenModal} />
 
+            {/* 01. Territórios Culturais / Ecossistema */}
             <Hero onExploreClick={() => scrollToSection('nossa-essencia')} />
 
+            {/* 02. Quem Somos / Finalidade */}
             <About />
 
-            <PortfolioSection />
-
-            <Methodology />
-
-            <ProjectShowcase />
-
+            {/* 03. Portfólio de Atuação */}
             <Services />
 
-            <Team />
+            {/* 04. Programa Destino Estruturado */}
+            <DestinoEstruturado />
 
-            <Proponent />
+            {/* 05. MATC / Sistema Territórios Culturais */}
+            <Methodology />
 
+            {/* 06. Eventos Realizados */}
+            <ProjectShowcase />
+
+            {/* 07. Próximos Eventos */}
+            <UpcomingEvents />
+
+            {/* 08. Galeria de Fotos */}
             <GalleryPreview />
 
+            {/* 09. Observatório Territórios Culturais */}
+            <ObservatorioDestaque />
+
+            {/* 10. Nossa Equipe */}
+            <Team />
+
+            {/* 11. Escreva este Futuro Conosco (CTA Final e Footer) */}
             <section id="futuro" className="snap-section flex flex-col relative overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <img
@@ -74,7 +91,7 @@ const Home = ({ onOpenModal }) => {
                     <div className="absolute inset-0 bg-charcoal/40"></div>
                 </div>
 
-                <div className="container mx-auto px-8 text-center relative z-10 flex-grow flex flex-col justify-center items-center">
+                <div className="container mx-auto px-8 py-32 text-center relative z-10 grow flex flex-col justify-center items-center">
                     <h2 className="font-playfair text-6xl md:text-8xl mb-8 text-white">
                         Escreva este Futuro <br /> <i className="font-light">Conosco</i>
                     </h2>
@@ -84,11 +101,14 @@ const Home = ({ onOpenModal }) => {
                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
                         <button
                             onClick={onOpenModal}
-                            className="bg-primary text-charcoal font-bold px-12 py-5 rounded-full text-lg hover:scale-105 transition-all font-manrope uppercase tracking-wider"
+                            className="bg-primary text-charcoal font-bold px-12 py-5 rounded-full text-lg hover:scale-105 transition-all font-manrope uppercase tracking-wider shadow-[0_0_20px_rgba(17,212,212,0.2)]"
                         >
                             Solicitar Apresentação Executiva
                         </button>
-                        <button className="bg-white/10 backdrop-blur-md border border-white/20 px-12 py-5 rounded-full text-lg font-bold hover:bg-white/20 transition-all text-white font-manrope uppercase tracking-wider">
+                        <button 
+                            onClick={onOpenModal}
+                            className="bg-white/10 backdrop-blur-md border border-white/20 px-12 py-5 rounded-full text-lg font-bold hover:bg-white/20 transition-all text-white font-manrope uppercase tracking-wider"
+                        >
                             Agendar Consultoria
                         </button>
                     </div>

@@ -14,7 +14,7 @@ const ImpactMap = ({ onCitySelect, selectedCity }) => {
     ];
 
     return (
-        <div className="relative w-full h-[400px] md:h-[500px] bg-[#1A2B2B]/50 rounded-2xl border border-white/5 p-4 flex items-center justify-center overflow-hidden group/map">
+        <div className="relative w-full h-[400px] md:h-[500px] bg-[#283618]/50 rounded-2xl border border-white/5 p-4 flex items-center justify-center overflow-hidden group/map">
 
             <div className="absolute top-4 left-4 z-10 pointer-events-none">
                 <h4 className="font-playfair text-white text-xl">Mapa de Impacto</h4>
@@ -30,7 +30,7 @@ const ImpactMap = ({ onCitySelect, selectedCity }) => {
                         fill="#152222"
                         stroke="#334b4b"
                         strokeWidth="0.5"
-                        className="transition-colors duration-500 hover:fill-[#1A2B2B]"
+                        className="transition-colors duration-500 hover:fill-[#283618]"
                     />
 
                     {/* Cities Points */}

@@ -39,7 +39,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                     initial={{ scale: 0.9, opacity: 0, y: 20 }}
                     animate={{ scale: 1, opacity: 1, y: 0 }}
                     exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                    className="bg-[#1A2B2B] w-full max-w-2xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative"
+                    className="bg-[#283618] w-full max-w-2xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden relative"
                     onClick={(e) => e.stopPropagation()}
                 >
                     {/* Close Button */}

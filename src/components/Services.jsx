@@ -1,58 +1,91 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
+import { motion } from 'framer-motion';
 
 const Services = () => {
     const services = [
         {
-            title: "Projetos Culturais",
-            description: "Desenvolvimento, planejamento e execução de projetos culturais de alto impacto.",
-            icon: "architecture"
-        },
-        {
-            title: "Consultoria Institucional",
-            description: "Orientação técnica para prefeituras e governos na organização de sistemas culturais.",
+            id: "01",
+            title: "Planejamento Institucional",
+            description: "Consultoria técnica para governos na organização do Sistema Municipal de Cultura e Políticas Públicas.",
             icon: "account_balance"
         },
         {
-            title: "Formação Cultural",
-            description: "Programas de capacitação para agentes, gestores e fazedores de cultura.",
+            id: "02",
+            title: "Projetos Estruturantes",
+            description: "Desenvolvimento e execução de projetos culturais e audiovisuais de alto impacto territorial.",
+            icon: "architecture"
+        },
+        {
+            id: "03",
+            title: "Formação Territorial",
+            description: "Programas de capacitação para agentes e gestores, gerando autonomia técnica e retenção de talentos.",
             icon: "school"
         },
         {
-            title: "Programas Audiovisuais",
-            description: "Produção cinematográfica e registro da memória e identidade territorial.",
-            icon: "movie"
-        },
-        {
-            title: "Planejamento Turístico",
-            description: "Roteirização e ativação de destinos por meio do patrimônio cultural.",
-            icon: "map"
-        },
-        {
-            title: "Economia Criativa",
-            description: "Ações voltadas à geração de renda e sustentabilidade das cadeias produtivas.",
+            id: "04",
+            title: "Economia Criativa e Turismo",
+            description: "Operação integrada entre cultura e vocações turísticas para o desenvolvimento econômico da região.",
             icon: "payments"
         }
     ];
 
     return (
-        <section id="servicos" className="snap-section bg-charcoal text-white">
-            <div className="container mx-auto px-8 py-20 h-full flex flex-col justify-center">
-                <div className="mb-12">
-                    <span className="text-primary uppercase tracking-[0.5em] text-xs font-bold mb-4 block font-manrope">Soluções Estratégicas</span>
-                    <h2 className="font-playfair text-5xl md:text-6xl text-white">Produtos e Serviços</h2>
+        <section id="servicos" className="snap-section bg-charcoal text-white py-32 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/4"></div>
+
+            <div className="container mx-auto px-8 relative z-10 h-full flex flex-col justify-center">
+                <div className="text-center mb-20 max-w-3xl mx-auto">
+                    <motion.span 
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="text-primary uppercase tracking-[0.5em] text-xs font-bold mb-4 block font-manrope"
+                    >
+                        Soluções Estratégicas
+                    </motion.span>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="font-playfair text-5xl md:text-6xl text-white leading-tight"
+                    >
+                        Portfólio de <i className="font-light text-white/70">Atuação</i>
+                    </motion.h2>
                 </div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid sm:grid-cols-2 gap-8 lg:gap-12 relative">
+                    {/* Linha Divisória Customizada Central (opcional para dar efeito de quadrante) */}
+                    <div className="hidden sm:block absolute top-0 bottom-0 left-1/2 w-px bg-white/5 -translate-x-1/2"></div>
+                    <div className="hidden sm:block absolute left-0 right-0 top-1/2 h-px bg-white/5 -translate-y-1/2"></div>
+                    
                     {services.map((service, index) => (
-                        <div key={index} className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-primary/50 transition-all group backdrop-blur-sm">
-                            <span className="material-symbols-outlined text-primary text-4xl mb-6 block group-hover:scale-110 transition-transform">
-                                {service.icon}
-                            </span>
-                            <h3 className="font-playfair text-2xl mb-4 text-white">{service.title}</h3>
-                            <p className="text-white/60 font-light font-manrope text-sm leading-relaxed">
+                        <motion.div 
+                            key={index} 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="p-8 lg:p-12 group hover:bg-white/5 transition-colors rounded-3xl"
+                        >
+                            <div className="flex justify-between items-start mb-8">
+                                <span className="material-symbols-outlined text-primary text-5xl group-hover:scale-110 transition-transform origin-left">
+                                    {service.icon}
+                                </span>
+                                <span className="font-playfair text-4xl text-white/10 group-hover:text-primary/40 transition-colors">
+                                    {service.id}
+                                </span>
+                            </div>
+                            <h3 className="font-playfair text-3xl mb-4 text-white group-hover:text-primary transition-colors">{service.title}</h3>
+                            <p className="text-white/60 font-light font-manrope text-base leading-relaxed max-w-sm">
                                 {service.description}
                             </p>
-                        </div>
+                            
+                            <div className="mt-8 flex items-center gap-2 text-[10px] text-primary uppercase font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity -translate-x-4 group-hover:translate-x-0 cursor-pointer">
+                                Saiba Mais <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

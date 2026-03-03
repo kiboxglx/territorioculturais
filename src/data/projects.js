@@ -42,18 +42,18 @@ export const projects = [
         id: "cine-territorio",
         slug: "cine-territorio",
         title: "Cine Território",
-        subtitle: "Difusão Audiovisual e Formação",
+        subtitle: "9 a 11 de Maio | Patos de Minas",
         heroImage: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2940&auto=format&fit=crop",
         incentiveLaw: "Lei Paulo Gustavo",
-        status: "Em Execução",
+        status: "Realizado com Sucesso",
         category: "realized",
         progress: 100,
-        quotaAvailable: "Parceria Institucional",
-        estimatedAudience: "5.000 + Escolas",
+        quotaAvailable: "Edição Concluída",
+        estimatedAudience: "Público Local",
         regionalImpact: "Formação de Público e Educação",
-        description: "Difusão audiovisual e formação de público em Patos de Minas. Oficinas, cinema e rodas de conversa no Teatro Leão de Formosa.",
-        institutionalRelations: "Parceria com Ministério da Cultura, Caminhos do Cerrado e Balaio de Arte & Cultura.",
-        governance: "Projeto aprovado e executado via Lei Paulo Gustavo, com foco em democratização do acesso.",
+        description: "Projeto realizado entre 09 e 11 de maio em Patos de Minas. Promovemos a difusão audiovisual e a formação de público com exibições de cinema e apoio direto de parceiros comunitários e culturais.",
+        institutionalRelations: "Apoio: Caminhos do Cerrado, Balaio de Arte & Cultura, Orquestra Filarmônica, Eddy Som e Luz, Gov. Federal.",
+        governance: "Aprovado e executado via Lei Paulo Gustavo, com foco na democratização do acesso cultural.",
         locationLabel: "📍 Patos de Minas",
         city: "patos-de-minas",
         impactMetrics: {
@@ -68,12 +68,12 @@ export const projects = [
         ],
         details: [
             {
-                title: "Oficinas e Capacitação",
-                content: "Workshops de cinema e audiovisual para jovens e adultos, fomentando novos talentos locais."
+                title: "Difusão Cinematográfica",
+                content: "Exibições voltadas à conscientização e envolvimento da comunidade em torno da produção audiovisual nacional."
             },
             {
-                title: "Rodas de Conversa",
-                content: "Debates com realizadores e especialistas sobre a produção cinematográfica e seu impacto cultural."
+                title: "Engajamento Artístico",
+                content: "Conexão com artistas locais, produtores e iniciativas regionais para fortalecer a rede de cultura no Cerrado Mineiro."
             }
         ]
     },
