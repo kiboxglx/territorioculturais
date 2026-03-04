@@ -75,16 +75,16 @@ const Hero = ({ onExploreClick }) => {
         <section id="inicio" className="snap-section relative bg-charcoal overflow-hidden min-h-screen pt-20">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0">
-                <video
-                    className="absolute inset-0 w-full h-full object-cover"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                >
-                    <source src="/WhatsApp Video 2026-02-19 at 18.34.49.mp4" type="video/mp4" />
-                </video>
-                <div className="absolute inset-0 bg-charcoal/80 backdrop-blur-[2px]"></div>
+                <img
+                    src="/bg-brand.png"
+                    alt="Background Geométrico Brand"
+                    className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-40"
+                />
+                <div className="absolute inset-0 bg-charcoal/70 backdrop-blur-sm"></div>
+                {/* Additional color overlays to enhance the logo colors */}
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 blur-[100px] rounded-full mix-blend-screen"></div>
+                <div className="absolute bottom-[-20%] left-[-10%] w-[800px] h-[800px] bg-[#1b5e54]/30 blur-[120px] rounded-full mix-blend-screen"></div>
+                <div className="absolute top-[40%] left-[30%] w-[400px] h-[400px] bg-[#d93d3b]/10 blur-[100px] rounded-full mix-blend-screen"></div>
             </div>
 
             <div className="container mx-auto px-8 relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
