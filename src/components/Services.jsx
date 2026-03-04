@@ -6,27 +6,27 @@ const Services = () => {
     const services = [
         {
             id: "01",
-            title: "Planejamento Institucional",
+            title: "Cinema audiovisual e novas mídias",
             description: "Consultoria técnica para governos na organização do Sistema Municipal de Cultura e Políticas Públicas.",
-            icon: "account_balance"
+            icon: "movie"
         },
         {
             id: "02",
-            title: "Projetos Estruturantes",
+            title: "Mostras, festivais e eventos culturais",
             description: "Desenvolvimento e execução de projetos culturais e audiovisuais de alto impacto territorial.",
-            icon: "architecture"
+            icon: "festival"
         },
         {
             id: "03",
-            title: "Formação Territorial",
+            title: "Formação, capacitação e qualificação cultural",
             description: "Programas de capacitação para agentes e gestores, gerando autonomia técnica e retenção de talentos.",
             icon: "school"
         },
         {
             id: "04",
-            title: "Economia Criativa e Turismo",
+            title: "Governança, financiamento e estruturação institucional",
             description: "Operação integrada entre cultura e vocações turísticas para o desenvolvimento econômico da região.",
-            icon: "payments"
+            icon: "account_balance"
         }
     ];
 

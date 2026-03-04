@@ -100,19 +100,33 @@ const Hero = ({ onExploreClick }) => {
                             <span className="text-primary italic font-light">Culturais LTDA.</span>
                         </h1>
                         <h2 className="text-lg md:text-xl font-manrope text-primary/80 uppercase tracking-widest font-bold mb-8">
-                            Produtora Cinematográfica Brasileira com Registro 63126 na Agência Nacional do Cinema<br/>
-                            <span className="text-sm font-light text-white/50 block mt-2 tracking-normal">— integrando indústria criativa, gestão cultural e desenvolvimento territorial.</span>
+                            Integrando indústria criativa, gestão cultural e desenvolvimento territorial.<br/>
+                            <span className="text-sm font-light text-white/50 block mt-2 tracking-normal">— Produtora Cinematográfica Brasileira com Registro 63126 na Agência Nacional do Cinema</span>
                         </h2>
-                        <div className="text-white/70 text-base md:text-lg font-light leading-relaxed mb-12 max-w-xl space-y-4">
-                            <p>
-                                A Territórios Culturais atua por meio de um <strong className="text-white">Sistema estruturado</strong> que conecta metodologia própria (MATC), produção cultural, planejamento institucional, financiamento público, economia criativa e monitoramento estratégico.
-                            </p>
+                        <div className="text-white/70 text-base md:text-lg font-light leading-relaxed mb-8 max-w-xl space-y-4">
                             <p>
                                 Nosso portfólio é organizado em eixos complementares que articulam criação artística, execução de políticas públicas, formação técnica, governança cultural e desenvolvimento econômico. Cada dimensão dialoga com as demais, formando um ecossistema cultural integrado e permanente.
                             </p>
-                            <p className="border-l-2 border-primary/50 pl-4 py-1 italic font-manrope">
-                                Não operamos projetos isolados. <br/>
-                                <strong className="text-white">Implantamos arquitetura de desenvolvimento territorial.</strong>
+                        </div>
+                        
+                        <div className="mb-12 max-w-xl">
+                            <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-primary/80 font-bold flex flex-wrap gap-x-3 gap-y-2 items-center">
+                                <span>Criar</span> •
+                                <span>Comunicar</span> •
+                                <span>Circular</span> •
+                                <span>Formar</span> •
+                                <span>Estruturar</span> •
+                                <span>Financiar</span> •
+                                <span>Desenvolver</span> •
+                                <span>Monitorar</span>
+                                <motion.span 
+                                    animate={{ x: [0, 10, 0] }}
+                                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                                    className="material-symbols-outlined text-primary ml-1 text-xl"
+                                    translate="no"
+                                >
+                                    arrow_forward
+                                </motion.span>
                             </p>
                         </div>
 
@@ -121,7 +135,7 @@ const Hero = ({ onExploreClick }) => {
                                 onClick={onExploreClick}
                                 className="bg-primary text-charcoal font-bold px-8 py-4 rounded-full hover:scale-105 transition-all text-sm tracking-widest uppercase shadow-[0_0_20px_rgba(17,212,212,0.15)]"
                             >
-                                Conhecer Metodologia
+                                Conheça mais sobre Territórios Culturais
                             </button>
                         </div>
                     </motion.div>
@@ -131,36 +145,47 @@ const Hero = ({ onExploreClick }) => {
                 <div className="w-full lg:w-1/2 relative h-[500px] md:h-[600px] flex items-center justify-center">
                     <div className="relative w-full h-full flex items-center justify-center">
                         {/* Circular Layout */}
-                        {circleItems.map((item, index) => {
-                            const angle = (index * 360) / circleItems.length;
-                            const radius = typeof window !== 'undefined' && window.innerWidth < 768 ? 140 : 200;
-                            const x = Math.cos((angle * Math.PI) / 180) * radius;
-                            const y = Math.sin((angle * Math.PI) / 180) * radius;
+                        <motion.div 
+                            animate={{ rotate: [0, 360] }}
+                            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                            className="absolute inset-0 z-10"
+                        >
+                            {circleItems.map((item, index) => {
+                                const angle = (index * 360) / circleItems.length;
+                                const radius = typeof window !== 'undefined' && window.innerWidth < 768 ? 140 : 200;
+                                const x = Math.cos((angle * Math.PI) / 180) * radius;
+                                const y = Math.sin((angle * Math.PI) / 180) * radius;
 
-                            return (
-                                <motion.div
-                                    key={item.id}
-                                    initial={{ opacity: 0, scale: 0 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: 0.1 * index, duration: 0.5 }}
-                                    style={{
-                                        position: 'absolute',
-                                        left: `calc(50% + ${x}px - 40px)`,
-                                        top: `calc(50% + ${y}px - 40px)`,
-                                    }}
-                                    className="relative group cursor-pointer"
-                                    onClick={() => setSelectedItem(item)}
-                                    onMouseEnter={() => setSelectedItem(item)}
-                                >
-                                    <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 transition-all duration-300 ${selectedItem?.id === item.id ? 'border-primary ring-4 ring-primary/20 scale-110' : 'border-white/20 hover:border-white/50'}`}>
-                                        <img src={item.image} alt={item.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" />
-                                    </div>
-                                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-charcoal/80 px-3 py-1 rounded text-[10px] uppercase tracking-widest text-white border border-white/10 z-20">
-                                        {item.title}
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
+                                return (
+                                    <motion.div
+                                        key={item.id}
+                                        initial={{ opacity: 0, scale: 0 }}
+                                        animate={{ opacity: 1, scale: 1, rotate: [0, -360] }}
+                                        transition={{ 
+                                            opacity: { delay: 0.1 * index, duration: 0.5 },
+                                            scale: { delay: 0.1 * index, duration: 0.5 },
+                                            rotate: { duration: 60, repeat: Infinity, ease: "linear" }
+                                        }}
+                                        style={{
+                                            position: 'absolute',
+                                            left: `calc(50% + ${x}px - 40px)`,
+                                            top: `calc(50% + ${y}px - 40px)`,
+                                        }}
+                                        className="relative group cursor-pointer"
+                                        onClick={() => setSelectedItem(item)}
+                                        onMouseEnter={() => setSelectedItem(item)}
+                                        onMouseLeave={() => setSelectedItem(null)}
+                                    >
+                                        <div className={`w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 transition-all duration-300 ${selectedItem?.id === item.id ? 'border-primary ring-4 ring-primary/20 scale-110' : 'border-white/20 hover:border-white/50'}`}>
+                                            <img src={item.image} alt={item.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" />
+                                        </div>
+                                        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity bg-charcoal/80 px-3 py-1 rounded text-[10px] uppercase tracking-widest text-white border border-white/10 z-20">
+                                            {item.title}
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
+                        </motion.div>
 
                         {/* Center Display */}
                         <AnimatePresence mode="wait">
@@ -203,21 +228,10 @@ const Hero = ({ onExploreClick }) => {
                                     <div className="absolute inset-0 bg-primary/5 rounded-full blur-2xl animate-pulse"></div>
                                     <img src="/LOGO_VETOR-removebg-preview.png" alt="Logo" className="w-16 h-auto opacity-30 mb-6 drop-shadow-[0_0_10px_rgba(17,212,212,0.5)]" />
                                     
-                                    <h3 className="text-white font-playfair text-xl md:text-2xl mb-2 relative z-10">
+                                    <h3 className="text-white font-playfair text-2xl md:text-3xl relative z-10 leading-tight">
                                         Ecossistema de<br/>
-                                        <span className="text-primary italic">Atuação Integrada.</span>
+                                        <span className="text-primary italic">Atuação Integrada</span>
                                     </h3>
-                                    
-                                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/50 leading-loose relative z-10 mt-2 flex flex-wrap justify-center gap-x-2">
-                                        <span>Criar</span> •
-                                        <span>Comunicar</span> •
-                                        <span>Circular</span> •
-                                        <span>Formar</span> •
-                                        <span>Estruturar</span> •
-                                        <span>Financiar</span> •
-                                        <span>Desenvolver</span> •
-                                        <span>Monitorar</span>
-                                    </p>
                                 </motion.div>
                             )}
                         </AnimatePresence>
@@ -225,22 +239,7 @@ const Hero = ({ onExploreClick }) => {
                 </div>
             </div>
 
-            {/* Final Impact Phrase before Scroll */}
-            <div className="absolute bottom-16 w-full text-center px-8 z-20 pointer-events-none">
-                <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1, duration: 1 }}
-                    className="flex flex-col items-center justify-center"
-                >
-                    <p className="text-primary text-xs md:text-sm font-bold tracking-[0.4em] uppercase mb-2 drop-shadow-md">
-                        Sistema. Método. Execução. Monitoramento.
-                    </p>
-                    <p className="text-white/60 text-xs md:text-sm font-light font-manrope">
-                        Cultura como infraestrutura de desenvolvimento territorial.
-                    </p>
-                </motion.div>
-            </div>
+
 
             {/* Scroll Indicator */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-40 z-20">

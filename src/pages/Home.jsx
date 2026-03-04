@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 // Componentes em Ordem do Croqui
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero'; // 01
-import About from '../components/About'; // 02
+import FilmStrip from '../components/FilmStrip'; // 02
 import Services from '../components/Services'; // 03 (Refatorar depois para 2x2)
 import DestinoEstruturado from '../components/DestinoEstruturado'; // 04
 import Methodology from '../components/Methodology'; // 05 (MATC)
@@ -19,6 +19,7 @@ import Team from '../components/Team'; // 10 (Nossa Equipe)
 
 const Home = ({ onOpenModal }) => {
     const location = useLocation();
+    const navigate = useNavigate();
 
     React.useEffect(() => {
         if (location.state?.scrollTo) {
@@ -33,13 +34,6 @@ const Home = ({ onOpenModal }) => {
         }
     }, [location]);
 
-    const scrollToSection = (id) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -51,10 +45,10 @@ const Home = ({ onOpenModal }) => {
             <Navbar onContactClick={onOpenModal} />
 
             {/* 01. Territórios Culturais / Ecossistema */}
-            <Hero onExploreClick={() => scrollToSection('nossa-essencia')} />
+            <Hero onExploreClick={() => navigate('/quem-somos')} />
 
-            {/* 02. Quem Somos / Finalidade */}
-            <About />
+            {/* 02. Película / Impacto Visual */}
+            <FilmStrip />
 
             {/* 03. Portfólio de Atuação */}
             <Services />
