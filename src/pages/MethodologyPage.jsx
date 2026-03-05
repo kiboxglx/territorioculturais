@@ -118,6 +118,23 @@ const MethodologyPage = () => {
                 </div>
             </section>
 
+            {/* Intro MATC — texto removido da Home */}
+            <section className="py-16 border-b border-white/5">
+                <div className="container mx-auto px-8">
+                    <div className="max-w-4xl mx-auto space-y-6">
+                        <p className="text-xl text-white font-medium font-manrope leading-relaxed">
+                            Sistema estruturante de implantação, organização e permanência da política cultural municipal.
+                        </p>
+                        <p className="text-base text-white/70 font-light font-manrope leading-relaxed">
+                            A MATC é uma metodologia aplicada de estruturação da política pública de cultura, desenvolvida para organizar administrativamente o setor cultural dentro do município, criar capacidade permanente de gestão e integrar cultura ao desenvolvimento territorial.
+                        </p>
+                        <p className="text-base text-white/80 font-light font-manrope leading-relaxed border-l-2 border-primary/50 pl-4 italic">
+                            Ela transforma ações isoladas em sistema contínuo, garantindo previsibilidade, eficiência administrativa e fortalecimento dos agentes culturais locais.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             {/* Section 1: Pilares de Sustentação */}
             <section className="py-24 bg-white/5 border-t border-white/5">
                 <div className="container mx-auto px-8">

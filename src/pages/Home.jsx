@@ -113,7 +113,7 @@ const Home = ({ onOpenModal }) => {
                         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
                             <div className="flex items-center gap-4">
                                 <img
-                                    src="/IMG_4327.PNG"
+                                    src="/IMG_4327-removebg-preview.png"
                                     alt="Territórios Culturais"
                                     className="h-10 w-auto opacity-80"
                                 />

@@ -100,12 +100,11 @@ const Hero = ({ onExploreClick }) => {
                             <span className="text-primary italic font-light">Culturais LTDA.</span>
                         </h1>
                         <h2 className="text-lg md:text-xl font-manrope text-primary/80 uppercase tracking-widest font-bold mb-8">
-                            Integrando indústria criativa, gestão cultural e desenvolvimento territorial.<br/>
-                            <span className="text-sm font-light text-white/50 block mt-2 tracking-normal">— Produtora Cinematográfica Brasileira com Registro 63126 na Agência Nacional do Cinema</span>
+                            Integrando indústria criativa, gestão cultural e desenvolvimento territorial.
                         </h2>
                         <div className="text-white/70 text-base md:text-lg font-light leading-relaxed mb-8 max-w-xl space-y-4">
                             <p>
-                                Nosso portfólio é organizado em eixos complementares que articulam criação artística, execução de políticas públicas, formação técnica, governança cultural e desenvolvimento econômico. Cada dimensão dialoga com as demais, formando um ecossistema cultural integrado e permanente.
+                                Nossos eixos complementares articulam criação artística, execução de políticas públicas, formação técnica, governança cultural e desenvolvimento econômico. Cada dimensão dialoga com as demais, formando um ecossistema cultural integrado e permanente.
                             </p>
                         </div>
                         
@@ -131,12 +130,15 @@ const Hero = ({ onExploreClick }) => {
                         </div>
 
                         <div className="flex gap-4">
-                            <button
-                                onClick={onExploreClick}
-                                className="bg-primary text-charcoal font-bold px-8 py-4 rounded-full hover:scale-105 transition-all text-sm tracking-widest uppercase shadow-[0_0_20px_rgba(17,212,212,0.15)]"
-                            >
-                                Conheça mais sobre Territórios Culturais
-                            </button>
+                            {/* Botão estilo borda gradiente Afroreggae */}
+                            <div className="p-[2px] rounded-full" style={{background: 'linear-gradient(90deg, #11d4d4, #f0c419, #e8742a, #d93d3b, #9b30d4)'}}>
+                                <button
+                                    onClick={onExploreClick}
+                                    className="bg-charcoal text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-all text-sm tracking-widest uppercase w-full"
+                                >
+                                    Conheça mais sobre Territórios Culturais
+                                </button>
+                            </div>
                         </div>
                     </motion.div>
                 </div>
@@ -223,12 +225,11 @@ const Hero = ({ onExploreClick }) => {
                                 <motion.div
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
-                                    className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none max-w-[250px] mx-auto text-center"
+                                    className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center"
                                 >
                                     <div className="absolute inset-0 bg-primary/5 rounded-full blur-2xl animate-pulse"></div>
-                                    <img src="/IMG_4327.PNG" alt="Logo" className="w-16 h-auto opacity-30 mb-6 drop-shadow-[0_0_10px_rgba(17,212,212,0.5)]" />
                                     
-                                    <h3 className="text-white font-playfair text-2xl md:text-3xl relative z-10 leading-tight">
+                                    <h3 className="text-white font-playfair text-2xl md:text-3xl relative z-10 leading-tight text-center">
                                         Ecossistema de<br/>
                                         <span className="text-primary italic">Atuação Integrada</span>
                                     </h3>
