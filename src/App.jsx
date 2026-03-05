@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import MethodologyPage from './pages/MethodologyPage';
 import PortfolioPage from './pages/PortfolioPage';
+import PortfolioEventosPage from './pages/PortfolioEventosPage';
+import FormacaoCulturalPage from './pages/FormacaoCulturalPage';
 import GalleryPage from './pages/GalleryPage';
 import ProjectDetail from './pages/ProjectDetail';
 import ContactModal from './components/ContactModal';
@@ -23,6 +25,9 @@ const AnimatedRoutes = () => {
           <Route path="/quem-somos" element={<AboutPage />} />
           <Route path="/metodologia" element={<MethodologyPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/portfolio/cinema-audiovisual" element={<PortfolioCinemaPage />} />
+          <Route path="/formacao" element={<FormacaoCulturalPage />} />
+          <Route path="/portfolio-eventos" element={<PortfolioEventosPage onOpenModal={() => setIsModalOpen(true)} />} />
           <Route path="/galeria" element={<GalleryPage />} />
           <Route path="/projeto/:slug" element={<ProjectDetail onOpenModal={() => setIsModalOpen(true)} />} />
         </Routes>

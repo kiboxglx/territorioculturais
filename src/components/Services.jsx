@@ -1,32 +1,40 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
     const services = [
         {
             id: "01",
-            title: "Cinema audiovisual e novas mídias",
-            description: "Consultoria técnica para governos na organização do Sistema Municipal de Cultura e Políticas Públicas.",
-            icon: "movie"
+            title: "Cinema, Audiovisual e Novas Mídias.",
+            subtitle: "Produção cinematográfica, comunicação institucional e conteúdo estratégico para o setor público e privado.",
+            description: "Atuamos na indústria cinematográfica brasileira, na produção audiovisual institucional e na criação de conteúdos digitais estratégicos, integrando narrativa, informação e identidade territorial com qualidade técnica e registro na ANCINE.",
+            icon: "movie",
+            link: "/portfolio/cinema-audiovisual"
         },
         {
             id: "02",
-            title: "Mostras, festivais e eventos culturais",
-            description: "Desenvolvimento e execução de projetos culturais e audiovisuais de alto impacto territorial.",
-            icon: "festival"
+            title: "Mostras, Festivais e Eventos Culturais",
+            subtitle: "Curadoria, produção e execução de eventos culturais estruturados com impacto artístico, social e territorial.",
+            description: "Planejamos e realizamos Mostras, Festivais e Eventos Culturais como instrumentos estratégicos de democratização do acesso, fortalecimento da economia criativa e valorização da identidade territorial, com organização técnica e responsabilidade administrativa.",
+            icon: "festival",
+            link: "/portfolio-eventos"
         },
         {
             id: "03",
-            title: "Formação, capacitação e qualificação cultural",
+            title: "Formação e qualificação cultural",
+            subtitle: "Programas de capacitação para agentes e gestores culturais.",
             description: "Programas de capacitação para agentes e gestores, gerando autonomia técnica e retenção de talentos.",
-            icon: "school"
+            icon: "school",
+            link: "/portfolio"
         },
         {
             id: "04",
-            title: "Governança, financiamento e estruturação institucional",
+            title: "Plano institucional e governança",
+            subtitle: "Operação integrada entre cultura e vocações turísticas.",
             description: "Operação integrada entre cultura e vocações turísticas para o desenvolvimento econômico da região.",
-            icon: "account_balance"
+            icon: "account_balance",
+            link: "/portfolio"
         }
     ];
 
@@ -61,31 +69,45 @@ const Services = () => {
                     <div className="hidden sm:block absolute left-0 right-0 top-1/2 h-px bg-white/5 -translate-y-1/2"></div>
                     
                     {services.map((service, index) => (
-                        <motion.div 
+                        <Link 
+                            to={service.link}
                             key={index} 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="p-8 lg:p-12 group hover:bg-white/5 transition-colors rounded-3xl"
+                            className="block"
                         >
-                            <div className="flex justify-between items-start mb-8">
-                                <span className="material-symbols-outlined text-primary text-5xl group-hover:scale-110 transition-transform origin-left">
-                                    {service.icon}
-                                </span>
-                                <span className="font-playfair text-4xl text-white/10 group-hover:text-primary/40 transition-colors">
-                                    {service.id}
-                                </span>
-                            </div>
-                            <h3 className="font-playfair text-3xl mb-4 text-white group-hover:text-primary transition-colors">{service.title}</h3>
-                            <p className="text-white/60 font-light font-manrope text-base leading-relaxed max-w-sm">
-                                {service.description}
-                            </p>
-                            
-                            <div className="mt-8 flex items-center gap-2 text-[10px] text-primary uppercase font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity -translate-x-4 group-hover:translate-x-0 cursor-pointer">
-                                Saiba Mais <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                            </div>
-                        </motion.div>
+                            <motion.div 
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="p-8 lg:p-12 group hover:bg-white/5 transition-all rounded-3xl h-full flex flex-col justify-between border border-transparent hover:border-white/5"
+                            >
+                                <div>
+                                    <div className="flex justify-between items-start mb-8">
+                                        <span className="material-symbols-outlined text-primary text-5xl group-hover:scale-110 transition-transform origin-left">
+                                            {service.icon}
+                                        </span>
+                                        <span className="font-playfair text-4xl text-white/10 group-hover:text-primary/40 transition-colors">
+                                            {service.id}
+                                        </span>
+                                    </div>
+                                    <h3 className="font-playfair text-3xl mb-4 text-white group-hover:text-primary transition-colors">{service.title}</h3>
+                                    
+                                    {/* Default View: Subtitle */}
+                                    <p className="text-white/60 font-light font-manrope text-sm leading-relaxed max-w-sm group-hover:opacity-0 group-hover:h-0 transition-all duration-300">
+                                        {service.subtitle}
+                                    </p>
+
+                                    {/* Hover View: Description Box */}
+                                    <p className="text-white font-light font-manrope text-sm leading-relaxed max-w-sm opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto transition-all duration-300 overflow-hidden">
+                                        {service.description}
+                                    </p>
+                                </div>
+                                
+                                <div className="mt-8 flex items-center gap-2 text-[10px] text-primary uppercase font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity -translate-x-4 group-hover:translate-x-0 cursor-pointer">
+                                    Saiba Mais <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                                </div>
+                            </motion.div>
+                        </Link>
                     ))}
                 </div>
             </div>
