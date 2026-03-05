@@ -18,9 +18,9 @@ const Navbar = ({ onContactClick }) => {
             <div className="pointer-events-auto">
                 <Link to="/">
                     <img
-                        src="/LOGO_VETOR-removebg-preview.png"
+                        src="/IMG_4327.PNG"
                         alt="Territórios Culturais"
-                        className="h-10 md:h-12 w-auto cursor-pointer object-contain"
+                    className="h-24 md:h-28 w-auto cursor-pointer object-contain"
                     />
                 </Link>
             </div>

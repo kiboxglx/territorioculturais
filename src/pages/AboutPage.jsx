@@ -183,7 +183,7 @@ const AboutPage = () => {
                                 viewport={{ once: true }}
                                 className="text-center pt-20"
                             >
-                                <img src="/LOGO_VETOR-removebg-preview.png" alt="Logo" className="w-24 h-auto mx-auto opacity-20 mb-8" />
+                                <img src="/logosterritorios (4).jpeg" alt="Quem Somos e Finalidade" className="w-40 h-auto mx-auto mb-8 mix-blend-lighten opacity-90" />
                                 <h2 className="font-playfair text-4xl md:text-5xl mb-6 italic">Sistema de Desenvolvimento Contínuo</h2>
                                 <p className="text-xl font-light text-white/40 max-w-2xl mx-auto">
                                     Mais do que executar eventos, a Territórios Culturais atua na organização da cultura como um sistema de desenvolvimento territorial permanente.

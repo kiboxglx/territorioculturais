@@ -306,7 +306,7 @@ const PortfolioEventosPage = ({ onOpenModal }) => {
             {/* FOOTER */}
             <footer className="bg-black/90 py-12 px-8">
                 <div className="container mx-auto text-center flex flex-col items-center">
-                    <img src="/LOGO_VETOR-removebg-preview.png" alt="Territórios Culturais" className="h-10 w-auto opacity-50 mb-6" />
+                    <img src="/logosterritorios (1).jpeg" alt="Mostras, Festivais e Eventos Culturais" className="h-16 w-auto mb-6 mix-blend-lighten opacity-90" />
                     <div className="text-white/40 text-xs tracking-widest uppercase font-bold flex flex-wrap justify-center gap-x-6 gap-y-3 mb-4">
                         <span>Territórios Culturais LTDA</span>
                         <span>+55 38 99806-8804</span>

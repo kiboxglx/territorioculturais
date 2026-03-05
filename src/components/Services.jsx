@@ -26,15 +26,15 @@ const Services = () => {
             subtitle: "Programas de capacitação para agentes e gestores culturais.",
             description: "Programas de capacitação para agentes e gestores, gerando autonomia técnica e retenção de talentos.",
             icon: "school",
-            link: "/portfolio"
+            link: "/formacao"
         },
         {
             id: "04",
-            title: "Plano institucional e governança",
-            subtitle: "Operação integrada entre cultura e vocações turísticas.",
-            description: "Operação integrada entre cultura e vocações turísticas para o desenvolvimento econômico da região.",
+            title: "Governança, Financiamento e Estruturação Institucional.",
+            subtitle: "Arquitetura técnica para organização administrativa, captação estratégica de recursos e consolidação permanente de políticas públicas culturais e turísticas.",
+            description: "Estruturamos, regulamentamos e operacionalizamos sistemas como Transferegov.br, ISSQN Cultural, ICMS Patrimônio Cultural e ICMS Turismo, garantindo segurança jurídica, eficiência administrativa, aumento de pontuação técnica e ampliação de repasses financeiros.",
             icon: "account_balance",
-            link: "/portfolio"
+            link: "/portfolio-governanca"
         }
     ];
 

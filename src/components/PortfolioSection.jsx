@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const portfolioItems = [
     { id: "01", title: "Audiovisual", slug: "audiovisual", desc: "Produção e difusão de conteúdos com finalidade cultural." },
@@ -8,7 +8,8 @@ const portfolioItems = [
     { 
         id: "03", 
         title: "Formação e Qualificação", 
-        slug: "formacao", 
+        slug: "formacao",
+        link: "/formacao",
         desc: "Programas formativos voltados à profissionalização, autonomia técnica e fortalecimento estruturado do setor cultural.",
         hoverText: "Realizamos oficinas, cursos, congressos e programas de capacitação voltados à gestão cultural, produção artística e estruturação de políticas públicas, promovendo qualificação técnica e geração de capacidade instalada no território."
     },
@@ -20,6 +21,8 @@ const portfolioItems = [
 ];
 
 const PortfolioSection = () => {
+    const navigate = useNavigate();
+
     return (
         <section id="portfolio-prev" className="snap-section bg-charcoal overflow-hidden relative py-20">
             <div className="absolute inset-0 z-0 opacity-10">
@@ -32,65 +35,67 @@ const PortfolioSection = () => {
                         <span className="text-primary uppercase tracking-[0.5em] text-xs font-bold mb-4 block font-manrope">Experiência e Realização</span>
                         <h2 className="font-playfair text-5xl md:text-6xl text-white">Portfólio de Atuação</h2>
                     </div>
-
                     <Link
-                        to="/portfolio"
+                        to="/formacao"
                         className="bg-primary/10 border border-primary/30 text-primary hover:bg-primary hover:text-charcoal font-bold px-8 py-3 rounded-full transition-all text-xs tracking-widest uppercase inline-block"
                     >
-                        Ver Documentação Completa
+                        Eixo 03 — Formação e Qualificação
                     </Link>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {portfolioItems.map((item, index) => (
-                        <Link
-                            key={index}
-                            to={`/portfolio#${item.slug}`}
-                            onClick={() => {
-                                // Manual scroll if already on page or to handle hash
-                                if (window.location.hash === `#${item.slug}`) {
-                                    document.getElementById(item.slug)?.scrollIntoView({ behavior: 'smooth' });
-                                }
-                            }}
-                        >
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.05 }}
-                                className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-white/5 border border-white/5 p-8 flex flex-col justify-between hover:border-primary/40 transition-all hover:bg-white/[0.07]"
-                            >
-                                <div className={`text-6xl font-playfair transition-colors duration-500 ${item.hoverText ? 'text-primary' : 'text-primary/10 group-hover:text-primary'}`}>
-                                    {item.id}
-                                </div>
+                    {portfolioItems.map((item, index) => {
+                        const destination = item.link || null;
 
-                                <div className="space-y-4 relative z-10 w-full">
-                                    <div className="space-y-2">
-                                        <h4 className="font-playfair text-lg md:text-xl text-white group-hover:text-primary transition-colors">
-                                            {item.title}
-                                        </h4>
-                                        <p className={`text-[10px] md:text-xs text-white/50 font-light font-manrope leading-relaxed transition-all duration-500 ${item.hoverText ? 'opacity-100' : 'opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0'}`}>
-                                            {item.desc}
-                                        </p>
+                        return (
+                            <div
+                                key={index}
+                                className="cursor-pointer"
+                                onClick={() => {
+                                    if (destination) {
+                                        navigate(destination);
+                                    }
+                                }}
+                            >
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.05 }}
+                                    className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-white/5 border border-white/5 p-8 flex flex-col justify-between hover:border-primary/40 transition-all hover:bg-white/[0.07]"
+                                >
+                                    <div className={`text-6xl font-playfair transition-colors duration-500 ${item.hoverText ? 'text-primary' : 'text-primary/10 group-hover:text-primary'}`}>
+                                        {item.id}
                                     </div>
 
-                                    {item.hoverText && (
-                                        <div className="absolute left-0 bottom-full mb-4 w-[115%] -ml-6 bg-charcoal/95 backdrop-blur-xl p-6 rounded-2xl border border-primary/20 shadow-2xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 pointer-events-none z-50">
-                                            <span className="text-primary text-[10px] uppercase font-bold tracking-widest block mb-2">{item.title}</span>
-                                            <p className="text-[10px] md:text-xs text-white/80 font-light leading-relaxed mb-4">
-                                                {item.hoverText}
+                                    <div className="space-y-4 relative z-10 w-full">
+                                        <div className="space-y-2">
+                                            <h4 className="font-playfair text-lg md:text-xl text-white group-hover:text-primary transition-colors">
+                                                {item.title}
+                                            </h4>
+                                            <p className={`text-[10px] md:text-xs text-white/50 font-light font-manrope leading-relaxed transition-all duration-500 ${item.hoverText ? 'opacity-100' : 'opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0'}`}>
+                                                {item.desc}
                                             </p>
-                                            <span className="bg-primary/10 text-primary border border-primary text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full inline-block">
-                                                Saiba Mais
-                                            </span>
                                         </div>
-                                    )}
 
-                                    <div className="h-[2px] w-12 bg-primary/20 group-hover:w-full bg-primary transition-all duration-500"></div>
-                                </div>
-                            </motion.div>
-                        </Link>
-                    ))}
+                                        {item.hoverText && (
+                                            <div className="absolute left-0 bottom-full mb-4 w-[115%] -ml-6 bg-charcoal/95 backdrop-blur-xl p-6 rounded-2xl border border-primary/20 shadow-2xl opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 z-50">
+                                                <span className="text-primary text-[10px] uppercase font-bold tracking-widest block mb-2">{item.title}</span>
+                                                <p className="text-[10px] md:text-xs text-white/80 font-light leading-relaxed mb-4">
+                                                    {item.hoverText}
+                                                </p>
+                                                <span className="bg-primary text-charcoal text-[10px] uppercase font-bold tracking-widest px-4 py-2 rounded-full inline-block">
+                                                    Saiba Mais →
+                                                </span>
+                                            </div>
+                                        )}
+
+                                        <div className="h-[2px] w-12 bg-primary/20 group-hover:w-full transition-all duration-500"></div>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

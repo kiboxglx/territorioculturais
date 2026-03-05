@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import { Helmet } from 'react-helmet-async';
@@ -47,7 +48,7 @@ const PortfolioCinemaPage = () => {
                             <span className="italic text-primary font-light">Novas Mídias</span>
                         </h1>
                         
-                        <div className="space-y-6 text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-3xl mx-auto mb-16 border-l-2 border-primary/30 pl-6 md:pl-10 text-left md:text-center md:border-l-0 md:pl-0">
+                        <div className="space-y-6 text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-3xl mx-auto mb-16 border-l-2 border-primary/30 pl-6 text-left md:text-center md:border-l-0 md:pl-0">
                             <p>
                                 O eixo Cinema, Audiovisual e Novas Mídias nasce da cinematografia como base criativa da <span className="text-white font-bold">Territórios Culturais</span>.
                             </p>
@@ -199,7 +200,7 @@ const PortfolioCinemaPage = () => {
             {/* PÁGINA 3: AUDIOVISUAL */}
             <section id="audiovisual" className="py-24 md:py-32 relative bg-[#131515] border-t border-white/5">
                 <div className="container mx-auto px-8 max-w-6xl">
-                    <div className="flex flex-col md:flex-row gap-16 md:flex-row-reverse">
+                    <div className="flex flex-col gap-16 md:flex-row-reverse">
                         {/* Header side */}
                         <div className="md:w-1/3">
                             <span className="text-primary material-symbols-outlined text-6xl mb-6 block">video_camera_front</span>
@@ -356,7 +357,7 @@ const PortfolioCinemaPage = () => {
                 
                 <div className="container mx-auto px-8 relative z-10">
                     <div className="flex flex-col items-center justify-center text-center">
-                        <img src="/LOGO_VETOR-removebg-preview.png" alt="Territórios Culturais" className="h-12 w-auto mb-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500" />
+                        <img src="/logosterritorios (5).jpeg" alt="Cinema, Audiovisual e Novas Mídias" className="h-20 w-auto mb-8 mix-blend-lighten opacity-90 hover:opacity-100 transition-all duration-500" />
                         
                         <h4 className="font-playfair text-2xl text-white mb-6">TERRITÓRIOS CULTURAIS LTDA</h4>
                         

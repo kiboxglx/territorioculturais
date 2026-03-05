@@ -226,7 +226,7 @@ const Hero = ({ onExploreClick }) => {
                                     className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none max-w-[250px] mx-auto text-center"
                                 >
                                     <div className="absolute inset-0 bg-primary/5 rounded-full blur-2xl animate-pulse"></div>
-                                    <img src="/LOGO_VETOR-removebg-preview.png" alt="Logo" className="w-16 h-auto opacity-30 mb-6 drop-shadow-[0_0_10px_rgba(17,212,212,0.5)]" />
+                                    <img src="/IMG_4327.PNG" alt="Logo" className="w-16 h-auto opacity-30 mb-6 drop-shadow-[0_0_10px_rgba(17,212,212,0.5)]" />
                                     
                                     <h3 className="text-white font-playfair text-2xl md:text-3xl relative z-10 leading-tight">
                                         Ecossistema de<br/>

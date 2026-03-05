@@ -246,7 +246,7 @@ const FormacaoCulturalPage = () => {
             {/* Footer Específico */}
             <footer className="py-12 bg-black/90 text-center relative z-10">
                 <div className="container mx-auto px-8">
-                    <img src="/LOGO_VETOR-removebg-preview.png" alt="Logo" className="w-24 h-auto mx-auto opacity-40 mb-6" />
+                    <img src="/logosterritorios (3).jpeg" alt="Formação, Oficinas e Ações Educativas" className="h-16 w-auto mx-auto mb-6 mix-blend-lighten opacity-90" />
                     <div className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/40 flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 flex-wrap">
                         <span className="text-white">TERRITÓRIOS CULTURAIS LTDA</span>
                         <span className="hidden md:inline">|</span>

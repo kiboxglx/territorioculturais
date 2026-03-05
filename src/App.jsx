@@ -5,8 +5,9 @@ import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import MethodologyPage from './pages/MethodologyPage';
-import PortfolioPage from './pages/PortfolioPage';
+import PortfolioCinemaPage from './pages/PortfolioCinemaPage';
 import PortfolioEventosPage from './pages/PortfolioEventosPage';
+import PortfolioGovernancaPage from './pages/PortfolioGovernancaPage';
 import FormacaoCulturalPage from './pages/FormacaoCulturalPage';
 import GalleryPage from './pages/GalleryPage';
 import ProjectDetail from './pages/ProjectDetail';
@@ -24,10 +25,10 @@ const AnimatedRoutes = () => {
           <Route path="/" element={<Home onOpenModal={() => setIsModalOpen(true)} />} />
           <Route path="/quem-somos" element={<AboutPage />} />
           <Route path="/metodologia" element={<MethodologyPage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/portfolio/cinema-audiovisual" element={<PortfolioCinemaPage />} />
           <Route path="/formacao" element={<FormacaoCulturalPage />} />
           <Route path="/portfolio-eventos" element={<PortfolioEventosPage onOpenModal={() => setIsModalOpen(true)} />} />
+          <Route path="/portfolio-governanca" element={<PortfolioGovernancaPage onOpenModal={() => setIsModalOpen(true)} />} />
           <Route path="/galeria" element={<GalleryPage />} />
           <Route path="/projeto/:slug" element={<ProjectDetail onOpenModal={() => setIsModalOpen(true)} />} />
         </Routes>
