@@ -29,11 +29,21 @@ const Methodology = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="font-playfair text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4"
+                            className="font-playfair text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-2"
                         >
                             Sistema <br />
                             <span className="italic text-primary font-light text-3xl md:text-4xl lg:text-5xl">Territórios Culturais.</span>
                         </motion.h2>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.15 }}
+                            className="text-base text-white/60 font-light font-manrope leading-relaxed border-l-2 border-primary/50 pl-4 py-1 italic mb-6"
+                        >
+                            Arquitetura estratégica integrada de desenvolvimento cultural, institucional e territorial.
+                        </motion.p>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -42,10 +52,6 @@ const Methodology = () => {
                             transition={{ delay: 0.2 }}
                             className="space-y-6"
                         >
-                            <p className="text-base text-white/60 font-light font-manrope leading-relaxed border-l-2 border-primary/50 pl-4 py-1 italic">
-                                Arquitetura estratégica integrada de desenvolvimento cultural, institucional e territorial.
-                            </p>
-
                             <p className="text-sm text-white/70 font-manrope font-light leading-relaxed">
                                 O Sistema Territórios Culturais é a matriz conceitual que organiza toda a atuação da Territórios Culturais LTDA. Ele integra metodologia própria (MATC), programa estruturante (Destino Estruturado), observatório de monitoramento e quatro eixos executivos em um modelo sistêmico de governança, financiamento, produção cultural e desenvolvimento territorial.
                             </p>
@@ -103,7 +109,7 @@ const Methodology = () => {
                             className="space-y-6"
                         >
                             <p className="text-base text-white/60 font-light font-manrope leading-relaxed border-l-2 border-primary/50 pl-4 py-1 italic">
-                                Sistema estruturante de implantação, organização e permanência da política cultural municipal.
+                                Metodologia de autonomia territorial cultural.
                             </p>
 
                             <p className="text-sm text-white/70 font-manrope font-light leading-relaxed">
