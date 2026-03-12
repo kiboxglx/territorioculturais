@@ -9,6 +9,9 @@ import PortfolioCinemaPage from './pages/PortfolioCinemaPage';
 import PortfolioEventosPage from './pages/PortfolioEventosPage';
 import PortfolioGovernancaPage from './pages/PortfolioGovernancaPage';
 import FormacaoCulturalPage from './pages/FormacaoCulturalPage';
+import ProgramaDestinoPage from './pages/ProgramaDestinoPage';
+import SistemaPage from './pages/SistemaPage';
+import ObservatorioPage from './pages/ObservatorioPage';
 import GalleryPage from './pages/GalleryPage';
 import ProjectDetail from './pages/ProjectDetail';
 import ContactModal from './components/ContactModal';
@@ -25,10 +28,13 @@ const AnimatedRoutes = () => {
           <Route path="/" element={<Home onOpenModal={() => setIsModalOpen(true)} />} />
           <Route path="/quem-somos" element={<AboutPage />} />
           <Route path="/metodologia" element={<MethodologyPage />} />
-          <Route path="/portfolio/cinema-audiovisual" element={<PortfolioCinemaPage />} />
+          <Route path="/portfolio/cinema" element={<PortfolioCinemaPage />} />
           <Route path="/formacao" element={<FormacaoCulturalPage />} />
           <Route path="/portfolio-eventos" element={<PortfolioEventosPage onOpenModal={() => setIsModalOpen(true)} />} />
           <Route path="/portfolio-governanca" element={<PortfolioGovernancaPage onOpenModal={() => setIsModalOpen(true)} />} />
+          <Route path="/programa-destino" element={<ProgramaDestinoPage />} />
+          <Route path="/sistema" element={<SistemaPage />} />
+          <Route path="/observatorio" element={<ObservatorioPage />} />
           <Route path="/galeria" element={<GalleryPage />} />
           <Route path="/projeto/:slug" element={<ProjectDetail onOpenModal={() => setIsModalOpen(true)} />} />
         </Routes>

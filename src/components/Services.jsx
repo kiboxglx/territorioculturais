@@ -10,23 +10,26 @@ const Services = () => {
             subtitle: "Produção cinematográfica, comunicação institucional e conteúdo estratégico para o setor público e privado.",
             description: "Atuamos na indústria cinematográfica brasileira, na produção audiovisual institucional e na criação de conteúdos digitais estratégicos, integrando narrativa, informação e identidade territorial com qualidade técnica e registro na ANCINE.",
             icon: "movie",
-            link: "/portfolio/cinema-audiovisual"
+            link: "/portfolio/cinema",
+            buttonText: "Saiba Mais"
         },
         {
             id: "02",
-            title: "Mostras, Festivais e Eventos Culturais",
+            title: "Mostras, Festivais e Eventos Culturais.",
             subtitle: "Curadoria, produção e execução de eventos culturais estruturados com impacto artístico, social e territorial.",
             description: "Planejamos e realizamos Mostras, Festivais e Eventos Culturais como instrumentos estratégicos de democratização do acesso, fortalecimento da economia criativa e valorização da identidade territorial, com organização técnica e responsabilidade administrativa.",
             icon: "festival",
-            link: "/portfolio-eventos"
+            link: "/portfolio-eventos",
+            buttonText: "Saiba Mais"
         },
         {
             id: "03",
-            title: "Formação e qualificação cultural",
-            subtitle: "Programas de capacitação para agentes e gestores culturais.",
-            description: "Programas de capacitação para agentes e gestores, gerando autonomia técnica e retenção de talentos.",
+            title: "Formação, Capacitação e Qualificação Cultural.",
+            subtitle: "Programas formativos voltados à profissionalização, autonomia técnica e fortalecimento estruturado do setor cultural.",
+            description: "Realizamos oficinas, cursos, congressos e programas de capacitação voltados à gestão cultural, produção artística e estruturação de políticas públicas, promovendo qualificação técnica e geração de capacidade instalada no território.",
             icon: "school",
-            link: "/formacao"
+            link: "/formacao",
+            buttonText: "Saiba Mais"
         },
         {
             id: "04",
@@ -34,8 +37,9 @@ const Services = () => {
             subtitle: "Arquitetura técnica para organização administrativa, captação estratégica de recursos e consolidação permanente de políticas públicas culturais e turísticas.",
             description: "Estruturamos, regulamentamos e operacionalizamos sistemas como Transferegov.br, ISSQN Cultural, ICMS Patrimônio Cultural e ICMS Turismo, garantindo segurança jurídica, eficiência administrativa, aumento de pontuação técnica e ampliação de repasses financeiros.",
             icon: "account_balance",
-            link: "/portfolio-governanca"
-        }
+            link: "/portfolio-governanca",
+            buttonText: "Saiba Mais"
+        },
     ];
 
     return (
@@ -63,11 +67,9 @@ const Services = () => {
                     </motion.h2>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-8 lg:gap-12 relative">
-                    {/* Linha Divisória Customizada Central (opcional para dar efeito de quadrante) */}
-                    <div className="hidden sm:block absolute top-0 bottom-0 left-1/2 w-px bg-white/5 -translate-x-1/2"></div>
-                    <div className="hidden sm:block absolute left-0 right-0 top-1/2 h-px bg-white/5 -translate-y-1/2"></div>
-                    
+                <div className="grid sm:grid-cols-2 gap-8 lg:gap-12 relative border-t border-white/5 pt-12">
+                    {/* Alterado grid para manter a flexibilidade com 5 itens e removidas linhas de divisão estilo 4 quadrantes */}
+
                     {services.map((service, index) => (
                         <Link 
                             to={service.link}
@@ -104,7 +106,7 @@ const Services = () => {
                                 </div>
                                 
                                 <div className="mt-8 flex items-center gap-2 text-[10px] text-primary uppercase font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity -translate-x-4 group-hover:translate-x-0 cursor-pointer">
-                                    Saiba Mais <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                                    {service.buttonText || "Saiba Mais"} <span className="material-symbols-outlined text-sm">arrow_forward</span>
                                 </div>
                             </motion.div>
                         </Link>

@@ -70,7 +70,7 @@ const Methodology = () => {
                             className="mt-10"
                         >
                             <Link
-                                to="/metodologia"
+                                to="/sistema"
                                 className="group flex items-center gap-4 bg-primary text-charcoal font-bold px-8 py-4 rounded-full transition-all text-xs tracking-widest uppercase w-fit hover:scale-105 shadow-[0_0_20px_rgba(17,212,212,0.15)]"
                             >
                                 Conheça o Sistema
@@ -87,7 +87,7 @@ const Methodology = () => {
                             viewport={{ once: true }}
                             className="text-primary uppercase tracking-[0.5em] text-xs font-bold mb-6 block font-manrope"
                         >
-                            Nossa Metodologia
+                            Metodologia de Autonomia Territorial Cultural – MATC
                         </motion.span>
 
                         <motion.h2
@@ -109,17 +109,33 @@ const Methodology = () => {
                             className="space-y-6"
                         >
                             <p className="text-base text-white/60 font-light font-manrope leading-relaxed border-l-2 border-primary/50 pl-4 py-1 italic">
-                                Metodologia de autonomia territorial cultural.
+                                Arquitetura estratégica integrada para estruturar governança cultural, fortalecer identidade territorial e consolidar desenvolvimento sustentável.
                             </p>
 
                             <p className="text-sm text-white/70 font-manrope font-light leading-relaxed">
-                                A MATC é uma metodologia aplicada de estruturação da política pública de cultura, desenvolvida para organizar administrativamente o setor cultural dentro do município, criar capacidade permanente de gestão e integrar cultura ao desenvolvimento territorial.
+                                A MATC nasce da necessidade de superar ações culturais isoladas e substituí-las por sistemas organizados, normatizados e sustentáveis. A metodologia entende que desenvolvimento cultural não acontece por evento pontual, mas por estrutura permanente.
                             </p>
 
                             <div className="bg-white/5 border border-white/10 p-6 rounded-2xl space-y-2">
-                                <p className="text-sm font-bold text-white font-manrope">Ela transforma ações isoladas em sistema contínuo.</p>
-                                <p className="text-sm text-primary font-bold uppercase tracking-widest font-manrope">Garantindo previsibilidade, eficiência e permanência.</p>
+                                <p className="text-sm font-bold text-white font-manrope">Mais do que executar projetos.</p>
+                                <p className="text-sm text-primary font-bold uppercase tracking-widest font-manrope">Estruturamos sistemas permanentes de autonomia cultural, institucional e econômica.</p>
                             </div>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4 }}
+                            className="mt-10"
+                        >
+                            <Link
+                                to="/metodologia"
+                                className="group flex items-center gap-4 bg-primary text-charcoal font-bold px-8 py-4 rounded-full transition-all text-xs tracking-widest uppercase w-fit hover:scale-105 shadow-[0_0_20px_rgba(17,212,212,0.15)]"
+                            >
+                                Conheça a MATC
+                                <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </Link>
                         </motion.div>
                     </div>
 

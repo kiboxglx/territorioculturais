@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const DestinoEstruturado = () => {
     return (
@@ -48,15 +49,17 @@ const DestinoEstruturado = () => {
                     Desenvolvemos ecossistemas locais integrando cultura, turismo e economia criativa em um programa contínuo de desenvolvimento territorial.
                 </motion.p>
 
-                <motion.button
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 }}
-                    className="bg-red-600 text-white font-bold px-10 py-4 rounded-full hover:bg-red-700 transition-colors text-sm tracking-widest uppercase shadow-2xl"
-                >
-                    Conheça o Programa
-                </motion.button>
+                <Link to="/programa-destino">
+                    <motion.button
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 }}
+                        className="bg-red-600 text-white font-bold px-10 py-4 rounded-full hover:bg-red-700 transition-colors text-sm tracking-widest uppercase shadow-2xl"
+                    >
+                        Conheça o Programa Destino Estruturado
+                    </motion.button>
+                </Link>
             </div>
         </section>
     );
