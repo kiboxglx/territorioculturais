@@ -36,15 +36,12 @@ const Navbar = ({ onContactClick }) => {
 
                     {/* Links de navegação */}
                     <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-                        <a onClick={() => scrollToSection('inicio')} className="text-[10px] uppercase tracking-[0.25em] hover:text-primary transition-colors cursor-pointer text-white/80 font-medium">Início</a>
-                        <a onClick={() => scrollToSection('nossa-essencia')} className="text-[10px] uppercase tracking-[0.25em] hover:text-primary transition-colors cursor-pointer text-white/80 font-medium">Quem somos</a>
-                        <a onClick={() => scrollToSection('portfolio-prev')} className="text-[10px] uppercase tracking-[0.25em] hover:text-primary transition-colors cursor-pointer text-white/80 font-medium">Portfólio</a>
-                        <a onClick={() => scrollToSection('metodologia')} className="text-[10px] uppercase tracking-[0.25em] hover:text-primary transition-colors cursor-pointer text-white/80 font-medium">Metodologia</a>
-                        <a onClick={() => scrollToSection('eventos')} className="text-[10px] uppercase tracking-[0.25em] hover:text-primary transition-colors cursor-pointer text-white/80 font-medium">Eventos</a>
-                        <a onClick={() => scrollToSection('servicos')} className="text-[10px] uppercase tracking-[0.25em] hover:text-primary transition-colors cursor-pointer text-white/80 font-medium">Serviços</a>
-                        <a onClick={() => scrollToSection('equipe')} className="text-[10px] uppercase tracking-[0.25em] hover:text-primary transition-colors cursor-pointer text-white/80 font-medium">Equipe</a>
-                        <a onClick={() => scrollToSection('proponente')} className="text-[10px] uppercase tracking-[0.25em] hover:text-primary transition-colors cursor-pointer text-white/80 font-medium">Proponente</a>
-                        <Link to="/galeria" className="text-[10px] uppercase tracking-[0.25em] hover:text-primary transition-colors cursor-pointer text-white/80 font-medium">Galeria</Link>
+                        <a onClick={() => scrollToSection('home')} className="nav-link-premium">Início</a>
+                        <Link to="/quem-somos" className="nav-link-premium">Empresa</Link>
+                        <a onClick={() => scrollToSection('territorios')} className="nav-link-premium">Territórios</a>
+                        <a onClick={() => scrollToSection('projetos')} className="nav-link-premium">Portfólio</a>
+                        <a onClick={() => scrollToSection('blog')} className="nav-link-premium">Blog</a>
+                        <a onClick={() => scrollToSection('investimento')} className="nav-link-premium font-bold text-primary">Investimento</a>
                     </nav>
 
                     {/* Botão Conectar com borda gradiente */}

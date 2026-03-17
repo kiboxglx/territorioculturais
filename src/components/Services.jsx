@@ -43,7 +43,7 @@ const Services = () => {
     ];
 
     return (
-        <section id="servicos" className="snap-section bg-charcoal text-white py-32 relative overflow-hidden">
+        <section id="territorios" className="snap-section bg-charcoal text-white py-32 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/4"></div>
 
             <div className="container mx-auto px-8 relative z-10 h-full flex flex-col justify-center">

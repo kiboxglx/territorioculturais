@@ -1,34 +1,132 @@
+/* ============================================================
+   TERRITÓRIOS CULTURAIS — Design System v2.0
+   Identidade Black & Gold Brutalista
+   Tailwind CSS v4 — @theme (sem tailwind.config.js)
+   ============================================================ */
+
 @import "tailwindcss";
 
+/* ============================================================
+   1. DESIGN TOKENS — @theme
+   Todas as variáveis expõem classes utilitárias Tailwind
+   automaticamente. Ex: bg-void, text-gold, border-surface, etc.
+   ============================================================ */
 @theme {
-  --color-primary: #11D4D4;
-  --color-charcoal: #283618;
-  --color-accent-gold: #FFD700;
-  --color-accent-red: #FF4B4B;
-  --font-playfair: 'Playfair Display', serif;
-  --font-manrope: 'Manrope', sans-serif;
+
+  /* ----------------------------------------------------------
+     PALETA DE FUNDOS — Hierarquia de profundidade em pretos
+     ---------------------------------------------------------- */
+  --color-void:        #0A0A0A;  /* bg-void    · Fundo absoluto, brutalista */
+  --color-charcoal:    #111111;  /* bg-charcoal · Fundo principal do site   */
+  --color-surface:     #1A1A1A;  /* bg-surface  · Cards, painéis, modais    */
+  --color-elevated:    #222222;  /* bg-elevated · Hover de cards, dropdowns */
+  --color-border:      #2A2A2A;  /* border-border · Divisores sutis         */
+  --color-border-mid:  #3A3A3A;  /* border-border-mid · Bordas com destaque */
+
+  /* ----------------------------------------------------------
+     SISTEMA DOURADO — 5 tons para hierarquia de ouro
+     ---------------------------------------------------------- */
+  --color-gold-soft:   #FFF8DC;  /* text-gold-soft  · Texto dourado suave, readable  */
+  --color-gold:        #FFD700;  /* text-gold       · Gold principal, destaques       */
+  --color-gold-warm:   #F0B429;  /* text-gold-warm  · Gold quente, CTAs principais    */
+  --color-gold-bronze: #B8860B;  /* text-gold-bronze· Bronze, contornos, bordas ouro  */
+  --color-gold-dim:    #7A5C00;  /* text-gold-dim   · Gold escuro, ícones secundários */
+
+  /* ----------------------------------------------------------
+     ACENTO CULTURAL — Rouge AfroReggae
+     ---------------------------------------------------------- */
+  --color-rouge:       #C8102E;  /* Vermelho cultural, CTAs de urgência      */
+  --color-rouge-dark:  #8B0B1E;  /* Vermelho escuro, hover do rouge          */
+
+  /* ----------------------------------------------------------
+     BRANCO COM OPACIDADE — Para textos sobre preto
+     (Tailwind v4: use opacity modifier direto: text-white/70)
+     ---------------------------------------------------------- */
+  --color-white:       #FFFFFF;
+
+  /* ----------------------------------------------------------
+     HERANÇA SEMÂNTICA — Mantém retrocompatibilidade com
+     componentes existentes que usam 'primary' e 'accent-gold'
+     ---------------------------------------------------------- */
+  --color-primary:     #FFD700;  /* Era #11D4D4 (teal) — agora é gold        */
+  --color-accent-gold: #FFD700;  /* Mantido para não quebrar componentes      */
+  --color-accent-red:  #C8102E;  /* Era #FF4B4B — agora rouge cultural        */
+
+  /* ----------------------------------------------------------
+     TIPOGRAFIA — 3 famílias com papéis editoriais distintos
+     ---------------------------------------------------------- */
+  --font-display:  'Playfair Display', Georgia, serif;   /* Títulos cinematográficos     */
+  --font-body:     'Manrope', system-ui, sans-serif;     /* Corpo, leitura               */
+  --font-mono:     'Space Mono', 'Courier New', monospace; /* Dados, badges, ANCINE      */
+
+  /* Aliases para retrocompatibilidade */
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-manrope:  'Manrope', system-ui, sans-serif;
+
+  /* ----------------------------------------------------------
+     EFEITOS — Shadows e glows dourados
+     ---------------------------------------------------------- */
+  --shadow-gold-sm:  0 0 12px rgba(255, 215, 0, 0.15);
+  --shadow-gold:     0 0 24px rgba(255, 215, 0, 0.20);
+  --shadow-gold-lg:  0 0 48px rgba(255, 215, 0, 0.25);
+  --shadow-gold-xl:  0 0 80px rgba(255, 215, 0, 0.30);
+  --shadow-card:     0 4px 32px rgba(0, 0, 0, 0.6);
+
+  /* ----------------------------------------------------------
+     ESPAÇAMENTO — Scale consistente
+     ---------------------------------------------------------- */
+  --spacing-section: 8rem;   /* Espaço vertical entre seções */
+  --spacing-inner:   5rem;   /* Padding interno de seções    */
+
+  /* ----------------------------------------------------------
+     BORDAS — Radii para diferentes contextos
+     ---------------------------------------------------------- */
+  --radius-card:   2px;    /* Brutalista: quase sem arredondamento */
+  --radius-badge:  2px;
+  --radius-pill:   9999px; /* Para badges de status e CTAs arredondados */
+
+  /* ----------------------------------------------------------
+     TRANSIÇÕES — Timing padrão
+     ---------------------------------------------------------- */
+  --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base:   300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow:   500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-cinema: 700ms cubic-bezier(0.16, 1, 0.3, 1); /* Spring para entradas */
 }
 
+/* ============================================================
+   2. RESET & BASE STYLES
+   ============================================================ */
 :root {
-  font-family: 'Manrope', sans-serif;
-  line-height: 1.5;
+  font-family: var(--font-body);
+  line-height: 1.6;
   font-weight: 400;
 
   color-scheme: dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(255, 255, 255, 0.85);
   background-color: var(--color-charcoal);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Variáveis CSS nativas (acessíveis via var() em qualquer componente) */
+  --gold: #FFD700;
+  --gold-warm: #F0B429;
+  --gold-bronze: #B8860B;
+  --gold-glow: rgba(255, 215, 0, 0.18);
+  --gold-glow-strong: rgba(255, 215, 0, 0.35);
+  --rouge: #C8102E;
+  --surface: #1A1A1A;
+  --border: #2A2A2A;
+  --border-mid: #3A3A3A;
 }
 
 html {
   min-height: 100%;
   width: 100%;
   overflow-x: hidden;
-  /* Allow natural scrolling unless specified */
 }
 
 body {
@@ -41,52 +139,233 @@ body {
   background-color: var(--color-charcoal);
 }
 
-h1 {
-  font-size: 3.2em;
+/* ============================================================
+   3. TIPOGRAFIA BASE
+   ============================================================ */
+
+/* Títulos — Playfair Display para impacto cinematográfico */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 900;
   line-height: 1.1;
+  letter-spacing: -0.02em;
 }
+
+h4, h5, h6 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h1 { font-size: clamp(3rem, 8vw, 7rem); }
+h2 { font-size: clamp(2rem, 5vw, 4rem); }
+h3 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+
+p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.70);
+}
+
+/* ============================================================
+   4. COMPONENTES DE DESIGN SYSTEM
+   Classes utilitárias customizadas que encapsulam padrões
+   recorrentes de design da marca.
+   ============================================================ */
+
+/* --- Eyebrow Label (rótulo acima de títulos) ---
+   Uso: <span class="eyebrow">PORTFÓLIO · CINEMA</span>  */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+/* --- Badge ANCINE / Credencial Institucional ---
+   Uso: <span class="badge-institutional">ANCINE Nº 63126</span> */
+.badge-institutional {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-badge);
+  background: rgba(255, 215, 0, 0.04);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all var(--transition-base);
+}
+
+.badge-institutional:hover {
+  background: rgba(255, 215, 0, 0.10);
+  border-color: rgba(255, 215, 0, 0.60);
+  box-shadow: var(--shadow-gold-sm);
+}
+
+/* --- Card Premium ---
+   Superfície padrão para cards de projeto e portfólio  */
+.card-premium {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.03) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+
+.card-premium:hover {
+  border-color: var(--border-mid);
+  box-shadow: var(--shadow-card), var(--shadow-gold-sm);
+  transform: translateY(-2px);
+}
+
+.card-premium:hover::before {
+  opacity: 1;
+}
+
+/* --- Divisor Dourado ---
+   Linha horizontal com acento dourado  */
+.divider-gold {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--gold-bronze), transparent);
+  opacity: 0.4;
+  margin: 0.5rem 0;
+}
+
+/* --- Linha de acento dourado (para decoração lateral) --- */
+.accent-line {
+  display: block;
+  width: 3rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+   5. BOTÕES — Sistema de CTAs
+   ============================================================ */
+
+/* CTA Primário — Gold sobre preto */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  background: var(--gold);
+  border: 2px solid var(--gold);
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: var(--gold-warm);
+  border-color: var(--gold-warm);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* CTA Secundário — Outline dourado */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid rgba(255, 215, 0, 0.40);
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 215, 0, 0.08);
+  border-color: rgba(255, 215, 0, 0.70);
+  box-shadow: var(--shadow-gold-sm);
+  transform: translateY(-1px);
+}
+
+/* CTA Ghost — Para contextos sobre imagem  */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.70);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  white-space: nowrap;
+  backdrop-filter: blur(12px);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.30);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* ============================================================
+   6. LAYOUT — Estrutura de seções
+   ============================================================ */
 
 section {
   position: relative;
   width: 100%;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 40px, 0);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.animate-fade-in-up {
-  animation-name: fadeInUp;
-  animation-duration: 0.8s;
-  animation-fill-mode: both;
-}
-
-.delay-100 {
-  animation-delay: 100ms;
-}
-
-.delay-200 {
-  animation-delay: 200ms;
-}
-
-.delay-300 {
-  animation-delay: 300ms;
-}
-
-/* Utilities */
-.full-bleed-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(26, 43, 43, 0.4), rgba(26, 43, 43, 0.6), rgba(26, 43, 43, 0.9));
 }
 
 .snap-section {
@@ -98,11 +377,9 @@ section {
   display: flex;
   align-items: center;
   overflow: visible;
-  /* Changed from hidden to avoid clipping */
   z-index: 1;
 }
 
-/* Specific adjustment for mobile where content might exceed vh */
 @media (max-width: 1024px) {
   .snap-section {
     height: auto;
@@ -111,39 +388,240 @@ section {
   }
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+/* ============================================================
+   7. EFEITOS — Overlays e Glows
+   ============================================================ */
+
+/* Overlay cinematográfico — gradiente de baixo para cima */
+.cinematic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.95) 0%,
+    rgba(10, 10, 10, 0.60) 40%,
+    rgba(10, 10, 10, 0.20) 100%
+  );
+  pointer-events: none;
 }
 
+/* Overlay lateral — para seções de texto à esquerda */
+.side-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.90) 0%,
+    rgba(10, 10, 10, 0.60) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Vinheta de bordas — efeito película */
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 50%,
+    rgba(0, 0, 0, 0.70) 100%
+  );
+  pointer-events: none;
+}
+
+/* Glow dourado — para estados ativos e hovers especiais */
+.glow-gold {
+  box-shadow: var(--shadow-gold);
+}
+
+.glow-gold-lg {
+  box-shadow: var(--shadow-gold-lg);
+}
+
+/* Borda com gradiente dourado  */
+.border-gradient-gold {
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.border-gradient-gold::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, var(--gold-bronze), transparent, var(--gold-bronze));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+/* ============================================================
+   8. ANIMAÇÕES
+   ============================================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 32px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes shimmerGold {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+  50%       { box-shadow: 0 0 0 6px rgba(255, 215, 0, 0.12); }
+}
+
+@keyframes scanLine {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Efeito shimmer para textos dourados com gradiente */
+.text-shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    var(--gold-bronze) 0%,
+    var(--gold) 40%,
+    var(--gold-soft, #FFF8DC) 50%,
+    var(--gold) 60%,
+    var(--gold-bronze) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerGold 4s linear infinite;
+}
+
+/* Delay helpers para stagger de animações */
+.delay-100  { animation-delay: 100ms; }
+.delay-200  { animation-delay: 200ms; }
+.delay-300  { animation-delay: 300ms; }
+.delay-400  { animation-delay: 400ms; }
+.delay-500  { animation-delay: 500ms; }
+.delay-700  { animation-delay: 700ms; }
+.delay-1000 { animation-delay: 1000ms; }
+
+/* ============================================================
+   9. SCROLLBAR CUSTOMIZADA
+   ============================================================ */
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-/* Custom Scrollbar for internal Pages */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 8px;
-}
+/* Scrollbar Gold para painéis internos */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #283618;
+  background: var(--color-surface);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #334b4b;
-  border-radius: 4px;
+  background: var(--gold-dim, #7A5C00);
+  border-radius: 3px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #11D4D4;
+  background: var(--gold-bronze);
 }
 
+/* ============================================================
+   10. UTILITÁRIOS ESPECÍFICOS DA MARCA
+   ============================================================ */
+
+/* Separador decorativo com ponto dourado */
 .marker-divider {
-  height: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   width: 100%;
-  background-color: #00FF88;
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-  margin: 1rem 0;
-  border-radius: 99px;
-  opacity: 0.8;
+  margin: 1.5rem 0;
+}
+
+.marker-divider::before,
+.marker-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-mid));
+}
+
+.marker-divider::after {
+  background: linear-gradient(90deg, var(--border-mid), transparent);
+}
+
+/* Texto com número de impacto (Space Mono grande) */
+.stat-number {
+  font-family: var(--font-mono);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.40);
+  margin-top: 0.5rem;
+}
+
+/* Linha scan - efeito cinematográfico over video */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+  animation: scanLine 6s linear infinite;
+  pointer-events: none;
+}
+
+/* Texto para seção "Portfólio de Atuação Full-Bleed" */
+.full-bleed-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.3),
+    rgba(10, 10, 10, 0.6),
+    rgba(10, 10, 10, 0.9)
+  );
+}
+
+/* Links de navegação premium */
+.nav-link-premium {
+  font-size: 0.625rem; /* 10px */
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.nav-link-premium:hover {
+  color: var(--gold);
 }

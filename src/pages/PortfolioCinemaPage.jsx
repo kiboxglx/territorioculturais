@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 import { Helmet } from 'react-helmet-async';
+import ProgressiveImage from '../components/ProgressiveImage';
 
 const PortfolioCinemaPage = () => {
     useEffect(() => {
@@ -27,11 +28,18 @@ const PortfolioCinemaPage = () => {
             <Navbar />
 
             {/* PÁGINA 2: HERO & OVERVIEW */}
-            <section className="relative pt-40 pb-20 overflow-hidden bg-background-dark min-h-screen flex items-center">
+            <section className="relative pt-40 pb-20 overflow-hidden bg-charcoal min-h-screen flex items-center">
                 <div className="absolute inset-0 z-0">
-                    {/* Background glow and subtle textures */}
-                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4"></div>
-                    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-black/50 rounded-full blur-[100px] -translate-x-1/2 translate-y-1/2"></div>
+                    <ProgressiveImage 
+                        src="/images/hero/cine1.png"
+                        alt="Set de filmagem cinematográfico em Minas Gerais — Eixo Cinema e Audiovisual"
+                        className="w-full h-full"
+                        imgClassName="object-cover"
+                        fetchPriority="high"
+                    />
+                    {/* Overlay Dramático */}
+                    <div className="absolute inset-0 bg-linear-to-b from-charcoal/40 via-charcoal/80 to-charcoal z-10" />
+                    <div className="absolute inset-0 bg-linear-to-r from-charcoal via-transparent to-charcoal/40 z-10 opacity-60" />
                 </div>
 
                 <div className="container mx-auto px-8 relative z-10 w-full">

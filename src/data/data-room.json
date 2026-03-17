@@ -1,0 +1,149 @@
+{
+  "approvedProjects": [
+    {
+      "id": 1,
+      "name": "Mostra de Cinema Itinerante da Cordilheira do Espinhaço",
+      "pronac": "259675",
+      "approvedValue": "R$ 542.000,00",
+      "status": "Aberto para Captação",
+      "law": "Lei Rouanet"
+    },
+    {
+      "id": 2,
+      "name": "1º Fórum Internacional de Enoturismo",
+      "pronac": "FDC-2025",
+      "approvedValue": "R$ 400.000,00",
+      "status": "Planejamento Estratégico",
+      "law": "Investimento Direto / ESG"
+    },
+    {
+      "id": 3,
+      "name": "Acessa Cultura - Patos de Minas",
+      "pronac": "LPG-PM-2025",
+      "approvedValue": "R$ 100.000,00",
+      "status": "Em Aprovação",
+      "law": "Lei Paulo Gustavo / Fomento"
+    }
+  ],
+  "sponsorTiers": [
+    {
+      "tier": "Master",
+      "investment": "R$ 500.000,00",
+      "benefits": [
+        "Naming Rights (Ex: Mostra Espinhaço / Fórum Enoturismo)",
+        "20 convites VIP para a cerimônia de abertura",
+        "Estande premium de ativação de marca",
+        "Vinheta de 5s em todas as exibições/eventos",
+        "Acesso exclusivo ao ESG Data Room"
+      ],
+      "availability": "Cota Exclusiva"
+    },
+    {
+      "tier": "Ouro",
+      "investment": "R$ 250.000,00",
+      "benefits": [
+        "Logo em destaque no backdrop oficial",
+        "Ativação de marca na praça/espaço público",
+        "10 convites VIP para convidados",
+        "Menção especial nos releases de imprensa",
+        "Relatório consolidado de impacto social"
+      ],
+      "availability": "3 Cotas Disponíveis"
+    },
+    {
+      "tier": "Prata",
+      "investment": "R$ 100.000,00",
+      "benefits": [
+        "Inserção publicitária em plataformas digitais",
+        "6 convites VIP para o evento",
+        "Menção em redes sociais e site oficial",
+        "Logo em peças de sinalização local",
+        "Certificado de Investidor Cultural"
+      ],
+      "availability": "6 Cotas Disponíveis"
+    }
+  ],
+  "governanceDocs": [
+    {
+      "id": "doc-1",
+      "title": "Registro ANCINE 63126",
+      "type": "PDF",
+      "date": "2025",
+      "link": "#",
+      "description": "Certificação oficial para produção e gestão de recursos incentivados."
+    },
+    {
+      "id": "doc-2",
+      "title": "Relatório de Impacto Social 2024",
+      "type": "DOC",
+      "date": "Dez 2024",
+      "link": "#",
+      "description": "Mapeamento completo dos KPIs sociais e demográficos dos projetos realizados."
+    },
+    {
+      "id": "doc-3",
+      "title": "Dossiê de Contrapartidas Fiscais",
+      "type": "PDF",
+      "date": "Fev 2025",
+      "link": "#",
+      "description": "Guia técnico sobre incentivos das Leis Rouanet e LPG."
+    }
+  ],
+  "esgImpact": {
+    "social": [
+      {
+        "label": "Impacto Direto",
+        "value": 6000,
+        "suffix": "+",
+        "detail": "pessoas impactadas diretamente",
+        "icon": "Users"
+      },
+      {
+        "label": "Acessibilidade",
+        "value": 100,
+        "suffix": "%",
+        "detail": "das sessões com Libras/Audiodescrição",
+        "icon": "Accessibility"
+      },
+      {
+        "label": "Capacitação",
+        "value": 60,
+        "suffix": "",
+        "detail": "jovens capacitados em Moda Autoral",
+        "icon": "GraduationCap"
+      }
+    ],
+    "environmental": [
+      {
+        "label": "Território",
+        "value": 1,
+        "suffix": " UNESCO",
+        "detail": "Reserva da Biosfera da Cordilheira do Espinhaço",
+        "icon": "Leaf"
+      },
+      {
+        "label": "Cidades",
+        "value": 3,
+        "suffix": "",
+        "detail": "municípios com cinema itinerante zero carbono",
+        "icon": "MapPin"
+      }
+    ],
+    "governance": [
+      {
+        "label": "Compliance",
+        "value": 100,
+        "suffix": "%",
+        "detail": "Projetos via Artigo 18 (Lei Rouanet)",
+        "icon": "ShieldCheck"
+      },
+      {
+        "label": "Transparência",
+        "value": 12,
+        "suffix": "",
+        "detail": "relatórios mensais de execução",
+        "icon": "FileCheck"
+      }
+    ]
+  }
+}

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const About = () => {
     return (
-        <section id="nossa-essencia" className="snap-section relative bg-charcoal overflow-hidden py-32">
+        <section id="empresa" className="snap-section relative bg-charcoal overflow-hidden py-32">
             {/* Background Aesthetic Elements */}
             <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2"></div>
             <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-black/40 rounded-full blur-[150px] translate-x-1/3 translate-y-1/3 z-0"></div>

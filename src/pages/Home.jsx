@@ -1,12 +1,13 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import ProgressiveImage from '../components/ProgressiveImage';
 
 // Componentes em Ordem do Croqui
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero'; // 01
 import FilmStrip from '../components/FilmStrip'; // 02
-import Services from '../components/Services'; // 03 (Refatorar depois para 2x2)
+import Services from '../components/Services'; // 03
 import DestinoEstruturado from '../components/DestinoEstruturado'; // 04
 import Methodology from '../components/Methodology'; // 05 (MATC)
 import ProjectShowcase from '../components/ProjectShowcase'; // 06 (Eventos Realizados)
@@ -14,12 +15,14 @@ import UpcomingEvents from '../components/UpcomingEvents'; // 07 (Próximos Even
 import GalleryPreview from '../components/GalleryPreview'; // 08 (Galeria de Fotos)
 import ObservatorioDestaque from '../components/ObservatorioDestaque'; // 09 (Observatório)
 import Team from '../components/Team'; // 10 (Nossa Equipe)
+import SponsorTier from '../components/SponsorTier';
+import ESGImpact from '../components/ESGImpact';
+import InvestorDataRoom from '../components/InvestorDataRoom';
 
 // Componentes retirados temporariamente para alinhar ao croqui exato: PortfolioSection, Proponent
 
 const Home = ({ onOpenModal }) => {
     const location = useLocation();
-    const navigate = useNavigate();
 
     React.useEffect(() => {
         if (location.state?.scrollTo) {
@@ -45,7 +48,7 @@ const Home = ({ onOpenModal }) => {
             <Navbar onContactClick={onOpenModal} />
 
             {/* 01. Territórios Culturais / Ecossistema */}
-            <Hero onExploreClick={() => navigate('/quem-somos')} />
+            <Hero onContactClick={onOpenModal} />
 
             {/* 02. Película / Impacto Visual */}
             <FilmStrip />
@@ -71,16 +74,40 @@ const Home = ({ onOpenModal }) => {
             {/* 09. Observatório Territórios Culturais */}
             <ObservatorioDestaque />
 
+            {/* Nova Seção: Cotas de Patrocínio */}
+            <SponsorTier onContactClick={onOpenModal} />
+
+            {/* Impacto ESG - Pilar de Valor */}
+            <ESGImpact />
+
+            {/* Investor Data Room - Seção Técnica */}
+            <section id="governance" className="py-24 bg-charcoal">
+                <div className="container mx-auto px-8">
+                    <div className="mb-16">
+                        <span className="eyebrow">Transparência & Governança</span>
+                        <h2 className="font-display text-4xl md:text-6xl text-white mb-6 italic">Investor Data Room</h2>
+                        <p className="text-white/50 max-w-2xl font-body text-sm md:text-base">
+                            Painel técnico unificado com projetos ativos, registros ANCINE e documentos estratégicos para patrocinadores institucionais.
+                        </p>
+                    </div>
+                </div>
+                <div className="container mx-auto px-8">
+                    <InvestorDataRoom />
+                </div>
+            </section>
+
             {/* 10. Nossa Equipe */}
             <Team />
 
             {/* 11. Escreva este Futuro Conosco (CTA Final e Footer) */}
             <section id="futuro" className="snap-section flex flex-col relative overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <img
+                    <ProgressiveImage
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq_jeYR2mj2qo6HjjsQ7eM6hTUyxUbqvvgGIgVRLd25thHQFiWzr02-89qol_RdHUEday_xOK0LGFP_kqOIRDaXZjbW2P8AQ2rFkkYaGdHlsdBfUUni3zn14EHCaweF6KhKaOLWdjWZBEm4CwxaL_VSUcZX23xarSrOwR29H3n_x4k5qPMPIkcRjtgW8BL0eT6tER4cbspQ_uLpQT1wEgkd03vcGaqkSwWmIZGmpzI8HEa3NxZnqdCTF5_XBQcdfdAPZcN62pFiFs"
-                        alt="Ending Background"
-                        className="w-full h-full object-cover opacity-20 grayscale"
+                        alt="Background cinematográfico de impacto cultural — Territórios Culturais"
+                        loading="lazy"
+                        className="w-full h-full"
+                        imgClassName="opacity-20 grayscale"
                     />
                     <div className="absolute inset-0 bg-charcoal/40"></div>
                 </div>
@@ -114,7 +141,8 @@ const Home = ({ onOpenModal }) => {
                             <div className="flex items-center gap-4">
                                 <img
                                     src="/IMG_4327-removebg-preview.png"
-                                    alt="Territórios Culturais"
+                                    alt="Logo Territórios Culturais — Especialistas em Desenvolvimento Territorial"
+                                    loading="lazy"
                                     className="h-10 w-auto opacity-80"
                                 />
                                 <div className="text-left">

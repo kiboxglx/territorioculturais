@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useSpring, useMotionValue, useTransform, animate } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-const AnimatedCounter = ({ value, suffix = "" }) => {
+export const AnimatedCounter = ({ value, suffix = "" }) => {
     const ref = useRef(null);
     const inView = useInView(ref, { once: true });
 
@@ -18,7 +18,7 @@ const AnimatedCounter = ({ value, suffix = "" }) => {
             const controls = animate(count, numericValue, { duration: 2.5, ease: "easeOut" });
             return controls.stop;
         }
-    }, [inView, numericValue]);
+    }, [inView, numericValue, count]);
 
     return (
         <span ref={ref}>

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { Helmet } from 'react-helmet-async';
+import ProgressiveImage from '../components/ProgressiveImage';
 
 const categories = [
     { id: 'todos', label: 'Todos' },
@@ -12,55 +13,52 @@ const categories = [
     { id: 'territorio', label: 'Território' }
 ];
 
+/* ─────────────────────────────────────────────────────────────────
+   Alt texts estratégicos — Plano de Curadoria Visual v1.0
+   Descrição contextual para SEO + acessibilidade.
+   Formato: [Título] — [Contexto do projeto] + [Localização/Impacto]
+───────────────────────────────────────────────────────────────── */
 const galleryImages = [
     {
-        url: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop",
-        title: "Registro Documental",
+        url: "/images/backstage/set-producao.webp",
+        fallback: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200",
+        title: "Produção Audiovisual",
         category: "audiovisual",
-        caption: "Gravações para série de documentários sobre identidade local."
+        caption: "Set de filmagem da Territórios Culturais — Registro ANCINE 63126. Produção de documentários territoriais.",
+        alt: "Equipe técnica em set de filmagem audiovisual. Economia Criativa em Minas Gerais. Produção com padrão de qualidade cinematográfica.",
     },
     {
-        url: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=1200&auto=format&fit=crop",
-        title: "Festival de Arte",
+        url: "/images/projects/cine-territorio.webp",
+        fallback: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=1200",
+        title: "Cine Território",
         category: "eventos",
-        caption: "Ativação cultural em praça pública durante festival intermunicipal."
+        caption: "Exibição ao ar livre em Patos de Minas — Lei Paulo Gustavo. Democratização do acesso ao cinema.",
+        alt: "Sessão de cinema ao ar livre via Lei Paulo Gustavo em Patos de Minas. Formação de público e impacto social.",
     },
     {
-        url: "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?q=80&w=1200&auto=format&fit=crop",
-        title: "Oficina Técnica",
-        category: "formacao",
-        caption: "Capacitação de agentes culturais locais em gestão de projetos."
-    },
-    {
-        url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop",
-        title: "Diagnóstico Territorial",
+        url: "/images/projects/espinhaco.webp",
+        fallback: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200",
+        title: "Cordilheira do Espinhaço",
         category: "territorio",
-        caption: "Escuta comunitária para mapeamento de ativos culturais."
+        caption: "Pesquisa de locação e ativos culturais — Reserva da Biosfera da UNESCO. PRONAC 259675.",
+        alt: "Paisagem da Cordilheira do Espinhaço. Reserva da Biosfera da UNESCO. Território de atuação da Mostra Itinerante de Cinema.",
     },
     {
-        url: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200&auto=format&fit=crop",
-        title: "Produção de Campo",
-        category: "audiovisual",
-        caption: "Equipe técnica em filmagem de curta-metragem institucional."
-    },
-    {
-        url: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1200&auto=format&fit=crop",
-        title: "Noite de Estreia",
-        category: "eventos",
-        caption: "Mostra itinerante de cinema em comunidade quilombola."
-    },
-    {
-        url: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop",
-        title: "Laboratório de Roteiro",
-        category: "formacao",
-        caption: "Encontro educativo com roteiristas e estudantes da rede pública."
-    },
-    {
-        url: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1200&auto=format&fit=crop",
-        title: "Patrimônio Histórico",
+        url: "/images/projects/moda-minas.webp",
+        fallback: "https://images.unsplash.com/photo-1539109132381-31a15b225765?q=80&w=1200",
+        title: "Moda de Minas",
         category: "territorio",
-        caption: "Registro fotográfico de monumentos para plano de turismo cultural."
-    }
+        caption: "Cultura, Identidade e Criação — Patos de Minas. Valorização da cadeia têxtil regional.",
+        alt: "Produção de moda mineira artesanal. Identidade e criação em Patos de Minas. Estética Brutalista-Mineira.",
+    },
+    {
+        url: "/images/backstage/reuniao-institucional.webp",
+        fallback: "https://images.unsplash.com/photo-1540317580384-e5d43616b9aa?q=80&w=1200",
+        title: "Capacitação Técnica",
+        category: "formacao",
+        caption: "Oficina de elaboração de projetos e leis de incentivo fiscal para gestores municipais.",
+        alt: "Treinamento de gestores culturais em Minas Gerais. Consultoria e elaboração de projetos via Lei Rouanet e LEIC.",
+    },
 ];
 
 const GalleryPage = () => {
@@ -125,7 +123,7 @@ const GalleryPage = () => {
                         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
                     >
                         <AnimatePresence mode="popLayout">
-                            {filteredImages.map((image, index) => (
+                            {filteredImages.map((image) => (
                                 <motion.div
                                     key={image.url}
                                     layout
@@ -135,13 +133,23 @@ const GalleryPage = () => {
                                     transition={{ duration: 0.4 }}
                                     className="group relative aspect-square cursor-pointer overflow-hidden rounded-xl bg-white/5"
                                     onClick={() => setSelectedImage(image)}
+                                    role="button"
+                                    aria-label={`Abrir imagem: ${image.title} — ${image.caption}`}
+                                    tabIndex={0}
+                                    onKeyDown={(e) => e.key === 'Enter' && setSelectedImage(image)}
                                 >
-                                    <img
+                                    {/* loading="lazy": grid de galeria está abaixo da dobra */}
+                                    <ProgressiveImage
                                         src={image.url}
-                                        alt={image.title}
-                                        className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+                                        fallbackUrl={image.fallback}
+                                        alt={image.alt || image.title}
+                                        loading="lazy"
+                                        fetchPriority="auto"
+                                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                                        className="w-full h-full"
+                                        imgClassName="grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 z-10">
                                         <span className="text-[10px] text-primary uppercase font-bold tracking-widest mb-1">{image.category}</span>
                                         <h3 className="font-playfair text-lg text-white font-bold">{image.title}</h3>
                                     </div>
@@ -177,10 +185,15 @@ const GalleryPage = () => {
                                 <span className="material-symbols-outlined text-sm group-hover:rotate-90 transition-transform">close</span>
                             </button>
 
-                            <img
+                            {/* fetchPriority="high": imagem em destaque no lightbox — prioridade máxima */}
+                            <ProgressiveImage
                                 src={selectedImage.url}
-                                alt={selectedImage.title}
-                                className="w-full h-auto max-h-[70vh] object-contain rounded-2xl shadow-2xl border border-white/5"
+                                fallbackUrl={selectedImage.fallback}
+                                alt={selectedImage.alt || selectedImage.title}
+                                loading="eager"
+                                fetchPriority="high"
+                                className="w-full rounded-2xl shadow-2xl border border-white/5 max-h-[70vh]"
+                                imgClassName="w-full h-auto max-h-[70vh] object-contain"
                             />
 
                             <div className="mt-8 text-center max-w-2xl">

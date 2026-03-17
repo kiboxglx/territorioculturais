@@ -15,6 +15,8 @@ import ObservatorioPage from './pages/ObservatorioPage';
 import GalleryPage from './pages/GalleryPage';
 import ProjectDetail from './pages/ProjectDetail';
 import ContactModal from './components/ContactModal';
+import MidiaKitCTA from './components/MidiaKitCTA';
+import FloatingSponsorMenu from './components/FloatingSponsorMenu';
 
 // Separate component to use `useLocation` hook inside Router context
 const AnimatedRoutes = () => {
@@ -42,6 +44,10 @@ const AnimatedRoutes = () => {
 
       {/* Global Contact Modal accessible from everywhere */}
       <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
+      {/* Global Conversion Tools */}
+      <MidiaKitCTA />
+      <FloatingSponsorMenu />
     </>
   );
 };

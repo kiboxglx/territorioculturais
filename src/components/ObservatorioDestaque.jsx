@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ObservatorioDestaque = () => {
     return (
-        <section className="py-24 snap-section relative overflow-hidden">
+        <section id="blog" className="py-24 snap-section relative overflow-hidden">
             <div className="absolute inset-0 bg-charcoal"></div>
             <div className="absolute -left-1/4 -bottom-1/4 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px]"></div>
             

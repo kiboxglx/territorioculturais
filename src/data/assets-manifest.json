@@ -1,0 +1,77 @@
+{
+  "projects": {
+    "grao-mogol": {
+      "id": "grao-mogol",
+      "main": "/images/projects/festival-grao-mogol.webp",
+      "placeholder": "/images/blur/festival-grao-mogol.webp",
+      "fallback": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200",
+      "alt": "1º Festival de Cinema de Grão Mogol — Estética Brutalista-Luxo com alto contraste e tons dourados. Cinema de destino turístico e Economia Criativa em Minas Gerais."
+    },
+    "mostra-espinhaco": {
+      "id": "mostra-espinhaco",
+      "main": "/images/projects/mostra-espinhaco.webp",
+      "placeholder": "/images/blur/mostra-espinhaco.webp",
+      "fallback": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1200",
+      "alt": "Mostra Itinerante da Cordilheira do Espinhaço — Registro da Biosfera da UNESCO. PRONAC 259675. Paisagem cinematográfica de Ouro Branco, Serro e Porteirinha."
+    },
+    "forum-enoturismo": {
+      "id": "forum-enoturismo",
+      "main": "/images/projects/forum-enoturismo.webp",
+      "placeholder": "/images/blur/forum-enoturismo.webp",
+      "fallback": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1200",
+      "alt": "1º Fórum Internacional de Enoturismo em Grão Mogol — Especialista em Desenvolvimento Territorial sustentável. Foco em Economia Criativa regional."
+    },
+    "moda-minas": {
+      "id": "moda-minas",
+      "main": "/images/projects/moda-minas.webp",
+      "placeholder": "/images/blur/moda-minas.webp",
+      "fallback": "https://images.unsplash.com/photo-1539109132381-31a15b225765?q=80&w=1200",
+      "alt": "Moda de Minas: Cultura, Identidade e Criação — Patos de Minas. Estética editorial de luxo Brutalista-Mineira."
+    },
+    "acessa-cultura": {
+      "id": "acessa-cultura",
+      "main": "/images/projects/acessa-cultura.webp",
+      "placeholder": "/images/blur/acessa-cultura.webp",
+      "fallback": "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=1200",
+      "alt": "Acessa Cultura — Fórum de Acessibilidade Cultural em MG. Inclusão universal e gestão cultural estruturada."
+    },
+    "cine-territorio": {
+      "id": "cine-territorio",
+      "main": "/images/projects/cine-territorio.webp",
+      "placeholder": "/images/blur/cine-territorio.webp",
+      "fallback": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200",
+      "alt": "Cine Território — Projeto de difusão audiovisual em Patos de Minas via Lei Paulo Gustavo. Cinema comunitário de alto impacto."
+    },
+    "cineclube-vemve": {
+      "id": "cineclube-vemve",
+      "main": "/images/projects/cine.png",
+      "placeholder": "/images/blur/cineclube-vemve.webp",
+      "fallback": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200",
+      "alt": "Cineclube Vemvê — Democratização do acesso ao cinema e formação de público através do audiovisual."
+    },
+    "luz-imagem-educacao": {
+      "id": "luz-imagem-educacao",
+      "main": "/images/projects/luz-imagem-educacao.webp",
+      "placeholder": "/images/blur/luz-imagem-educacao.webp",
+      "fallback": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200",
+      "alt": "Luz, Imagem, Educação — Projeto de alfabetização audiovisual e formação docente no Norte de Minas Gerais."
+    }
+  },
+  "team": {
+    "rafael-caldas": {
+      "main": "/images/team/rafael-caldas.webp",
+      "fallback": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600",
+      "alt": "Rafael Caldas — Diretor Executivo da Territórios Culturais. Especialista em Cinema e ANCINE 63126."
+    },
+    "patricia-mahet": {
+      "main": "/images/team/patricia-mahet.webp",
+      "fallback": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=600",
+      "alt": "Patricia Mahet — Diretora de Projetos. Especialista em Leis de Incentivo (Lei Rouanet e LEIC)."
+    }
+  },
+  "config": {
+    "blurEffect": "700ms",
+    "imageFormat": "webp",
+    "theme": "Cinematic Black Gold"
+  }
+}

@@ -3,20 +3,22 @@ export const projects = [
         id: "grao-mogol",
         slug: "festival-grao-mogol",
         title: "Festival de Cinema de Grão Mogol",
-        subtitle: "O Coração de Minas",
-        heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuB2UNY7XIHc9HbRTmgPOpLpOX7L3vqweyzwvpZlvBcHR5VB1hK5uxg5-HZsUKhy6hqmuuL2xl-C407WG2gAoECue9aR0CCuWaV94l_9jfcx3RA_L4j3nY4IOKQc3IhGO8x-anvC7x9YNMe4tzOxyuQW7QO-V4uXWb_0dedPHnfjNBcTky8oow14X5H0pR0x4IIXWM6-Ft7XIS9yNDTZvu-kLCO7AVxymJ0Vv8mV0MIyRrB3D7U8Upt9aBZHwCOklcBzuCP87zAT2Tc",
-        incentiveLaw: "Lei Rouanet - Art. 18",
+        subtitle: "O Coração de Minas | Cinema de Destino",
+        heroImage: "/images/projects/festival-grao-mogol.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200&auto=format&fit=crop",
+        incentiveLaw: "Lei Rouanet - PRONAC 245678",
         status: "Em Captação",
         category: "upcoming",
         progress: 65,
-        quotaAvailable: "Cotas Gold e Silver",
+        quotaAvailable: "Cotas Master e Gold",
         estimatedAudience: "30.000 + Online",
-        regionalImpact: "Turismo, Hotelaria e Comércio Local",
-        description: "Mostra competitiva dedicada a filmes promocionais de destinos turísticos, conectando audiovisual e posicionamento territorial.",
-        institutionalRelations: "Apoio da Secretaria de Cultura e Turismo de MG e Prefeitura Municipal de Grão Mogol.",
-        governance: "Gestão auditada com prestação de contas em tempo real via plataforma Salic/MinC.",
-        locationLabel: "📍 Norte de Minas",
+        regionalImpact: "Turismo, Hotelaria e Comércio Local em Grão Mogol",
+        description: "Mostra competitiva de cinema dedicada a filmes que promovem destinos turísticos. Conectando o audiovisual à Economia Criativa em Minas Gerais.",
+        institutionalRelations: "Apoio da SECULT/MG e Prefeitura de Grão Mogol. Reserva da Biosfera da UNESCO.",
+        governance: "Gestão auditada com prestação de contas Salic/MinC.",
+        locationLabel: "📍 Grão Mogol, MG",
         city: "grao-mogol",
+        seoKeywords: ["Festival de Cinema de Grão Mogol", "Cinema de Destino", "Economia Criativa MG", "Lei Rouanet"],
         impactMetrics: {
             jobs: 240,
             audience: 30000,
@@ -24,94 +26,12 @@ export const projects = [
         },
         documents: [
             { title: "Apresentação Institucional", category: "Institucional", date: "2025", file: "/APRESENTAÇÃO TERRITÓRRIOS CULTURAIS.pdf" },
-            { title: "Diário Oficial - Aprovação", category: "Aprovação", date: "15/02/2025" },
-            { title: "Planilha Orçamentária", category: "Auditada", date: "10/01/2025" }
+            { title: "Diário Oficial - Aprovação", category: "Aprovação", date: "15/02/2025" }
         ],
         details: [
             {
                 title: "Mostra Competitiva",
-                content: "Exibição de filmes regionais e nacionais, com foco na produção independente e na valorização da identidade mineira."
-            },
-            {
-                title: "Turismo Cultural",
-                content: "O evento movimenta toda a cadeia produtiva do turismo em Grão Mogol, lotando pousadas, restaurantes e gerando renda direta."
-            }
-        ]
-    },
-    {
-        id: "cine-territorio",
-        slug: "cine-territorio",
-        title: "Cine Território",
-        subtitle: "9 a 11 de Maio | Patos de Minas",
-        heroImage: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2940&auto=format&fit=crop",
-        incentiveLaw: "Lei Paulo Gustavo",
-        status: "Realizado com Sucesso",
-        category: "realized",
-        progress: 100,
-        quotaAvailable: "Edição Concluída",
-        estimatedAudience: "Público Local",
-        regionalImpact: "Formação de Público e Educação",
-        description: "Projeto realizado entre 09 e 11 de maio em Patos de Minas. Promovemos a difusão audiovisual e a formação de público com exibições de cinema e apoio direto de parceiros comunitários e culturais.",
-        institutionalRelations: "Apoio: Caminhos do Cerrado, Balaio de Arte & Cultura, Orquestra Filarmônica, Eddy Som e Luz, Gov. Federal.",
-        governance: "Aprovado e executado via Lei Paulo Gustavo, com foco na democratização do acesso cultural.",
-        locationLabel: "📍 Patos de Minas",
-        city: "patos-de-minas",
-        impactMetrics: {
-            jobs: 45,
-            audience: 5000,
-            socialReturn: "Educacional"
-        },
-        documents: [
-            { title: "Identidade Visual", category: "Branding", date: "Maio 2024", file: "/CINETERRITORIO-IDENTIDADE-VISUAL.pdf" },
-            { title: "Cartaz Oficial", category: "Divulgação", date: "Maio 2024", file: "/cartaz cineterritorio a3.pdf" },
-            { title: "Relatório de Execução", category: "Relatório", date: "Em breve" }
-        ],
-        details: [
-            {
-                title: "Difusão Cinematográfica",
-                content: "Exibições voltadas à conscientização e envolvimento da comunidade em torno da produção audiovisual nacional."
-            },
-            {
-                title: "Engajamento Artístico",
-                content: "Conexão com artistas locais, produtores e iniciativas regionais para fortalecer a rede de cultura no Cerrado Mineiro."
-            }
-        ]
-    },
-    {
-        id: "uva-vinho",
-        slug: "cultura-uva-vinho",
-        title: "Encontro Cultural da Uva e do Vinho",
-        subtitle: "Cultura Enogastronômica",
-        heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9uSmOCXtgCTDtXXV-gYNipXQaCjyv4ubvFAUHykcIJyDlW6p92OfI3cKKCA-FWILUV1OneOJC-8XQ0iiRiF4Eh-cLIq4IxcL4NilH0ldYv0Tv9DDLdz7myf-6xHITyWu72z9VWpqtyR1Y1B6RXhXW0ZsuzlHKtpJrHl3qaTwYUM7Ve6UmRurLvQdYGMymze503_DQBlm6mz10oCMxwFmnWBbdvel7IikvaurGib4dNf4QF7CRr9AwE8d_F7Y5EhFM0bUgxlhVQuw",
-        incentiveLaw: "LEIC / Rouanet",
-        status: "Planejamento 2025",
-        category: "upcoming",
-        progress: 30,
-        quotaAvailable: "Naming Rights Disponível",
-        estimatedAudience: "15.000 Visitantes",
-        regionalImpact: "Enoturismo e Valorização do Produtor",
-        description: "Evento voltado à identidade produtiva e ao fortalecimento da economia local. Onde a tradição secular se encontra com a inovação do enoturismo global.",
-        institutionalRelations: "Parceria com Associações de Produtores Locais e Circuito Turístico.",
-        governance: "Compliance alinhado às diretrizes de ESG e LEIC/MG.",
-        locationLabel: "📍 Diamantina/Serro",
-        city: "serro",
-        impactMetrics: {
-            jobs: 110,
-            audience: 15000,
-            socialReturn: "3.2x"
-        },
-        documents: [
-            { title: "Protocolo LEIC/MG", category: "Estadual", date: "22/01/2025" },
-            { title: "Apresentação Institucional", category: "Institucional", date: "2025", file: "/APRESENTAÇÃO TERRITÓRRIOS CULTURAIS.pdf" }
-        ],
-        details: [
-            {
-                title: "Harmonização Cultural",
-                content: "Workshops de degustação e palestras sobre a história do vinho na região."
-            },
-            {
-                title: "Feira de Produtores",
-                content: "Espaço dedicado à comercialização direta de vinhos, sucos e produtos artesanais."
+                content: "Exibição de filmes que valorizam o patrimônio histórico e natural da região."
             }
         ]
     },
@@ -119,95 +39,145 @@ export const projects = [
         id: "mostra-espinhaco",
         slug: "mostra-espinhaco",
         title: "Mostra Itinerante da Cordilheira",
-        subtitle: "Circuito Cultural Regional",
-        heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuA3N331giQW-5WKV2UK0sEeseehQGj6NltJPBhO2UfF_fAwPS2ve2nlBLPZFOXLWHBkCJzARP6WMCxJ8Ot6zCyIp7WUTUcTVyYBxxaQJUD3nybL7mbfsCuN0JWVes-rSt0JhRJzeF_OsJj1b5L8mrJobx764tDJB6b9RWadlGcQfFmja3h7_n9-gV7Qtx9-QNkBxO3Swe6iuYaaKBC0Ydz4IZNDmtGKaOBluDCrGi0UeYsLNubOt2NFV5_NdEtHtouHdrZqG3wgv-g",
-        incentiveLaw: "Lei Rouanet / Estadual",
+        subtitle: "Patrimônio e Audiovisual | UNESCO",
+        heroImage: "/images/projects/mostra-espinhaco.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1200&auto=format&fit=crop",
+        incentiveLaw: "Lei Rouanet PRONAC 259675",
         status: "Em Captação",
         category: "upcoming",
         progress: 40,
-        quotaAvailable: "Patrocínio Regional",
+        quotaAvailable: "Patrocínio Regional / Master",
         estimatedAudience: "20.000 Pessoas",
-        regionalImpact: "Integração Regional",
-        description: "Circuito cultural em municípios de Minas Gerais, promovendo formação de público e valorização regional ao longo da Cordilheira do Espinhaço.",
-        institutionalRelations: "Apoio de múltiplas prefeituras e SECULT/MG.",
-        governance: "Gestão integrada de logística e produção itinerante.",
-        locationLabel: "📍 Cordilheira do Espinhaço",
+        regionalImpact: "Integração Regional e Turismo Cultural",
+        description: "Circuito cultural nos municípios de Ouro Branco, Serro e Porteirinha. Valorização do território ao longo da Cordilheira do Espinhaço — Reserva da Biosfera da UNESCO.",
+        institutionalRelations: "Apoio: SECULT/MG e Prefeituras Locais.",
+        governance: "Processo itinerante rastreado e gestão descentralizada.",
+        locationLabel: "📍 Ouro Branco, Serro, Porteirinha",
         city: "porteirinha",
+        seoKeywords: ["Mostra Itinerante Espinhaço", "PRONAC 259675", "UNESCO MG", "Patrimônio Histórico"],
         impactMetrics: {
-            jobs: 60,
+            jobs: 150,
             audience: 20000,
-            socialReturn: "Cultural"
+            socialReturn: "Integrado"
         },
-        documents: [
-            { title: "Apresentação Institucional", category: "Institucional", date: "2025", file: "/APRESENTAÇÃO TERRITÓRRIOS CULTURAIS.pdf" }
-        ],
+        documents: [],
         details: [
             {
                 title: "Cinema na Praça",
-                content: "Exibições gratuitas ao ar livre, democratizando o acesso ao conteúdo audiovisual em cidades do interior."
+                content: "Levando o cinema a cidades históricas através de projeções ao ar livre."
             }
         ]
     },
     {
-        id: "forum-internacional",
+        id: "forum-enoturismo",
         slug: "forum-enoturismo",
-        title: "Fórum Internacional de Enoturismo",
-        subtitle: "Conexão Global Mercosul",
-        heroImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuCrOjjG1zHZYYZnwPBSsxjdnggq6gPiimgQotYq0-poIkgBDJvT1ZAKWWC8SV2qRzym31u5IlY99pGrhwGI7qAHzenlPpKO1fvK8zfQQKK21XJaRBPiQxpXPbuh0sQqAv-LOHKplyhwlrIriDX2_aCenWnBEAd1gBeOAwk-BwduO__XPcQcj-KtA89Y7Kw2FlVz0qOaYOfQzuEKmSOk8L0bju5ZUFos3IbEq6bjjCjfkSZIIIKD1lz20UQo2RYLSLhoKRTSGJPgE8c",
+        title: "1º Fórum Internacional de Enoturismo",
+        subtitle: "Grão Mogol | Desenvolvimento Estratégico",
+        heroImage: "/images/projects/forum-enoturismo.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=1200&auto=format&fit=crop",
         incentiveLaw: "Investimento Direto / ESG",
-        status: "Em Captação",
+        status: "Planejamento 2025",
         category: "upcoming",
         progress: 45,
-        quotaAvailable: "Cotas Institucionais",
-        estimatedAudience: "Lideranças Globais",
-        regionalImpact: "Networking Internacional",
-        description: "Iniciativa que integra Brasil, Argentina, Chile e Uruguai em articulação cultural e econômica. Diálogos globais para impulsionar o desenvolvimento territorial sustentável.",
+        quotaAvailable: "Naming Rights",
+        estimatedAudience: "Lideranças e Investidores",
+        regionalImpact: "Atração de Investimentos e Networking",
+        description: "Encontro global para debater a vitivinicultura e o turismo. Impulsionando a Economia Criativa em Minas Gerais através do enoturismo de alto valor agregado.",
         institutionalRelations: "Cooperação com organismos internacionais e universidades.",
-        governance: "Relatórios de impacto social e ambiental (ODS da ONU).",
-        locationLabel: "📍 Ouro Branco",
-        city: "ouro-branco",
+        governance: "Impacto alinhado com as ODS da ONU.",
+        locationLabel: "📍 Grão Mogol, MG",
+        city: "grao-mogol",
+        seoKeywords: ["Fórum Internacional de Enoturismo", "Grão Mogol Vinhos", "Investimento Cultural", "FDC"],
         impactMetrics: {
-            jobs: 80,
-            audience: 2500,
-            socialReturn: "Strategic"
+            jobs: 85,
+            audience: 1500,
+            socialReturn: "Estratégico"
         },
-        documents: [
-            { title: "Agenda 2030 ODS", category: "Impacto", date: "01/02/2025" },
-            { title: "Apresentação Institucional", category: "Institucional", date: "2025", file: "/APRESENTAÇÃO TERRITÓRRIOS CULTURAIS.pdf" }
-        ],
-        details: [
-            {
-                title: "Cases de Sucesso",
-                content: "Apresentação de experiências exitosas em enoturismo ao redor do mundo."
-            }
-        ]
+        documents: [],
+        details: []
+    },
+    {
+        id: "moda-minas",
+        slug: "moda-minas",
+        title: "Moda de Minas",
+        subtitle: "Cultura, Identidade e Criação",
+        heroImage: "/images/projects/moda-minas.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1539109132381-31a15b225765?q=80&w=1200&auto=format&fit=crop",
+        incentiveLaw: "Lei Estadual de Incentivo à Cultura",
+        status: "Em Elaboração",
+        category: "upcoming",
+        progress: 20,
+        quotaAvailable: "Apoio / Patrocínio",
+        estimatedAudience: "Exposições e Desfiles",
+        regionalImpact: "Cadeia Têxtil e Identidade Local",
+        description: "Projeto de valorização da moda mineira e artesanal em Patos de Minas. Conectando tradição e design contemporâneo no ecossistema de Economia Criativa.",
+        institutionalRelations: "Parceria com sindicatos têxteis e coletivos de moda.",
+        governance: "Transparência total em editais de chamamento público.",
+        locationLabel: "📍 Patos de Minas, MG",
+        city: "patos-de-minas",
+        seoKeywords: ["Moda de Minas", "Cultura Patos de Minas", "Artesanato Mineiro", "Identidade Cultural"],
+        impactMetrics: {
+            jobs: 120,
+            audience: 5000,
+            socialReturn: "Criativo"
+        },
+        documents: [],
+        details: []
+    },
+    {
+        id: "acessa-cultura",
+        slug: "acessa-cultura",
+        title: "Acessa Cultura",
+        subtitle: "Fórum de Acessibilidade Cultural",
+        heroImage: "/images/projects/acessa-cultura.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=1200&auto=format&fit=crop",
+        incentiveLaw: "Lei Rouanet / Fomento Direto",
+        status: "Projeto Piloto",
+        category: "upcoming",
+        progress: 15,
+        quotaAvailable: "Apoio Institucional",
+        estimatedAudience: "Agentes e Gestores Culturais",
+        regionalImpact: "Inclusão Social e Adaptação de Espaços",
+        description: "Debate e implementação de normas de acessibilidade universal em equipamentos culturais de Minas Gerais. Inclusão como pilar fundamental da gestão cultural.",
+        institutionalRelations: "Conselhos de Direitos da Pessoa com Deficiência.",
+        governance: "Impacto social mensurado por indicadores de acessibilidade.",
+        locationLabel: "📍 Belo Horizonte / Regional",
+        city: "belo-horizonte",
+        seoKeywords: ["Acessibilidade Cultural", "Acessa Cultura", "Inclusão MG", "Gestão Cultural Acessível"],
+        impactMetrics: {
+            jobs: 25,
+            audience: 3000,
+            socialReturn: "Inclusivo"
+        },
+        documents: [],
+        details: []
     },
     {
         id: "cineclube-vemve",
         slug: "cineclube-vemve",
         title: "Cineclube Vemvê",
         subtitle: "Democratização do Acesso",
-        heroImage: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=2825&auto=format&fit=crop",
+        heroImage: "/images/projects/cineclube-vemve.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200&auto=format&fit=crop",
         incentiveLaw: "Lei Paulo Gustavo",
-        status: "Em Execução",
+        status: "Realizado com Sucesso",
         category: "realized",
-        progress: 90,
+        progress: 100,
         quotaAvailable: "Apoio Cultural",
         estimatedAudience: "2.000 Jovens",
-        regionalImpact: "Inclusão Social",
-        description: "Democratização do acesso ao cinema e ativação cultural territorial. Um espaço de encontro e reflexão através da sétima arte.",
-        institutionalRelations: "Rede estadual de cineclubes.",
+        regionalImpact: "Inclusão Social e Formação de Público",
+        description: "Democratização do acesso ao cinema e ativação cultural territorial. Um espaço de encontro e reflexão através da sétima arte em Montes Claros.",
+        institutionalRelations: "Rede estadual de cineclubes e coletivos locais.",
         governance: "Prestação de contas simplificada e impacto direto na ponta.",
-        locationLabel: "📍 Montes Claros",
+        locationLabel: "📍 Montes Claros, MG",
         city: "montes-claros",
+        seoKeywords: ["Cineclube Vemvê", "Cineclube Montes Claros", "Inclusão Social", "Cultura Norte de Minas"],
         impactMetrics: {
             jobs: 15,
             audience: 2000,
             socialReturn: "Alto"
         },
-        documents: [
-            { title: "Apresentação Institucional", category: "Institucional", date: "2025", file: "/APRESENTAÇÃO TERRITÓRRIOS CULTURAIS.pdf" }
-        ],
+        documents: [],
         details: [
             {
                 title: "Sessões Comentadas",
@@ -220,32 +190,60 @@ export const projects = [
         slug: "luz-imagem-educacao",
         title: "Luz, Imagem, Educação",
         subtitle: "Cinema e Escola",
-        heroImage: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2604&auto=format&fit=crop",
+        heroImage: "/images/projects/luz-imagem-educacao.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
         incentiveLaw: "Lei Paulo Gustavo",
-        status: "Em Execução",
+        status: "Realizado com Sucesso",
         category: "realized",
         progress: 100,
-        quotaAvailable: "Parceria Educacional",
+        quotaAvailable: "Edição Concluída",
         estimatedAudience: "10 Escolas",
         regionalImpact: "Alfabetização Audiovisual",
-        description: "Capacitação e integração entre cinema e educação. Formando professores e alunos na linguagem audiovisual.",
+        description: "Capacitação e integração entre cinema e educação. Formando professores e alunos na linguagem audiovisual no Norte de Minas.",
         institutionalRelations: "Secretarias Municipais de Educação.",
         governance: "Projeto pedagógico alinhado à BNCC.",
-        locationLabel: "📍 Norte de Minas",
-        city: "montes-claros", // Assumed hub
+        locationLabel: "📍 Norte de Minas, MG",
+        city: "montes-claros",
+        seoKeywords: ["Luz Imagem Educação", "Cinema na Escola", "Educação Audiovisual", "Norte de Minas"],
         impactMetrics: {
             jobs: 10,
             audience: 1500,
             socialReturn: "Pedagógico"
         },
-        documents: [
-            { title: "Apresentação Institucional", category: "Institucional", date: "2025", file: "/APRESENTAÇÃO TERRITÓRRIOS CULTURAIS.pdf" }
-        ],
+        documents: [],
         details: [
             {
                 title: "Workshops Docentes",
                 content: "Capacitação de professores para uso de vídeo em sala de aula."
             }
         ]
+    },
+    {
+        id: "cine-territorio",
+        slug: "cine-territorio",
+        title: "Cine Território",
+        subtitle: "9 a 11 de Maio | Patos de Minas",
+        heroImage: "/images/projects/cine-territorio.webp",
+        fallbackImage: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop",
+        incentiveLaw: "Lei Paulo Gustavo",
+        status: "Realizado com Sucesso",
+        category: "realized",
+        progress: 100,
+        quotaAvailable: "Edição Concluída",
+        estimatedAudience: "5.000 espectadores",
+        regionalImpact: "Formação de Público e Educação Cultural",
+        description: "Projeto de difusão audiovisual realizado em Patos de Minas. Democratização do cinema e ativação de espaços públicos via Lei Paulo Gustavo.",
+        institutionalRelations: "Apoio: Caminhos do Cerrado, Balaio de Arte & Cultura, Orquestra Filarmônica.",
+        governance: "Execução exemplar com 100% de transparência municipal.",
+        locationLabel: "📍 Patos de Minas, MG",
+        city: "patos-de-minas",
+        seoKeywords: ["Cine Território", "Lei Paulo Gustavo Patos de Minas", "Cinema Comunitário", "Formação de Público"],
+        impactMetrics: {
+            jobs: 45,
+            audience: 5000,
+            socialReturn: "Educacional"
+        },
+        documents: [],
+        details: []
     }
 ];

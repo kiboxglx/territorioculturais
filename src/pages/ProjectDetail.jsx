@@ -5,6 +5,8 @@ import { Helmet } from 'react-helmet-async';
 import { projects } from '../data/projects';
 import ImpactMetrics from '../components/ImpactMetrics';
 import InvestorDataRoom from '../components/InvestorDataRoom';
+import ProgressiveImage from '../components/ProgressiveImage';
+import assetsManifest from '../data/assets-manifest.json';
 
 const ProjectDetail = ({ onOpenModal }) => {
     const { slug } = useParams();
@@ -24,25 +26,31 @@ const ProjectDetail = ({ onOpenModal }) => {
         );
     }
 
+    // Busca dados no manifesto de assets com fallback
+    const assetData = assetsManifest.projects[project.id] || {};
+    const mainImg = assetData.main || project.heroImage;
+    const fallbackImg = assetData.fallback || project.fallbackImage;
+    const seoAlt = assetData.alt || `${project.title} — ${project.subtitle} — Territórios Culturais.`;
+
     return (
         <>
             <Helmet>
                 <title>{project.title} | Territórios Culturais</title>
-                <meta name="description" content={project.description} />
+                <meta name="description" content={`${project.description} — ${project.status}. Impacto regional em ${project.city}.`} />
 
                 {/* Open Graph / Facebook */}
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={window.location.href} />
-                <meta property="og:title" content={`${project.title} - Investimento Cultural`} />
+                <meta property="og:title" content={`${project.title} - Investimento Cultural Estratégico`} />
                 <meta property="og:description" content={project.description} />
-                <meta property="og:image" content={project.heroImage} />
+                <meta property="og:image" content={mainImg} />
 
                 {/* Twitter */}
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:url" content={window.location.href} />
                 <meta property="twitter:title" content={project.title} />
                 <meta property="twitter:description" content={project.description} />
-                <meta property="twitter:image" content={project.heroImage} />
+                <meta property="twitter:image" content={mainImg} />
             </Helmet>
 
             <motion.div
@@ -53,13 +61,17 @@ const ProjectDetail = ({ onOpenModal }) => {
                 className="min-h-screen bg-charcoal text-white font-manrope selection:bg-primary selection:text-charcoal w-full h-full overflow-y-auto custom-scrollbar"
             >
                 {/* Hero Section */}
-                <section className="relative h-[90vh] w-full overflow-hidden">
-                    <img
-                        src={project.heroImage}
-                        alt={project.title}
-                        className="absolute inset-0 w-full h-full object-cover animate-pan-slow"
+                <section className="relative h-[90vh] w-full overflow-hidden bg-charcoal">
+                    <ProgressiveImage
+                        src={mainImg}
+                        fallbackUrl={fallbackImg}
+                        alt={seoAlt}
+                        fetchPriority="high"
+                        loading="eager"
+                        className="absolute inset-0 w-full h-full"
+                        imgClassName="animate-pan-slow object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/20 to-black/40"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-charcoal via-charcoal/30 to-black/50"></div>
 
                     <div className="absolute inset-0 flex flex-col justify-end pb-24 px-8 container mx-auto z-10">
                         <Link to="/" className="mb-12 flex items-center gap-2 text-white/60 hover:text-primary transition-colors w-fit group">
