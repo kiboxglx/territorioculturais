@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import ProgressiveImage from './ProgressiveImage';
 
 /* ─────────────────────────────────────────────
@@ -13,7 +14,7 @@ const circleItems = [
         subtitle: "Cinema, Audiovisual e Novas Mídias",
         shortText: "Aqui nasce a narrativa, a imagem e a comunicação estratégica do território. É o eixo criativo e simbólico da empresa.",
         function: "Criar, comunicar e posicionar o território.",
-        image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=800&auto=format&fit=crop"
+        image: "/images/projects/cine-territorio.jpg"
     },
     {
         id: "02",
@@ -21,7 +22,7 @@ const circleItems = [
         subtitle: "Mostras, Festivais e Eventos Culturais",
         shortText: "Aqui a cultura ganha espaço público, ativa público e movimenta economia local.",
         function: "Conectar público, artistas e território.",
-        image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop"
+        image: "/images/hero/mostras.png"
     },
     {
         id: "03",
@@ -29,7 +30,7 @@ const circleItems = [
         subtitle: "Oficinas, Congressos, Fóruns",
         shortText: "Aqui se constrói autonomia técnica e qualificação profissional.",
         function: "Criar capacidade instalada no território.",
-        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop"
+        image: "/images/hero/formacao.png"
     },
     {
         id: "04",
@@ -37,7 +38,7 @@ const circleItems = [
         subtitle: "Assessoria técnica e estruturação",
         shortText: "Aqui se organiza o acesso a recursos, editais e mecanismos públicos de financiamento.",
         function: "Transformar intenção cultural em projeto estruturado.",
-        image: "https://images.unsplash.com/photo-1454165833767-1390e501ddff?q=80&w=800&auto=format&fit=crop"
+        image: "/images/projects/Gemini_Generated_Image_1dkyy91dkyy91dky.png"
     },
     {
         id: "05",
@@ -45,7 +46,7 @@ const circleItems = [
         subtitle: "MATC, Sistemas Municipais, Governança",
         shortText: "Aqui a cultura deixa de ser evento e se torna política pública permanente.",
         function: "Implantar estrutura institucional duradoura.",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop"
+        image: "/images/hero/governanca.png"
     },
     {
         id: "06",
@@ -53,7 +54,7 @@ const circleItems = [
         subtitle: "Planejamento Territorial",
         shortText: "Aqui identidade, patrimônio e cultura dialogam com estratégias de desenvolvimento econômico.",
         function: "Transformar identidade em ativo territorial.",
-        image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop"
+        image: "/images/projects/Gemini_Generated_Image_ewmt2eewmt2eewmt.png"
     },
     {
         id: "07",
@@ -61,7 +62,7 @@ const circleItems = [
         subtitle: "Desenvolvimento Econômico",
         shortText: "Aqui a cultura gera renda, emprego e circulação financeira estruturada.",
         function: "Converter cultura em vetor econômico.",
-        image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop"
+        image: "/images/projects/Gemini_Generated_Image_jandojandojandoj.png"
     },
     {
         id: "08",
@@ -69,7 +70,7 @@ const circleItems = [
         subtitle: "Análise contínua",
         shortText: "Aqui a política cultural é analisada, acompanhada e permanentemente aperfeiçoada.",
         function: "Garantir continuidade, inteligência e evolução institucional.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+        image: "/images/hero/cine1.png"
     }
 ];
 
@@ -180,18 +181,6 @@ const Hero = ({ onContactClick }) => {
                         </div>
                     </motion.div>
 
-                    {/* Eyebrow — rótulo institucional */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                        className="mb-4"
-                    >
-                        <span className="eyebrow">
-                            Operadora de Desenvolvimento Territorial · Patos de Minas, MG
-                        </span>
-                    </motion.div>
-
                     {/* Título Principal — Playfair Display 900 */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -199,8 +188,8 @@ const Hero = ({ onContactClick }) => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <h1
-                            className="font-display text-white leading-none mb-6"
-                            style={{ fontSize: 'clamp(3.5rem, 8vw, 7rem)', fontWeight: 900, letterSpacing: '-0.03em' }}
+                            className="font-display text-white leading-none mb-3"
+                            style={{ fontSize: 'clamp(2rem, 4.5vw, 4rem)', fontWeight: 900, letterSpacing: '-0.03em' }}
                         >
                             Territórios{' '}
                             <br />
@@ -211,6 +200,14 @@ const Hero = ({ onContactClick }) => {
                                 Culturais
                             </em>
                         </h1>
+
+                        {/* Rótulo institucional abaixo do título */}
+                        <p
+                            className="font-mono text-white/40 uppercase tracking-[0.2em] text-[0.65rem] mb-5"
+                            style={{ fontFamily: 'var(--font-mono)' }}
+                        >
+                            Operadora de Desenvolvimento Territorial · Patos de Minas, MG
+                        </p>
 
                         {/* Subtítulo de posicionamento */}
                         <p
@@ -312,6 +309,15 @@ const Hero = ({ onContactClick }) => {
                             </span>
                             Soluções para Cidades
                         </button>
+
+                        {/* CTA 3 — Quem Somos */}
+                        <Link
+                            to="/quem-somos"
+                            className="btn-secondary"
+                            aria-label="Conheça a equipe e história da Territórios Culturais"
+                        >
+                            Quem Somos
+                        </Link>
                     </motion.div>
 
                     {/* ── Faixa de Parceiros ───────────────────────────── */}
@@ -380,6 +386,7 @@ const Hero = ({ onContactClick }) => {
                         <motion.div
                             animate={{ rotate: [0, 360] }}
                             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                            style={{ willChange: 'transform' }}
                             className="absolute inset-0 z-10"
                             aria-hidden="true"
                         >
@@ -399,6 +406,7 @@ const Hero = ({ onContactClick }) => {
                                             scale: { delay: 0.1 * index, duration: 0.5 },
                                             rotate: { duration: 60, repeat: Infinity, ease: "linear" }
                                         }}
+                                        style={{ willChange: 'transform' }}
                                         style={{
                                             position: 'absolute',
                                             left: `calc(50% + ${x}px - 40px)`,

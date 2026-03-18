@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 
 /**
  * ProgressiveImage — Componente de Imagem com LQIP (Low Quality Image Placeholder)
@@ -40,6 +40,14 @@ const ProgressiveImage = ({
     const [hasError, setHasError] = useState(false);
     const [currentSrc, setCurrentSrc] = useState(src);
     const [isFallingBack, setIsFallingBack] = useState(false);
+    const imgRef = useRef(null);
+
+    // Fix para imagens já em cache: onLoad não dispara para imagens cacheadas
+    useEffect(() => {
+        if (imgRef.current?.complete && imgRef.current?.naturalWidth > 0) {
+            setIsLoaded(true);
+        }
+    }, [currentSrc]);
 
     const handleLoad = useCallback(() => {
         setIsLoaded(true);
@@ -105,6 +113,7 @@ const ProgressiveImage = ({
             ──────────────────────────────────────────────────────── */}
             {!hasError ? (
                 <img
+                    ref={imgRef}
                     src={currentSrc}
                     alt={alt}
                     loading={loading}

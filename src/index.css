@@ -625,3 +625,59 @@ section {
 .nav-link-premium:hover {
   color: var(--gold);
 }
+
+/* ============================================================
+   11. ACESSIBILIDADE & UX PRO MAX
+   ============================================================ */
+
+/* Focus states visíveis — teclado e leitores de tela */
+*:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Touch targets mínimos — 44px — para links de nav */
+.nav-link-premium {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding-block: 0.5rem;
+}
+
+/* Cursor pointer em todos os elementos clicáveis */
+[role="button"],
+button,
+[onClick],
+.card-premium,
+article[aria-label] {
+  cursor: pointer;
+}
+
+/* prefers-reduced-motion — respeita preferência do sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .text-shimmer-gold {
+    animation: none;
+    -webkit-text-fill-color: var(--gold);
+  }
+
+  .scan-line {
+    display: none;
+  }
+}

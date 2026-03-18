@@ -37,24 +37,24 @@
     },
     "cine-territorio": {
       "id": "cine-territorio",
-      "main": "/images/projects/cine-territorio.webp",
-      "placeholder": "/images/blur/cine-territorio.webp",
+      "main": "/images/projects/cine-territorio.jpg",
+      "placeholder": "",
       "fallback": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200",
-      "alt": "Cine Território — Projeto de difusão audiovisual em Patos de Minas via Lei Paulo Gustavo. Cinema comunitário de alto impacto."
+      "alt": "Cine Território — Festival competitivo de mostras cinematográficas de Patos de Minas."
     },
     "cineclube-vemve": {
       "id": "cineclube-vemve",
-      "main": "/images/projects/cine.png",
-      "placeholder": "/images/blur/cineclube-vemve.webp",
+      "main": "/images/projects/cineclube-vemve.png",
+      "placeholder": "",
       "fallback": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200",
-      "alt": "Cineclube Vemvê — Democratização do acesso ao cinema e formação de público através do audiovisual."
+      "alt": "Cineclube Vemvê — Mostra cinematográfica permanente dedicada à formação de público para o cinema brasileiro."
     },
     "luz-imagem-educacao": {
       "id": "luz-imagem-educacao",
-      "main": "/images/projects/luz-imagem-educacao.webp",
-      "placeholder": "/images/blur/luz-imagem-educacao.webp",
+      "main": "/images/projects/luz-imagem-educacao.jpg",
+      "placeholder": "",
       "fallback": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200",
-      "alt": "Luz, Imagem, Educação — Projeto de alfabetização audiovisual e formação docente no Norte de Minas Gerais."
+      "alt": "Luz, Imagem, Educação — Mostras cinematográficas itinerantes para escolas estaduais de Patos de Minas."
     }
   },
   "team": {

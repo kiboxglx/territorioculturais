@@ -15,9 +15,6 @@ import UpcomingEvents from '../components/UpcomingEvents'; // 07 (Próximos Even
 import GalleryPreview from '../components/GalleryPreview'; // 08 (Galeria de Fotos)
 import ObservatorioDestaque from '../components/ObservatorioDestaque'; // 09 (Observatório)
 import Team from '../components/Team'; // 10 (Nossa Equipe)
-import SponsorTier from '../components/SponsorTier';
-import ESGImpact from '../components/ESGImpact';
-import InvestorDataRoom from '../components/InvestorDataRoom';
 
 // Componentes retirados temporariamente para alinhar ao croqui exato: PortfolioSection, Proponent
 
@@ -74,27 +71,7 @@ const Home = ({ onOpenModal }) => {
             {/* 09. Observatório Territórios Culturais */}
             <ObservatorioDestaque />
 
-            {/* Nova Seção: Cotas de Patrocínio */}
-            <SponsorTier onContactClick={onOpenModal} />
-
-            {/* Impacto ESG - Pilar de Valor */}
-            <ESGImpact />
-
-            {/* Investor Data Room - Seção Técnica */}
-            <section id="governance" className="py-24 bg-charcoal">
-                <div className="container mx-auto px-8">
-                    <div className="mb-16">
-                        <span className="eyebrow">Transparência & Governança</span>
-                        <h2 className="font-display text-4xl md:text-6xl text-white mb-6 italic">Investor Data Room</h2>
-                        <p className="text-white/50 max-w-2xl font-body text-sm md:text-base">
-                            Painel técnico unificado com projetos ativos, registros ANCINE e documentos estratégicos para patrocinadores institucionais.
-                        </p>
-                    </div>
-                </div>
-                <div className="container mx-auto px-8">
-                    <InvestorDataRoom />
-                </div>
-            </section>
+            {/* As seções de Patrocínio, ESG e Data Room foram movidas para o modal de Próximos Eventos */}
 
             {/* 10. Nossa Equipe */}
             <Team />
@@ -122,13 +99,13 @@ const Home = ({ onOpenModal }) => {
                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
                         <button
                             onClick={onOpenModal}
-                            className="bg-primary text-charcoal font-bold px-12 py-5 rounded-full text-lg hover:scale-105 transition-all font-manrope uppercase tracking-wider shadow-[0_0_20px_rgba(17,212,212,0.2)]"
+                            className="btn-primary text-lg px-12 py-5 rounded-full shadow-[0_0_20px_var(--color-accent-gold-glow,rgba(200,150,42,0.25))]"
                         >
                             Solicitar Apresentação Executiva
                         </button>
-                        <button 
+                        <button
                             onClick={onOpenModal}
-                            className="bg-white/10 backdrop-blur-md border border-white/20 px-12 py-5 rounded-full text-lg font-bold hover:bg-white/20 transition-all text-white font-manrope uppercase tracking-wider"
+                            className="btn-secondary text-lg px-12 py-5 rounded-full"
                         >
                             Agendar Consultoria
                         </button>

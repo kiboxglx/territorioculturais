@@ -35,7 +35,7 @@ const ProjectCard = ({ project }) => {
 
     return (
         <article
-            className="w-[300px] md:w-[380px] h-[550px] snap-center bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 group hover:border-primary/50 transition-all duration-500 flex flex-col overflow-hidden relative shadow-2xl"
+            className="w-[300px] md:w-[380px] h-[550px] snap-center bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 group hover:border-primary/50 transition-all duration-500 flex flex-col overflow-hidden relative shadow-2xl cursor-pointer"
             aria-label={`Projeto: ${project.title} — ${project.status}`}
         >
             {/* Badge de status dinâmico */}
@@ -90,7 +90,7 @@ const ProjectCard = ({ project }) => {
                     </p>
                 </div>
 
-                <p className="text-[12px] text-white/60 mb-6 font-light font-manrope line-clamp-3 leading-relaxed">
+                <p className="text-[12px] text-white/70 mb-6 font-light font-manrope line-clamp-3 leading-relaxed">
                     {project.description}
                 </p>
 

@@ -10,6 +10,7 @@ const Services = () => {
             subtitle: "Produção cinematográfica, comunicação institucional e conteúdo estratégico para o setor público e privado.",
             description: "Atuamos na indústria cinematográfica brasileira, na produção audiovisual institucional e na criação de conteúdos digitais estratégicos, integrando narrativa, informação e identidade territorial com qualidade técnica e registro na ANCINE.",
             icon: "movie",
+            image: "/images/hero/cine1.png",
             link: "/portfolio/cinema",
             buttonText: "Saiba Mais"
         },
@@ -19,6 +20,7 @@ const Services = () => {
             subtitle: "Curadoria, produção e execução de eventos culturais estruturados com impacto artístico, social e territorial.",
             description: "Planejamos e realizamos Mostras, Festivais e Eventos Culturais como instrumentos estratégicos de democratização do acesso, fortalecimento da economia criativa e valorização da identidade territorial, com organização técnica e responsabilidade administrativa.",
             icon: "festival",
+            image: "/images/hero/mostras.png",
             link: "/portfolio-eventos",
             buttonText: "Saiba Mais"
         },
@@ -28,6 +30,7 @@ const Services = () => {
             subtitle: "Programas formativos voltados à profissionalização, autonomia técnica e fortalecimento estruturado do setor cultural.",
             description: "Realizamos oficinas, cursos, congressos e programas de capacitação voltados à gestão cultural, produção artística e estruturação de políticas públicas, promovendo qualificação técnica e geração de capacidade instalada no território.",
             icon: "school",
+            image: "/images/hero/formacao.png",
             link: "/formacao",
             buttonText: "Saiba Mais"
         },
@@ -37,6 +40,7 @@ const Services = () => {
             subtitle: "Arquitetura técnica para organização administrativa, captação estratégica de recursos e consolidação permanente de políticas públicas culturais e turísticas.",
             description: "Estruturamos, regulamentamos e operacionalizamos sistemas como Transferegov.br, ISSQN Cultural, ICMS Patrimônio Cultural e ICMS Turismo, garantindo segurança jurídica, eficiência administrativa, aumento de pontuação técnica e ampliação de repasses financeiros.",
             icon: "account_balance",
+            image: "/images/hero/governanca.png",
             link: "/portfolio-governanca",
             buttonText: "Saiba Mais"
         },
@@ -76,37 +80,49 @@ const Services = () => {
                             key={index} 
                             className="block"
                         >
-                            <motion.div 
+                            <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="p-8 lg:p-12 group hover:bg-white/5 transition-all rounded-3xl h-full flex flex-col justify-between border border-transparent hover:border-white/5"
+                                className="group relative rounded-3xl h-full flex flex-col justify-between border border-white/5 hover:border-primary/30 transition-all duration-500 overflow-hidden"
                             >
-                                <div>
-                                    <div className="flex justify-between items-start mb-8">
-                                        <span className="material-symbols-outlined text-primary text-5xl group-hover:scale-110 transition-transform origin-left">
-                                            {service.icon}
-                                        </span>
-                                        <span className="font-playfair text-4xl text-white/10 group-hover:text-primary/40 transition-colors">
-                                            {service.id}
-                                        </span>
+                                {/* Imagem de fundo do card */}
+                                {service.image && (
+                                    <div className="absolute inset-0 z-0">
+                                        <img
+                                            src={service.image}
+                                            alt=""
+                                            aria-hidden="true"
+                                            loading="lazy"
+                                            className="w-full h-full object-cover opacity-20 group-hover:opacity-35 transition-opacity duration-700 scale-105 group-hover:scale-110 transition-transform"
+                                        />
+                                        <div className="absolute inset-0 bg-linear-to-br from-charcoal/95 via-charcoal/80 to-charcoal/60" />
                                     </div>
-                                    <h3 className="font-playfair text-3xl mb-4 text-white group-hover:text-primary transition-colors">{service.title}</h3>
-                                    
-                                    {/* Default View: Subtitle */}
-                                    <p className="text-white/60 font-light font-manrope text-sm leading-relaxed max-w-sm group-hover:opacity-0 group-hover:h-0 transition-all duration-300">
-                                        {service.subtitle}
-                                    </p>
+                                )}
 
-                                    {/* Hover View: Description Box */}
-                                    <p className="text-white font-light font-manrope text-sm leading-relaxed max-w-sm opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto transition-all duration-300 overflow-hidden">
-                                        {service.description}
-                                    </p>
-                                </div>
-                                
-                                <div className="mt-8 flex items-center gap-2 text-[10px] text-primary uppercase font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity -translate-x-4 group-hover:translate-x-0 cursor-pointer">
-                                    {service.buttonText || "Saiba Mais"} <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                                <div className="p-8 lg:p-12 relative z-10 flex flex-col justify-between h-full">
+                                    <div>
+                                        <div className="flex justify-between items-start mb-8">
+                                            <span className="text-primary text-4xl font-bold font-mono">{service.id}</span>
+                                            <span className="text-white/10 group-hover:text-primary/30 transition-colors text-xs uppercase tracking-widest font-bold pt-2">Eixo</span>
+                                        </div>
+                                        <h3 className="font-playfair text-3xl mb-4 text-white group-hover:text-primary transition-colors">{service.title}</h3>
+
+                                        {/* Default View: Subtitle */}
+                                        <p className="text-white/60 font-light font-manrope text-sm leading-relaxed max-w-sm group-hover:opacity-0 group-hover:h-0 transition-all duration-300">
+                                            {service.subtitle}
+                                        </p>
+
+                                        {/* Hover View: Description Box */}
+                                        <p className="text-white font-light font-manrope text-sm leading-relaxed max-w-sm opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto transition-all duration-300 overflow-hidden">
+                                            {service.description}
+                                        </p>
+                                    </div>
+
+                                    <div className="mt-8 flex items-center gap-2 text-[10px] text-primary uppercase font-bold tracking-widest opacity-0 group-hover:opacity-100 transition-opacity -translate-x-4 group-hover:translate-x-0 cursor-pointer">
+                                        {service.buttonText || "Saiba Mais"} →
+                                    </div>
                                 </div>
                             </motion.div>
                         </Link>

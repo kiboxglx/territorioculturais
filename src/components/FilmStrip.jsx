@@ -53,13 +53,13 @@ const FilmStrip = () => {
                                     muted
                                     playsInline
                                     className="w-full h-full object-cover object-center opacity-50 transition-all duration-700 group-hover:opacity-80"
-                                    style={{ filter: 'sepia(0.8) contrast(1.1) brightness(0.75) saturate(0.6)' }}
+                                    style={{ filter: 'sepia(0.4) contrast(1.1) brightness(0.75) saturate(0.6)' }}
                                     aria-hidden="true"
                                 />
                                 {/* Overlay âmbar envelhecido */}
                                 <div className="absolute inset-0 pointer-events-none mix-blend-multiply" style={{ background: 'rgba(180, 110, 20, 0.35)' }} />
                                 {/* Riscos e grain da película */}
-                                <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,200,80,0.03) 2px, rgba(255,200,80,0.03) 4px)' }} />
+                                <div className="absolute inset-0 pointer-events-none opacity-5" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,200,80,0.03) 2px, rgba(255,200,80,0.03) 4px)' }} />
                                 <div className="absolute inset-0 border border-black/40 pointer-events-none"></div>
                                 {/* Marcador de Linha do Tempo */}
                                 <div className="absolute bottom-2 right-3 z-30 transition-all duration-300">

@@ -29,8 +29,8 @@ const TEAM_MEMBERS = [
         specialization: 'Cinema · Produção Executiva · Gestão Cultural',
     },
     {
-        id: 'patricia-mahet',
-        name: 'Patricia Mahet',
+        id: ' Julia ',
+        name: ' -- ',
         role: 'Diretora de Projetos',
         credential: 'Ex-Globo · Especialista em Políticas Culturais',
         description: 'Especialista em elaboração e captação de projetos culturais via Lei Rouanet, Lei Paulo Gustavo e LEIC/MG. Coordena as frentes de governança e impacto social.',

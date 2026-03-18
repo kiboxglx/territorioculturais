@@ -145,5 +145,47 @@
         "icon": "FileCheck"
       }
     ]
-  }
+  },
+  "upcomingEvents": [
+    {
+      "id": "event-1",
+      "title": "1º Festival de Cinema de Grão Mogol",
+      "date": "04 a 09 de Maio",
+      "location": "Grão Mogol - MG",
+      "image": "/events/festival-cinema-grao-mogol.png",
+      "logo": "/events/logo-festival-cinema-grao-mogol.png",
+      "bio": "Uma celebração do cinema no coração do Norte de Minas. Sessões com Libras, Audiodescrição e entrada gratuita garantem que a cultura chegue a todos os públicos, transformando Grão Mogol em palco da sétima arte.",
+      "lawInfo": "Lei Rouanet / ICMS (Artigo 18)"
+    },
+    {
+      "id": "event-2",
+      "title": "1º Fórum Internacional de Enoturismo",
+      "date": "14 a 16 de Agosto",
+      "location": "Grão Mogol - MG",
+      "image": "/events/forum-enoturismo.png",
+      "logo": "/events/logo-forum-enoturismo.png",
+      "bio": "Encontro de referência internacional reunindo produtores, sommeliers e agentes do turismo. Integração com o Mercosul, Catálogo Bilíngue oficial e Press Trips Internacionais posicionam Minas Gerais no mapa global do enoturismo.",
+      "lawInfo": "Investimento Direto / ESG"
+    },
+    {
+      "id": "event-3",
+      "title": "1º Encontro Cultural da Uva e do Vinho",
+      "date": "10 a 13 de Setembro",
+      "location": "Grão Mogol - MG",
+      "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=2070&auto=format&fit=crop",
+      "logo": "/events/logo-encontro-uva-vinho.png",
+      "bio": "Evento de impacto econômico e cultural com projeção de 4 mil pessoas, geração de 280 empregos diretos e 100 mil impactos de mídia. Uma vitrine do potencial vitivinícola do Norte de Minas para o Brasil e o mundo.",
+      "lawInfo": "Investimento Direto / ESG"
+    },
+    {
+      "id": "event-4",
+      "title": "Mostra de Cinema Itinerante (Espinhaço)",
+      "date": "Setembro a Novembro",
+      "location": "Ouro Branco, Serro, Porteirinha",
+      "image": "/events/mostra-itinerante.png",
+      "logo": "/events/logo-mostra-cinema.png",
+      "bio": "Uma caravana cinematográfica que percorre a Cordilheira do Espinhaço levando 54 filmes, oficinas de formação e 3 fóruns de cultura e turismo. Cinema a céu aberto em praças históricas como instrumento de desenvolvimento territorial.",
+      "lawInfo": "Lei Rouanet / ICMS (Artigo 18)"
+    }
+  ]
 }

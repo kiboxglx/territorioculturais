@@ -23,14 +23,14 @@ const Navbar = ({ onContactClick }) => {
 
             {/* Barra fixa de largura total — card sólido */}
             <header className="fixed top-[4px] left-0 right-0 z-50 bg-charcoal/95 backdrop-blur-md border-b border-white/10 shadow-[0_2px_30px_rgba(0,0,0,0.5)]">
-                <div className="container mx-auto px-8 py-4 flex items-center justify-between gap-6">
+                <div className="container mx-auto px-8 py-0 flex items-center justify-between gap-6">
 
                     {/* Logo */}
                     <Link to="/" className="flex-shrink-0">
                     <img
-                            src="/IMG_4327-removebg-preview.png"
+                            src="/IMG_4327.PNG"
                             alt="Territórios Culturais"
-                            className="h-16 md:h-20 w-auto object-contain drop-shadow-[0_0_8px_rgba(17,212,212,0.4)]"
+                            className="h-28 md:h-32 w-auto object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] hover:scale-105 transition-transform duration-300"
                         />
                     </Link>
 

@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Briefcase, Users, TrendingUp } from 'lucide-react';
 
 export const AnimatedCounter = ({ value, suffix = "" }) => {
     const ref = useRef(null);
     const inView = useInView(ref, { once: true });
 
-    // Check if value is a number, if not, parse it or handle gracefully
     const numericValue = typeof value === 'number' ? value : parseInt(value) || 0;
 
     const count = useMotionValue(0);
@@ -31,29 +31,60 @@ const ImpactMetrics = ({ metrics }) => {
     if (!metrics) return null;
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-12 border-t border-b border-white/10 my-16 bg-white/5 rounded-2xl p-8 backdrop-blur-sm">
-            <div className="text-center group">
-                <span className="material-symbols-outlined text-4xl text-primary mb-4 group-hover:scale-110 transition-transform block mx-auto">work</span>
-                <span className="block font-playfair text-4xl md:text-5xl text-white font-bold mb-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 py-12 border-t border-b border-white/10 my-16 bg-white/5 rounded-2xl overflow-hidden backdrop-blur-sm">
+
+            {/* Empregos */}
+            <div className="text-center group px-8 py-6 hover:bg-white/5 transition-colors duration-300">
+                <div className="flex justify-center mb-4">
+                    <Briefcase
+                        size={36}
+                        strokeWidth={1.5}
+                        className="text-primary group-hover:scale-110 transition-transform duration-300"
+                        aria-hidden="true"
+                    />
+                </div>
+                <span className="stat-number block mb-2">
                     <AnimatedCounter value={metrics.jobs} />
                 </span>
-                <span className="text-xs font-bold uppercase tracking-widest text-white/50 group-hover:text-primary transition-colors">Empregos Gerados</span>
+                <span className="stat-label group-hover:text-primary transition-colors duration-300">
+                    Empregos Gerados
+                </span>
             </div>
 
-            <div className="text-center group border-t md:border-t-0 md:border-l md:border-r border-white/10 pt-8 md:pt-0">
-                <span className="material-symbols-outlined text-4xl text-accent-gold mb-4 group-hover:scale-110 transition-transform block mx-auto">groups</span>
-                <span className="block font-playfair text-4xl md:text-5xl text-white font-bold mb-2">
+            {/* Público */}
+            <div className="text-center group px-8 py-6 hover:bg-white/5 transition-colors duration-300 border-t md:border-t-0 md:border-l md:border-r border-white/10">
+                <div className="flex justify-center mb-4">
+                    <Users
+                        size={36}
+                        strokeWidth={1.5}
+                        className="text-accent-gold group-hover:scale-110 transition-transform duration-300"
+                        aria-hidden="true"
+                    />
+                </div>
+                <span className="stat-number block mb-2">
                     <AnimatedCounter value={metrics.audience} suffix="+" />
                 </span>
-                <span className="text-xs font-bold uppercase tracking-widest text-white/50 group-hover:text-accent-gold transition-colors">Público Impactado</span>
+                <span className="stat-label group-hover:text-accent-gold transition-colors duration-300">
+                    Público Impactado
+                </span>
             </div>
 
-            <div className="text-center group border-t md:border-t-0 pt-8 md:pt-0">
-                <span className="material-symbols-outlined text-4xl text-accent-red mb-4 group-hover:scale-110 transition-transform block mx-auto">monitoring</span>
-                <span className="block font-playfair text-4xl md:text-5xl text-white font-bold mb-2">
+            {/* Retorno Social */}
+            <div className="text-center group px-8 py-6 hover:bg-white/5 transition-colors duration-300 border-t md:border-t-0 border-white/10">
+                <div className="flex justify-center mb-4">
+                    <TrendingUp
+                        size={36}
+                        strokeWidth={1.5}
+                        className="text-accent-red group-hover:scale-110 transition-transform duration-300"
+                        aria-hidden="true"
+                    />
+                </div>
+                <span className="stat-number block mb-2">
                     {metrics.socialReturn}
                 </span>
-                <span className="text-xs font-bold uppercase tracking-widest text-white/50 group-hover:text-accent-red transition-colors">Retorno Social (SROI)</span>
+                <span className="stat-label group-hover:text-accent-red transition-colors duration-300">
+                    Retorno Social (SROI)
+                </span>
             </div>
         </div>
     );
