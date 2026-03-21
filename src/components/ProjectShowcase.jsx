@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import ProgressiveImage from './ProgressiveImage';
+import RealizedCard from './RealizedCard';
 import assetsManifest from '../data/assets-manifest.json';
 
 /* ─────────────────────────────────────────────────────────────────
@@ -165,7 +166,10 @@ const ProjectSection = ({ title, projects, id }) => {
             >
                 {projects.map(project => (
                     <div key={project.id} role="listitem" className="h-full">
-                        <ProjectCard project={project} />
+                        {project.category === 'realized'
+                            ? <RealizedCard project={project} />
+                            : <ProjectCard project={project} />
+                        }
                     </div>
                 ))}
             </div>
