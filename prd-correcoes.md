@@ -10,11 +10,11 @@
 
 ## Stories (Tasks)
 ### Epic 1: Limpeza da Home e UI
-- [ ] STORY 1: Substituir as tags antigas ('Cinema', 'Moda', etc.) pelo fluxo do Ecossistema: 'CRIAR -> COMUNICAR', 'CIRCULAR -> FORMAR', 'ESTRUTURAR -> FINANCIAR', 'DESENVOLVER -> MONITORAR'.
-- [ ] STORY 2: Remover o botão 'Mídia Kit 2026' da Home.
-- [ ] STORY 3: Configurar o botão 'VER IMPACTO' para ancorar com scroll suave em `#destinos-estruturados`.
-- [ ] STORY 4: Remover a seção 'Parceiros & Realizadores' (Logos institucionais) da página principal.
-- [ ] STORY 5: Ajustar o CSS do vídeo da fita de cinema (FilmStrip) usando `object-position: top` (ou `50% 20%`) para descer o enquadramento e não cortar o rosto das pessoas.
+- [x] STORY 1: Substituir as tags antigas ('Cinema', 'Moda', etc.) pelo fluxo do Ecossistema: 'CRIAR -> COMUNICAR', 'CIRCULAR -> FORMAR', 'ESTRUTURAR -> FINANCIAR', 'DESENVOLVER -> MONITORAR'.
+- [x] STORY 2: Remover o botão 'Mídia Kit 2026' da Home.
+- [x] STORY 3: Configurar o botão 'VER IMPACTO' para ancorar com scroll suave em `#destinos-estruturados`.
+- [x] STORY 4: Remover a seção 'Parceiros & Realizadores' (Logos institucionais) da página principal.
+- [x] STORY 5: Ajustar o CSS do vídeo da fita de cinema (FilmStrip) usando `object-position: top` (ou `50% 20%`) para descer o enquadramento e não cortar o rosto das pessoas.
 
 ### Epic 2: Próximos Eventos (Atualização de Dados e Nomenclaturas)
 - [x] STORY 6: Remover a exibição de todas as datas dos próximos eventos.
