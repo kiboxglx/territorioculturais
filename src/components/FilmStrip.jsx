@@ -52,7 +52,7 @@ const FilmStrip = () => {
                                     loop
                                     muted
                                     playsInline
-                                    className="w-full h-full object-cover object-center opacity-50 transition-all duration-700 group-hover:opacity-80"
+                                    className="w-full h-full object-cover filmstrip-video opacity-50 transition-all duration-700 group-hover:opacity-80"
                                     style={{ filter: 'sepia(0.4) contrast(1.1) brightness(0.75) saturate(0.6)' }}
                                     aria-hidden="true"
                                 />

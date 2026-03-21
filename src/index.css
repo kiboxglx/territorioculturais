@@ -681,3 +681,7 @@ article[aria-label] {
     display: none;
   }
 }
+
+.filmstrip-video {
+  object-position: 50% 20%;
+}
