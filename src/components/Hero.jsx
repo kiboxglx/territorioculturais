@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ProgressiveImage from './ProgressiveImage';
 
@@ -90,6 +90,22 @@ const Hero = ({ onContactClick }) => {
     const [videoLoaded, setVideoLoaded] = useState(false);
     const [orbitalRadius, setOrbitalRadius] = useState(200);
     const videoRef = useRef(null);
+    const reduceMotion = useReducedMotion();
+
+    // Memoiza estilos dos itens orbitais — evita recalcular em cada render
+    const itemStyles = useMemo(() =>
+        circleItems.map((_, index) => {
+            const angle = (index * 360) / circleItems.length;
+            const x = Math.cos((angle * Math.PI) / 180) * orbitalRadius;
+            const y = Math.sin((angle * Math.PI) / 180) * orbitalRadius;
+            return {
+                willChange: 'transform',
+                position: 'absolute',
+                left: `calc(50% + ${x}px - 40px)`,
+                top: `calc(50% + ${y}px - 40px)`,
+            };
+        }),
+    [orbitalRadius]);
 
     // Calcula radius do orbital fora do render (evita layout read em cada frame)
     useEffect(() => {
@@ -324,32 +340,23 @@ const Hero = ({ onContactClick }) => {
                         {/* Anel orbital animado */}
                         <motion.div
                             animate={{ rotate: [0, 360] }}
-                            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                            transition={reduceMotion ? { duration: 0 } : { duration: 60, repeat: Infinity, ease: "linear" }}
                             style={{ willChange: 'transform' }}
                             className="absolute inset-0 z-10"
                             aria-hidden="true"
                         >
                             {circleItems.map((item, index) => {
-                                const angle = (index * 360) / circleItems.length;
-                                const x = Math.cos((angle * Math.PI) / 180) * orbitalRadius;
-                                const y = Math.sin((angle * Math.PI) / 180) * orbitalRadius;
-
                                 return (
                                     <motion.div
                                         key={item.id}
                                         initial={{ opacity: 0, scale: 0 }}
-                                        animate={{ opacity: 1, scale: 1, rotate: [0, -360] }}
+                                        animate={{ opacity: 1, scale: 1, rotate: reduceMotion ? 0 : [0, -360] }}
                                         transition={{
                                             opacity: { delay: 0.1 * index, duration: 0.5 },
                                             scale: { delay: 0.1 * index, duration: 0.5 },
-                                            rotate: { duration: 60, repeat: Infinity, ease: "linear" }
+                                            rotate: { duration: 60, repeat: reduceMotion ? 0 : Infinity, ease: "linear" }
                                         }}
-                                        style={{
-                                            willChange: 'transform',
-                                            position: 'absolute',
-                                            left: `calc(50% + ${x}px - 40px)`,
-                                            top: `calc(50% + ${y}px - 40px)`,
-                                        }}
+                                        style={itemStyles[index]}
                                         className="relative group cursor-pointer"
                                         onClick={() => setSelectedItem(item)}
                                         onMouseEnter={() => setSelectedItem(item)}
@@ -517,7 +524,7 @@ const Hero = ({ onContactClick }) => {
                 </span>
                 <motion.div
                     animate={{ y: [0, 8, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.8 }}
+                    transition={reduceMotion ? { duration: 0 } : { repeat: Infinity, duration: 1.8 }}
                     className="w-px h-8"
                     style={{ background: 'linear-gradient(to bottom, var(--gold), transparent)' }}
                 />

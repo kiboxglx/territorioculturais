@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ContactModal = ({ isOpen, onClose, triggerRef }) => {
@@ -73,20 +73,18 @@ const ContactModal = ({ isOpen, onClose, triggerRef }) => {
             document.getElementById(`modal-${firstErrName}`)?.focus();
             return;
         }
-        console.log('Form submitted for', persona, ':', formData);
         alert('Obrigado! Nossa equipe entrará em contato em breve.');
         handleClose();
     };
 
-    const handleClose = () => {
+    const handleClose = useCallback(() => {
         setStep(1);
         setPersona(null);
         setErrors({});
         setFormData({ name: '', company: '', email: '', phone: '', interest: '', city: '', budget: '' });
         onClose();
-        // Retorna foco ao elemento que abriu o modal (WCAG 2.4.3)
         setTimeout(() => triggerRef?.current?.focus(), 50);
-    };
+    }, [onClose, triggerRef]);
 
     if (!isOpen) return null;
 

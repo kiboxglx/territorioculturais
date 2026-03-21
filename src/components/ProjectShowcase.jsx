@@ -177,11 +177,13 @@ const ProjectSection = ({ title, projects, id }) => {
     );
 };
 
+// Filtro estático — calculado uma vez fora do componente (projects nunca muda em runtime)
+const realizedProjects = projects.filter(p => p.category === 'realized');
+
 /* ─────────────────────────────────────────────────────────────────
    Componente Principal
 ───────────────────────────────────────────────────────────────── */
 const ProjectShowcase = () => {
-    const realizedProjects = projects.filter(p => p.category === 'realized');
 
     return (
         <section

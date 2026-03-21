@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -69,9 +69,10 @@ const GalleryPage = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const filteredImages = filter === 'todos'
-        ? galleryImages
-        : galleryImages.filter(img => img.category === filter);
+    const filteredImages = useMemo(
+        () => filter === 'todos' ? galleryImages : galleryImages.filter(img => img.category === filter),
+        [filter]
+    );
 
     return (
         <main className="bg-charcoal min-h-screen text-white font-manrope selection:bg-primary selection:text-charcoal">

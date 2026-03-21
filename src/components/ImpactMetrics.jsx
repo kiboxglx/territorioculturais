@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
 import { Briefcase, Users, TrendingUp } from 'lucide-react';
 
 export const AnimatedCounter = ({ value, suffix = "" }) => {

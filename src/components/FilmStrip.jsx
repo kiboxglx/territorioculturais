@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 const labels = [
     "Criar", "Comunicar", "Circular", "Formar",
@@ -19,6 +19,7 @@ const timelineVideos = labels.map((year, i) => ({
 
 const FilmStrip = () => {
     const track = [...timelineVideos, ...timelineVideos];
+    const reduceMotion = useReducedMotion();
 
     return (
         <section
@@ -41,8 +42,8 @@ const FilmStrip = () => {
                 <div className="flex overflow-hidden relative z-20">
                     <motion.div
                         className="flex"
-                        animate={{ x: ["0%", "-50%"] }}
-                        transition={{ repeat: Infinity, duration: 180, ease: "linear" }}
+                        animate={reduceMotion ? { x: '0%' } : { x: ["0%", "-50%"] }}
+                        transition={reduceMotion ? {} : { repeat: Infinity, duration: 180, ease: "linear" }}
                         style={{ width: "fit-content" }}
                     >
                         {track.map((item, i) => (
