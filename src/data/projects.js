@@ -197,17 +197,17 @@ export const projects = [
         subtitle: "Cinema e Escola",
         heroImage: "/images/projects/luz-imagem-educacao.webp",
         fallbackImage: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
-        incentiveLaw: "Lei Paulo Gustavo",
+        incentiveLaw: "LPG (Lei Paulo Gustavo)",
         status: "Realizado",
         category: "realized",
         progress: 100,
         quotaAvailable: "Edição Concluída",
-        estimatedAudience: "10 Escolas",
-        regionalImpact: "Alfabetização Audiovisual",
-        description: "Mostras cinematográficas itinerantes voltadas para escolas estaduais de Patos de Minas, com foco na formação cultural e audiovisual de jovens.",
-        institutionalRelations: "Secretarias Municipais de Educação.",
-        governance: "Projeto pedagógico alinhado à BNCC.",
-        locationLabel: "📍 Patos de Minas, MG",
+        estimatedAudience: "1.500 alunos",
+        regionalImpact: "Alfabetização Audiovisual em Escolas Públicas",
+        description: "Mostras cinematográficas itinerantes voltadas para escolas estaduais de Patos de Minas, com foco na formação cultural e audiovisual de jovens. Atividades educativas com exibição de filmes, oficinas de iniciação audiovisual e capacitação de professores para uso da linguagem cinematográfica em sala de aula.",
+        institutionalRelations: "Patrocínio: Prefeitura Municipal de Patos de Minas via LPG / Ministério da Cultura. Parceria com Secretarias Municipais de Educação.",
+        governance: "Projeto pedagógico alinhado à BNCC. Prestação de contas integral via LPG/SECULT.",
+        locationLabel: "📍 Patos de Minas - MG",
         city: "patos-de-minas",
         seoKeywords: ["Luz Imagem Educação", "Cinema na Escola", "Educação Audiovisual", "Patos de Minas"],
         impactMetrics: {
@@ -218,8 +218,16 @@ export const projects = [
         documents: [],
         details: [
             {
-                title: "Workshops Docentes",
-                content: "Capacitação de professores para uso de vídeo em sala de aula."
+                title: "Mostras Itinerantes",
+                content: "Exibições cinematográficas em 10 escolas estaduais de Patos de Minas, levando o cinema brasileiro para dentro das salas de aula e pátios escolares."
+            },
+            {
+                title: "Formação de Professores",
+                content: "Capacitação de docentes para uso da linguagem audiovisual como ferramenta pedagógica, alinhada à Base Nacional Comum Curricular (BNCC)."
+            },
+            {
+                title: "Oficinas de Iniciação Audiovisual",
+                content: "Atividades práticas de produção audiovisual com alunos da rede pública, estimulando criatividade, expressão cultural e identidade territorial."
             }
         ]
     },
