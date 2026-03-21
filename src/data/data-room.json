@@ -150,7 +150,6 @@
     {
       "id": "event-1",
       "title": "1º Festival de Cinema de Grão Mogol",
-      "date": "04 a 09 de Maio",
       "location": "Grão Mogol - MG",
       "image": "/events/festival-cinema-grao-mogol.png",
       "logo": "/events/logo-festival-cinema-grao-mogol.png",
@@ -159,8 +158,7 @@
     },
     {
       "id": "event-2",
-      "title": "1º Fórum Internacional de Enoturismo",
-      "date": "14 a 16 de Agosto",
+      "title": "Fórum de Enoturismo do Norte de Minas Gerais",
       "location": "Grão Mogol - MG",
       "image": "/events/forum-enoturismo.png",
       "logo": "/events/logo-forum-enoturismo.png",
@@ -169,9 +167,8 @@
     },
     {
       "id": "event-3",
-      "title": "1º Encontro Cultural da Uva e do Vinho",
-      "date": "10 a 13 de Setembro",
-      "location": "Grão Mogol - MG",
+      "title": "Encontro Cultural da Uva e do Vinho 🍷",
+      "location": "Norte de Minas - MG",
       "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=2070&auto=format&fit=crop",
       "logo": "/events/logo-encontro-uva-vinho.png",
       "bio": "Evento de impacto econômico e cultural com projeção de 4 mil pessoas, geração de 280 empregos diretos e 100 mil impactos de mídia. Uma vitrine do potencial vitivinícola do Norte de Minas para o Brasil e o mundo.",
@@ -179,8 +176,7 @@
     },
     {
       "id": "event-4",
-      "title": "Mostra de Cinema Itinerante (Espinhaço)",
-      "date": "Setembro a Novembro",
+      "title": "Mostra de Cinema Itinerante da Cordilheira do Espinhaço",
       "location": "Ouro Branco, Serro, Porteirinha",
       "image": "/events/mostra-itinerante.png",
       "logo": "/events/logo-mostra-cinema.png",
