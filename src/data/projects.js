@@ -156,16 +156,16 @@ export const projects = [
         id: "cineclube-vemve",
         slug: "cineclube-vemve",
         title: "Cineclube Vemvê",
-        subtitle: "Democratização do Acesso",
+        subtitle: "2 a 7 de Junho | UNIPAM, Patos de Minas",
         heroImage: "/images/projects/cineclube-vemve.webp",
         fallbackImage: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200&auto=format&fit=crop",
         incentiveLaw: "PNAB",
         status: "Realizado",
-        estimatedAudience: "2.000 Jovens",
-        regionalImpact: "Inclusão Social e Formação de Público",
-        description: "Mostra cinematográfica permanente dedicada à formação de público para o cinema brasileiro, promovendo sessões acessíveis e reflexivas junto à comunidade.",
-        institutionalRelations: "Rede estadual de cineclubes e coletivos locais.",
-        governance: "Prestação de contas simplificada e impacto direto na ponta.",
+        estimatedAudience: "2.000 pessoas",
+        regionalImpact: "Formação de Público para Cinema Brasileiro",
+        description: "Evento de mostras cinematográficas realizado no Centro Universitário de Patos de Minas (UNIPAM), de 2 a 7 de junho. 12 mostras gratuitas com 24 produções, percorrendo 6 ciclos temáticos — do Cinema Mineiro aos Clássicos Brasileiros — conectando o interior de Minas Gerais ao cenário global.",
+        institutionalRelations: "Patrocínio: Prefeitura Municipal de Patos de Minas via Política Nacional Aldir Blanc (PNAB) / Ministério da Cultura. Produção de Rafael Caldas.",
+        governance: "Prestação de contas integral via PNAB/SECULT. 12 mostras gratuitas com entrada aberta ao público.",
         locationLabel: "📍 Patos de Minas, MG",
         city: "patos-de-minas",
         seoKeywords: ["Cineclube Vemvê", "Cineclube Patos de Minas", "Inclusão Social", "Cultura Norte de Minas"],
@@ -177,8 +177,16 @@ export const projects = [
         documents: [],
         details: [
             {
-                title: "Sessões Comentadas",
-                content: "Exibições seguidas de debates enriquecedores com a comunidade."
+                title: "6 Ciclos Temáticos",
+                content: "Um Século de Cinema Mineiro · Clássicos do Cinema Brasileiro · O Cinema Negro · Códigos da Natureza · Minha Música Filme · Cine Território."
+            },
+            {
+                title: "Manifestações Culturais",
+                content: "11 apresentações musicais de cultura popular: Aldeia Xucuru-Kariri, Fanfarra de São Gonçalo do Abaeté, Conservatório Municipal de Patos de Minas, Banda Dino Patense, Slam Phatos e Folia das Mulheres."
+            },
+            {
+                title: "Master Class com Vinicius de Oliveira",
+                content: "Workshop 'A Trajetória do Cinema Brasileiro e sua Importância Cultural', seguido de exibição de 'Ainda Estou Aqui' (Walter Salles)."
             }
         ]
     },
@@ -229,9 +237,9 @@ export const projects = [
         quotaAvailable: "Edição Concluída",
         estimatedAudience: "5.000 espectadores",
         regionalImpact: "Formação de Público e Educação Cultural",
-        description: "Festival competitivo de mostras cinematográficas de Patos de Minas e da Mesorregião do Alto Paranaíba e Triângulo Mineiro.",
-        institutionalRelations: "Apoio: Caminhos do Cerrado, Balaio de Arte & Cultura, Orquestra Filarmônica.",
-        governance: "Execução exemplar com 100% de transparência municipal.",
+        description: "Festival de cinema realizado no Teatro Municipal Leão de Formosa, em Patos de Minas, de 9 a 11 de maio. A Mostra Competitiva reuniu 24 produções em 5 programas com curtas e médias-metragens de 10 cidades da Mesorregião do Triângulo Mineiro e Alto Paranaíba.",
+        institutionalRelations: "Patrocínio: Prefeitura Municipal de Patos de Minas via Edital Paulo Gustavo / Ministério da Cultura. Parceria com Balaio de Arte & Cultura e Orquestra Filarmônica de Patos de Minas.",
+        governance: "Produção de Rafael Caldas. Prestação de contas integral via Edital Paulo Gustavo / SECULT. 100% de transparência na execução municipal.",
         locationLabel: "📍 Patos de Minas, MG",
         city: "patos-de-minas",
         seoKeywords: ["Cine Território", "Lei Paulo Gustavo Patos de Minas", "Cinema Comunitário", "Formação de Público"],
@@ -241,6 +249,19 @@ export const projects = [
             socialReturn: "Educacional"
         },
         documents: [],
-        details: []
+        details: [
+            {
+                title: "Mostra Competitiva Regional",
+                content: "24 produções de 10 cidades da Mesorregião do Triângulo Mineiro e Alto Paranaíba, distribuídas em 5 programas de curtas e médias-metragens."
+            },
+            {
+                title: "Cerimônia de Abertura",
+                content: "Apresentação folclórica da Aldeia Indígena Xucuru-Kariri e homenagem aos artistas patenses Tatiana Cruz (atriz e bailarina) e Erick Maximiano (cineasta)."
+            },
+            {
+                title: "Cerimônia de Encerramento",
+                content: "Entrega do Troféu Cine Território a Regina Maria Faria Carvalho. Show de violão clássico com o grupo Os Hobbits do Conservatório Municipal de Patos de Minas."
+            }
+        ]
     }
 ];
