@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const DestinoEstruturado = () => {
     return (
-        <section className="py-24 relative overflow-hidden flex items-center justify-center snap-section min-h-[500px]">
+        <section id="destinos-estruturados" className="py-24 relative overflow-hidden flex items-center justify-center snap-section min-h-[500px]">
             {/* Imagem de fundo — Cordilheira do Espinhaço */}
             <div className="absolute inset-0 z-0">
                 <img

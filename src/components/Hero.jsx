@@ -274,12 +274,12 @@ const Hero = ({ onContactClick }) => {
                     >
                         {/* CTA 1 — Patrocinador: Ver Impacto Social */}
                         <a
-                            href="#projetos"
+                            href="#destinos-estruturados"
                             id="cta-ver-impacto"
                             className="btn-primary"
                             onClick={(e) => {
                                 e.preventDefault();
-                                document.getElementById('projetos')?.scrollIntoView({ behavior: 'smooth' });
+                                document.getElementById('destinos-estruturados')?.scrollIntoView({ behavior: 'smooth' });
                             }}
                             aria-label="Ver métricas de impacto social — para patrocinadores"
                         >
