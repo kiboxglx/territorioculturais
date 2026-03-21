@@ -29,3 +29,17 @@
 - [x] STORY 13: Atualizar leis e locais dos três eventos para Patos de Minas. Configurar 'Cine Território' (LPG), 'Luz - Imagem - Educação' (LPG) e 'Cineclube Vemvê' (PNAB).
 - [x] STORY 14: Conferir contexto do projeto que esta na pagina e dos realeses (do arquivo PDF fornecido) nas páginas de detalhe ou expansão dos eventos 'Cine Território' e 'Cineclube Vemvê' C:\Users\CLIENTE\Desktop\PROJETOS\Territorio Culturais\public\events\Realese Cineclubê Vemvê.pdf
 C:\Users\CLIENTE\Desktop\PROJETOS\Territorio Culturais\public\events\RELEASE - Cine Território divulga programação.pdf.
+
+### Epic 4: Card Completo - Eventos Realizados (Dados e Estrutura)
+- [x] STORY 13: Configurar Card "Cine Território". Local: "Patos de Minas - MG". Lei: "LPG (Lei Paulo Gustavo)". Conteúdo: Inserir resumo do release (Mostra com 24 produções, 10 cidades e Troféu Cine Território).
+- [x] STORY 14: Configurar Card "Cineclube Vemvê". Local: "Patos de Minas - MG (Campus UNIPAM)". Lei: "PNAB (Política Nacional Aldir Blanc)". Conteúdo: Inserir resumo das 12 mostras cinematográficas e 6 ciclos temáticos (Cinema Negro, Mineiro, etc.).
+- [x] STORY 15: Configurar Card "Luz - Imagem - Educação". Local: "Patos de Minas - MG". Lei: "LPG (Lei Paulo Gustavo)". Conteúdo: Inserir resumo de atividades educativas e formação de público.
+
+### Epic 5: Reestruturação Visual - Card Longo (Sponsor Proof)
+- [ ] STORY 16: Refatoração de UI/UX. No componente de 'Eventos Realizados', crie uma variante de 'Card Longo' (LongCard). 
+- [ ] STORY 17: Layout do LongCard. O card deve ser verticalmente expandido, exibindo na seguinte ordem: 
+    1. Imagem/Thumbnail do evento.
+    2. Título, Local (Ícone + Texto), Badge de Lei (LPG/PNAB).
+    3. Resumo do Release (mínimo de 3 linhas de texto visíveis).
+    4. **NOVO: Grid de Patrocinadores (SponsorGrid).**
+- [ ] STORY 18: Implementação do SponsorGrid. Localize o grid que contém as logos institucionais (LPG, Aldir Blanc, Prefeitura Patos de Minas) e insira-o **dentro do próprio LongCard**, logo abaixo do resumo do release. Ajuste o CSS para que os logos fiquem visíveis diretamente na Home, sem necessidade de hover ou clique
