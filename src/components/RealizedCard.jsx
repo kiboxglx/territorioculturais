@@ -5,27 +5,11 @@ import ProgressiveImage from './ProgressiveImage';
 import assetsManifest from '../data/assets-manifest.json';
 import './RealizedCard.css';
 
-const SPONSOR_MAP = {
-    'LPG (Lei Paulo Gustavo)': [
-        { label: 'Lei Paulo Gustavo', mod: 'lpg' },
-        { label: 'Ministério da Cultura', mod: 'minc' },
-        { label: 'Governo Federal', mod: '' },
-        { label: 'Prefeitura Patos de Minas', mod: 'prefeitura' },
-    ],
-    'PNAB (Política Nacional Aldir Blanc)': [
-        { label: 'PNAB · Aldir Blanc', mod: 'pnab' },
-        { label: 'Ministério da Cultura', mod: 'minc' },
-        { label: 'Governo Federal', mod: '' },
-        { label: 'Prefeitura Patos de Minas', mod: 'prefeitura' },
-    ],
-};
-
 const RealizedCard = ({ project, onOpenModal }) => {
     const assetData = assetsManifest.projects[project.id] || {};
     const mainImg = assetData.main || project.heroImage;
     const fallbackImg = assetData.fallback || project.fallbackImage;
     const seoAlt = assetData.alt || `${project.title} — ${project.locationLabel?.replace('📍 ', '')}`;
-    const sponsors = project.sponsors || SPONSOR_MAP[project.incentiveLaw] || [];
 
     return (
         <div
@@ -70,22 +54,6 @@ const RealizedCard = ({ project, onOpenModal }) => {
                     <div className="realized-card__location">
                         <MapPin size={16} className="realized-card__location-icon" aria-hidden="true" />
                         <span className="realized-card__location-text">{project.location || project.locationLabel?.replace('📍 ', '')}</span>
-                    </div>
-                </div>
-
-                <div className="realized-card__divider" aria-hidden="true" />
-
-                <div className="realized-card__sponsor-grid">
-                    <span className="realized-card__sponsor-label">Realização &amp; Patrocínio</span>
-                    <div className="realized-card__sponsor-logos">
-                        {sponsors.map((s) => (
-                            <span
-                                key={s.label}
-                                className={`sponsor-badge${s.mod ? ` sponsor-badge--${s.mod}` : ''}`}
-                            >
-                                {s.label}
-                            </span>
-                        ))}
                     </div>
                 </div>
 
