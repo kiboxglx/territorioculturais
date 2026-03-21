@@ -90,8 +90,10 @@ const partners = [
    DADOS: Tags de Eixos de Atuação
 ───────────────────────────────────────────── */
 const axisTags = [
-    "Cinema", "Enoturismo", "Moda", "Acessibilidade",
-    "Governança", "Formação", "Economia Criativa"
+    "CRIAR → COMUNICAR",
+    "CIRCULAR → FORMAR",
+    "ESTRUTURAR → FINANCIAR",
+    "DESENVOLVER → MONITORAR",
 ];
 
 /* ─────────────────────────────────────────────
