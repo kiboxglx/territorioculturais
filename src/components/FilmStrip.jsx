@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
 const labels = [
@@ -20,9 +20,31 @@ const timelineVideos = labels.map((year, i) => ({
 const FilmStrip = () => {
     const track = [...timelineVideos, ...timelineVideos];
     const reduceMotion = useReducedMotion();
+    const stripRef = useRef(null);
+
+    // Quando a fita entrar na viewport, força play em todos os vídeos
+    useEffect(() => {
+        const container = stripRef.current;
+        if (!container) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    container.querySelectorAll('video').forEach(v => {
+                        v.play().catch(() => {});
+                    });
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        observer.observe(container);
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <section
+            ref={stripRef}
             className="relative overflow-hidden bg-charcoal h-[350px] md:h-[450px] flex items-center justify-center z-10"
             aria-label="Carrossel visual de impacto: Película de registros cinematográficos"
         >
@@ -58,7 +80,7 @@ const FilmStrip = () => {
                                     loop
                                     muted
                                     playsInline
-                                    preload="none"
+                                    preload="metadata"
                                     className="w-full h-full object-cover filmstrip-video opacity-50 transition-[opacity] duration-700 group-hover:opacity-80"
                                     style={{ filter: 'sepia(0.4) contrast(1.1) brightness(0.75) saturate(0.6)' }}
                                     aria-hidden="true"
