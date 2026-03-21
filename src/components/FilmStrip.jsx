@@ -42,7 +42,7 @@ const FilmCell = ({ webm, mp4, label }) => {
                 muted
                 playsInline
                 preload="none"
-                className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity duration-700 group-hover:opacity-80"
+                className="absolute inset-0 w-full h-full object-cover object-top opacity-50 transition-opacity duration-700 group-hover:opacity-80"
                 style={{ filter: 'sepia(0.4) contrast(1.1) brightness(0.75) saturate(0.6)' }}
                 aria-hidden="true"
             >

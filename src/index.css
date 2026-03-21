@@ -748,33 +748,28 @@ article[aria-label] {
   }
 }
 
-/* Animação CSS da fita
-   36 células × 500px = 18000px total
-   -50% = -9000px = exatamente metade (os 18 originais)
-   → loop seamless infinito */
 @keyframes filmroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
 }
 
 .filmstrip-track {
   display: flex;
-  /* largura explícita: 36 células mobile × 280px = 10080px */
   width: calc(36 * 280px);
-  animation: filmroll 180s linear infinite;
+  animation: filmroll 100s linear infinite !important;
   will-change: transform;
+  backface-visibility: hidden;
 }
+
 @media (min-width: 768px) {
   .filmstrip-track {
-    /* largura explícita: 36 células desktop × 500px = 18000px */
     width: calc(36 * 500px);
   }
 }
 
-/* Respeita preferência de movimento reduzido */
 @media (prefers-reduced-motion: reduce) {
   .filmstrip-track {
-    animation: none;
+    animation: filmroll 100s linear infinite !important;
   }
 }
 
