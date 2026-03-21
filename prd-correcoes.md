@@ -24,8 +24,8 @@
 - [x] STORY 10: Atualizar o evento de Cinema de Grão Mogol. Remover o termo "1º". Nome exato deve ser "Festival de Cinema de Grão Mogol". Manter o local como "Grão Mogol - MG".
 
 ### Epic 3: Eventos Realizados (Compliance e Releases)
-- [ ] STORY 11: Remover a palavra 'sucesso' de todos os cards de eventos realizados.
-- [ ] STORY 12: Descer o layout do card de eventos realizados na página principal para garantir que os logos das leis/patrocinadores fiquem 100% visíveis na home.
-- [ ] STORY 13: Atualizar leis e locais dos três eventos para Patos de Minas. Configurar 'Cine Território' (LPG), 'Luz - Imagem - Educação' (LPG) e 'Cineclube Vemvê' (PNAB).
-- [ ] STORY 14: Conferir contexto do projeto que esta na pagina e dos realeses (do arquivo PDF fornecido) nas páginas de detalhe ou expansão dos eventos 'Cine Território' e 'Cineclube Vemvê' C:\Users\CLIENTE\Desktop\PROJETOS\Territorio Culturais\public\events\Realese Cineclubê Vemvê.pdf
+- [x] STORY 11: Remover a palavra 'sucesso' de todos os cards de eventos realizados.
+- [x] STORY 12: Descer o layout do card de eventos realizados na página principal para garantir que os logos das leis/patrocinadores fiquem 100% visíveis na home.
+- [x] STORY 13: Atualizar leis e locais dos três eventos para Patos de Minas. Configurar 'Cine Território' (LPG), 'Luz - Imagem - Educação' (LPG) e 'Cineclube Vemvê' (PNAB).
+- [x] STORY 14: Conferir contexto do projeto que esta na pagina e dos realeses (do arquivo PDF fornecido) nas páginas de detalhe ou expansão dos eventos 'Cine Território' e 'Cineclube Vemvê' C:\Users\CLIENTE\Desktop\PROJETOS\Territorio Culturais\public\events\Realese Cineclubê Vemvê.pdf
 C:\Users\CLIENTE\Desktop\PROJETOS\Territorio Culturais\public\events\RELEASE - Cine Território divulga programação.pdf.
