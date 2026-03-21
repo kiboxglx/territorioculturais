@@ -238,8 +238,10 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 10px;
+  font-family: var(--font-body, 'Manrope', sans-serif);
   text-decoration: none;
   transition: border-color 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(4px);
 }
 
 .realized-card__cta:hover {
