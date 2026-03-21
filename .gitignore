@@ -39,12 +39,13 @@ _bmad-output/
 
 # Large media files (use CDN/LFS instead)
 *.MP4
-*.mp4
 *.MOV
 *.mov
 *.avi
-*.webm
 
 # PDFs (large assets — keep only in public/ if needed but don't commit)
 # Uncomment the line below if you want to exclude all PDFs:
 # *.pdf
+
+.vercel
+.env*.local
