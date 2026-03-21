@@ -59,6 +59,16 @@ const RealizedCard = ({ project, onOpenModal }) => {
 
                 <div className="realized-card__divider" aria-hidden="true" />
 
+                {project.logosImage && (
+                    <div className="realized-card__logos-strip">
+                        <img
+                            src={project.logosImage}
+                            alt="Logos dos patrocinadores"
+                            className="realized-card__logos-img"
+                        />
+                    </div>
+                )}
+
                 <div className="realized-card__actions">
                     <Link
                         to={`/projeto/${project.slug}`}
