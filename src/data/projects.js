@@ -168,6 +168,7 @@ export const projects = [
         institutionalRelations: "Patrocínio: Prefeitura Municipal de Patos de Minas via Política Nacional Aldir Blanc (PNAB) / Ministério da Cultura. Produção de Rafael Caldas.",
         governance: "Prestação de contas integral via PNAB/SECULT. 12 mostras gratuitas com entrada aberta ao público.",
         locationLabel: "📍 Patos de Minas - MG (Campus UNIPAM)",
+        location: "Patos de Minas - MG (Campus UNIPAM)",
         city: "patos-de-minas",
         sponsors: [
             { label: "PNAB · Aldir Blanc", mod: "pnab" },
@@ -218,6 +219,7 @@ export const projects = [
         institutionalRelations: "Patrocínio: Prefeitura Municipal de Patos de Minas via LPG / Ministério da Cultura. Parceria com Secretarias Municipais de Educação.",
         governance: "Projeto pedagógico alinhado à BNCC. Prestação de contas integral via LPG/SECULT.",
         locationLabel: "📍 Patos de Minas - MG",
+        location: "Patos de Minas - MG",
         city: "patos-de-minas",
         sponsors: [
             { label: "Lei Paulo Gustavo", mod: "lpg" },
@@ -266,6 +268,7 @@ export const projects = [
         institutionalRelations: "Patrocínio: Prefeitura Municipal de Patos de Minas via Edital Paulo Gustavo / Ministério da Cultura. Parceria com Balaio de Arte & Cultura e Orquestra Filarmônica de Patos de Minas.",
         governance: "Produção de Rafael Caldas. Prestação de contas integral via Edital Paulo Gustavo / SECULT. 100% de transparência na execução municipal.",
         locationLabel: "📍 Patos de Minas - MG",
+        location: "Patos de Minas - MG",
         city: "patos-de-minas",
         sponsors: [
             { label: "Lei Paulo Gustavo", mod: "lpg" },
