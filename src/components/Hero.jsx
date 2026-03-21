@@ -75,18 +75,6 @@ const circleItems = [
 ];
 
 /* ─────────────────────────────────────────────
-   DADOS: Parceiros Institucionais
-───────────────────────────────────────────── */
-const partners = [
-    { name: "SEBRAE", role: "Parceiro Estratégico" },
-    { name: "ANCINE", role: "Registro Nº 63126" },
-    { name: "Lei Rouanet", role: "Incentivo Fiscal" },
-    { name: "Lei Paulo Gustavo", role: "Fomento Cultural" },
-    { name: "FUMAC", role: "Fundo Municipal" },
-    { name: "Prefeituras MG", role: "Poder Público" },
-];
-
-/* ─────────────────────────────────────────────
    DADOS: Tags de Eixos de Atuação
 ───────────────────────────────────────────── */
 const axisTags = [
@@ -320,63 +308,6 @@ const Hero = ({ onContactClick }) => {
                         >
                             Quem Somos
                         </Link>
-                    </motion.div>
-
-                    {/* ── Faixa de Parceiros ───────────────────────────── */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, delay: 0.9 }}
-                        className="w-full max-w-xl"
-                        aria-label="Parceiros e credenciais institucionais"
-                    >
-                        {/* Separador */}
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="h-px flex-1" style={{ background: 'rgba(255,215,0,0.12)' }} />
-                            <span
-                                className="font-mono text-[0.55rem] uppercase tracking-[0.2em]"
-                                style={{ color: 'rgba(255,255,255,0.3)', fontFamily: 'var(--font-mono)' }}
-                            >
-                                Parceiros &amp; Realizadores
-                            </span>
-                            <div className="h-px flex-1" style={{ background: 'rgba(255,215,0,0.12)' }} />
-                        </div>
-
-                        {/* Grid de parceiros */}
-                        <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                            {partners.map((partner) => (
-                                <div
-                                    key={partner.name}
-                                    className="group relative px-3 py-2 cursor-default transition-all duration-300"
-                                    style={{
-                                        border: '1px solid rgba(255,255,255,0.08)',
-                                        borderRadius: '2px',
-                                        background: 'rgba(255,255,255,0.03)',
-                                    }}
-                                    title={partner.role}
-                                >
-                                    {/* Hover: glow + borda dourada */}
-                                    <div
-                                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                                        style={{
-                                            background: 'rgba(255,215,0,0.05)',
-                                            border: '1px solid rgba(255,215,0,0.30)',
-                                            borderRadius: '2px',
-                                            boxShadow: '0 0 14px rgba(255,215,0,0.10)',
-                                        }}
-                                    />
-                                    <span
-                                        className="relative z-10 font-mono font-bold text-[0.625rem] uppercase tracking-widest transition-colors duration-300 group-hover:text-gold"
-                                        style={{
-                                            color: 'rgba(255,255,255,0.45)',
-                                            fontFamily: 'var(--font-mono)',
-                                        }}
-                                    >
-                                        {partner.name}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
                     </motion.div>
                 </div>
 
