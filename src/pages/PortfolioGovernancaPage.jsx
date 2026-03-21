@@ -31,7 +31,7 @@ const PortfolioGovernancaPage = () => {
             <section className="relative pt-40 pb-20 overflow-hidden bg-charcoal min-h-screen flex items-center">
                 <div className="absolute inset-0 z-0">
                     <ProgressiveImage 
-                        src="/images/hero/governanca.png"
+                        src="/images/hero/governanca.webp"
                         alt="Ambiente institucional premium e documentos oficiais — Eixo Governança e Estruturação"
                         className="w-full h-full"
                         imgClassName="object-cover"

@@ -31,7 +31,7 @@ const PortfolioEventosPage = () => {
             <section className="relative pt-40 pb-20 overflow-hidden bg-charcoal min-h-screen flex items-center">
                 <div className="absolute inset-0 z-0">
                     <ProgressiveImage 
-                        src="/images/hero/mostras.png"
+                        src="/images/hero/mostras.webp"
                         alt="Exposição cultural e eventos de impacto social — Mostras e Festivais"
                         className="w-full h-full"
                         imgClassName="object-cover"
@@ -50,7 +50,7 @@ const PortfolioEventosPage = () => {
                         className="max-w-5xl mx-auto text-center"
                     >
                         <span className="text-primary uppercase tracking-[0.5em] text-xs font-bold mb-6 block lg:mt-0 mt-20">Página 2</span>
-                        <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl mb-8 leading-tight">
+                        <h1 className="font-playfair fluid-h2 mb-8 leading-tight">
                             A Territórios Culturais LTDA atua na concepção, curadoria, planejamento e <span className="italic text-primary font-light">execução de eventos culturais</span>
                         </h1>
                         

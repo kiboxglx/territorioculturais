@@ -37,21 +37,21 @@
     },
     "cine-territorio": {
       "id": "cine-territorio",
-      "main": "/images/projects/cine-territorio.jpg",
+      "main": "/images/projects/cine-territorio.webp",
       "placeholder": "",
       "fallback": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200",
       "alt": "Cine Território — Festival competitivo de mostras cinematográficas de Patos de Minas."
     },
     "cineclube-vemve": {
       "id": "cineclube-vemve",
-      "main": "/images/projects/cineclube-vemve.png",
+      "main": "/images/projects/cineclube-vemve.webp",
       "placeholder": "",
       "fallback": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200",
       "alt": "Cineclube Vemvê — Mostra cinematográfica permanente dedicada à formação de público para o cinema brasileiro."
     },
     "luz-imagem-educacao": {
       "id": "luz-imagem-educacao",
-      "main": "/images/projects/luz-imagem-educacao.jpg",
+      "main": "/images/projects/luz-imagem-educacao.webp",
       "placeholder": "",
       "fallback": "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200",
       "alt": "Luz, Imagem, Educação — Mostras cinematográficas itinerantes para escolas estaduais de Patos de Minas."

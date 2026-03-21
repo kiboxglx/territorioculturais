@@ -22,7 +22,7 @@ const circleItems = [
         subtitle: "Mostras, Festivais e Eventos Culturais",
         shortText: "Aqui a cultura ganha espaço público, ativa público e movimenta economia local.",
         function: "Conectar público, artistas e território.",
-        image: "/images/hero/mostras.png"
+        image: "/images/hero/mostras.webp"
     },
     {
         id: "03",
@@ -30,7 +30,7 @@ const circleItems = [
         subtitle: "Oficinas, Congressos, Fóruns",
         shortText: "Aqui se constrói autonomia técnica e qualificação profissional.",
         function: "Criar capacidade instalada no território.",
-        image: "/images/hero/formacao.png"
+        image: "/images/hero/formacao.webp"
     },
     {
         id: "04",
@@ -46,7 +46,7 @@ const circleItems = [
         subtitle: "MATC, Sistemas Municipais, Governança",
         shortText: "Aqui a cultura deixa de ser evento e se torna política pública permanente.",
         function: "Implantar estrutura institucional duradoura.",
-        image: "/images/hero/governanca.png"
+        image: "/images/hero/governanca.webp"
     },
     {
         id: "06",
@@ -70,7 +70,7 @@ const circleItems = [
         subtitle: "Análise contínua",
         shortText: "Aqui a política cultural é analisada, acompanhada e permanentemente aperfeiçoada.",
         function: "Garantir continuidade, inteligência e evolução institucional.",
-        image: "/images/hero/cine1.png"
+        image: "/images/hero/cine1.webp"
     }
 ];
 
@@ -88,7 +88,16 @@ const ecosystemSteps = [
 const Hero = ({ onContactClick }) => {
     const [selectedItem, setSelectedItem] = useState(null);
     const [videoLoaded, setVideoLoaded] = useState(false);
+    const [orbitalRadius, setOrbitalRadius] = useState(200);
     const videoRef = useRef(null);
+
+    // Calcula radius do orbital fora do render (evita layout read em cada frame)
+    useEffect(() => {
+        const update = () => setOrbitalRadius(window.innerWidth < 768 ? 140 : 200);
+        update();
+        window.addEventListener('resize', update, { passive: true });
+        return () => window.removeEventListener('resize', update);
+    }, []);
 
     // Garante play do vídeo após interação do usuário (mobile policy)
     useEffect(() => {
@@ -103,6 +112,8 @@ const Hero = ({ onContactClick }) => {
             className="snap-section relative bg-charcoal overflow-hidden min-h-screen pt-20"
             aria-label="Seção principal — Territórios Culturais"
         >
+            {/* Âncora de skip link — acessibilidade WCAG 2.4.1 (sem aria-hidden: AT precisa do destino) */}
+            <span id="main-content" tabIndex={-1} className="sr-only" />
 
             {/* ── CAMADA 1: Vídeo em background ─────────────────── */}
             <div className="absolute inset-0 z-0" aria-hidden="true">
@@ -118,9 +129,11 @@ const Hero = ({ onContactClick }) => {
                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
                     style={{
                         filter: 'grayscale(0.85) contrast(1.15) brightness(0.55)',
+                        objectPosition: 'center 20%',
                     }}
                 >
-                    <source src="/videoshome (1).MP4" type="video/mp4" />
+                    <source src="/videos fita/webm/3.webm" type="video/webm" />
+                    <source src="/videos fita/mp4/3.mp4"  type="video/mp4"  />
                 </video>
 
                 {/* Overlay multicamada — profundidade progressiva */}
@@ -231,7 +244,7 @@ const Hero = ({ onContactClick }) => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.65 }}
-                        className="flex flex-wrap items-center gap-y-2 gap-x-0 mb-8"
+                        className="flex flex-wrap items-center gap-y-2 gap-x-0 mb-8 md:flex md:flex-wrap ecosystem-flow-mobile"
                         aria-label="Fluxo do ecossistema cultural"
                     >
                         {ecosystemSteps.map((step, i, arr) => (
@@ -318,9 +331,8 @@ const Hero = ({ onContactClick }) => {
                         >
                             {circleItems.map((item, index) => {
                                 const angle = (index * 360) / circleItems.length;
-                                const radius = typeof window !== 'undefined' && window.innerWidth < 768 ? 140 : 200;
-                                const x = Math.cos((angle * Math.PI) / 180) * radius;
-                                const y = Math.sin((angle * Math.PI) / 180) * radius;
+                                const x = Math.cos((angle * Math.PI) / 180) * orbitalRadius;
+                                const y = Math.sin((angle * Math.PI) / 180) * orbitalRadius;
 
                                 return (
                                     <motion.div
@@ -332,8 +344,8 @@ const Hero = ({ onContactClick }) => {
                                             scale: { delay: 0.1 * index, duration: 0.5 },
                                             rotate: { duration: 60, repeat: Infinity, ease: "linear" }
                                         }}
-                                        style={{ willChange: 'transform' }}
                                         style={{
+                                            willChange: 'transform',
                                             position: 'absolute',
                                             left: `calc(50% + ${x}px - 40px)`,
                                             top: `calc(50% + ${y}px - 40px)`,

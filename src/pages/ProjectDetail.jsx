@@ -88,7 +88,7 @@ const ProjectDetail = ({ onOpenModal }) => {
                             </span>
                         </div>
 
-                        <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl leading-none mb-8 text-white max-w-6xl shadow-black drop-shadow-lg">
+                        <h1 className="font-playfair fluid-h1 leading-none mb-8 text-white max-w-6xl shadow-black drop-shadow-lg">
                             {project.title}
                         </h1>
                         <p className="text-xl md:text-2xl font-light text-white/90 max-w-3xl leading-relaxed drop-shadow-md">
@@ -194,6 +194,36 @@ const ProjectDetail = ({ onOpenModal }) => {
                         </div>
                     </div>
                 </section>
+
+                {/* Supporters / Apoiadores */}
+                {project.supportersImage && (
+                    <section className="py-20 border-t border-white/5" style={{ background: 'linear-gradient(180deg, #0e1515 0%, #111c1c 100%)' }}>
+                        <div className="container mx-auto px-8 max-w-5xl">
+                            <motion.div
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.7 }}
+                                className="text-center"
+                            >
+                                <span className="block text-xs font-bold uppercase tracking-[0.4em] text-primary/40 mb-3">Realização & Apoio</span>
+                                <h3 className="font-playfair text-2xl text-white/80 mb-10">Apoiadores do Projeto</h3>
+                                <div className="flex justify-center items-center px-4 py-4">
+                                    <img
+                                        src={project.supportersImage}
+                                        alt={`Apoiadores do projeto ${project.title}`}
+                                        className="max-w-full w-auto object-contain transition-all duration-500 hover:opacity-100"
+                                        style={{
+                                            maxHeight: '180px',
+                                            opacity: 0.85,
+                                            filter: 'brightness(2) contrast(0.9) drop-shadow(0 2px 12px rgba(255,220,60,0.08))',
+                                        }}
+                                    />
+                                </div>
+                            </motion.div>
+                        </div>
+                    </section>
+                )}
 
                 {/* Footer Simple */}
                 <footer className="bg-black py-12 px-8 border-t border-white/10 text-center text-white/30 text-xs uppercase tracking-widest font-manrope">

@@ -29,7 +29,7 @@ const Methodology = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="font-playfair text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-2"
+                            className="font-playfair fluid-h2 text-white leading-tight mb-2"
                         >
                             Sistema <br />
                             <span className="italic text-primary font-light text-3xl md:text-4xl lg:text-5xl">Territórios Culturais.</span>
@@ -95,7 +95,7 @@ const Methodology = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="font-playfair text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4"
+                            className="font-playfair fluid-h2 text-white leading-tight mb-4"
                         >
                             Metodologia <br />
                             <span className="italic text-primary font-light text-3xl md:text-4xl lg:text-5xl">MATC.</span>

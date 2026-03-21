@@ -5,6 +5,11 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Dark mode nativo: scrollbar, inputs e UI do browser combinam com o tema -->
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#111111" />
+
   <title>Territórios Culturais | Cultura como Ativo Estratégico</title>
   <meta name="description"
     content="Produtora e consultoria de desenvolvimento territorial conectando arte, gestão e impacto social. Transformamos projetos culturais em vetores de desenvolvimento." />
@@ -14,8 +19,7 @@
   <meta property="og:description"
     content="Da produção executiva à inteligência territorial. Projetos aprovados na Lei Rouanet e Lei Paulo Gustavo." />
   <meta property="og:type" content="website" />
-  <meta property="og:image"
-    content="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2940&auto=format&fit=crop" />
+  <meta property="og:image" content="/images/hero/cine1.webp" />
 
   <!-- Preconnect para performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +41,9 @@
 </head>
 
 <body>
+  <!-- Skip link: permite usuários de teclado/leitores de tela pular a navbar (WCAG 2.4.1) -->
+  <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
+
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>

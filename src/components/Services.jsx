@@ -10,7 +10,7 @@ const Services = () => {
             subtitle: "Produção cinematográfica, comunicação institucional e conteúdo estratégico para o setor público e privado.",
             description: "Atuamos na indústria cinematográfica brasileira, na produção audiovisual institucional e na criação de conteúdos digitais estratégicos, integrando narrativa, informação e identidade territorial com qualidade técnica e registro na ANCINE.",
             icon: "movie",
-            image: "/images/hero/cine1.png",
+            image: "/images/hero/cine1.webp",
             link: "/portfolio/cinema",
             buttonText: "Saiba Mais"
         },
@@ -20,7 +20,7 @@ const Services = () => {
             subtitle: "Curadoria, produção e execução de eventos culturais estruturados com impacto artístico, social e territorial.",
             description: "Planejamos e realizamos Mostras, Festivais e Eventos Culturais como instrumentos estratégicos de democratização do acesso, fortalecimento da economia criativa e valorização da identidade territorial, com organização técnica e responsabilidade administrativa.",
             icon: "festival",
-            image: "/images/hero/mostras.png",
+            image: "/images/hero/mostras.webp",
             link: "/portfolio-eventos",
             buttonText: "Saiba Mais"
         },
@@ -30,7 +30,7 @@ const Services = () => {
             subtitle: "Programas formativos voltados à profissionalização, autonomia técnica e fortalecimento estruturado do setor cultural.",
             description: "Realizamos oficinas, cursos, congressos e programas de capacitação voltados à gestão cultural, produção artística e estruturação de políticas públicas, promovendo qualificação técnica e geração de capacidade instalada no território.",
             icon: "school",
-            image: "/images/hero/formacao.png",
+            image: "/images/hero/formacao.webp",
             link: "/formacao",
             buttonText: "Saiba Mais"
         },
@@ -40,7 +40,7 @@ const Services = () => {
             subtitle: "Arquitetura técnica para organização administrativa, captação estratégica de recursos e consolidação permanente de políticas públicas culturais e turísticas.",
             description: "Estruturamos, regulamentamos e operacionalizamos sistemas como Transferegov.br, ISSQN Cultural, ICMS Patrimônio Cultural e ICMS Turismo, garantindo segurança jurídica, eficiência administrativa, aumento de pontuação técnica e ampliação de repasses financeiros.",
             icon: "account_balance",
-            image: "/images/hero/governanca.png",
+            image: "/images/hero/governanca.webp",
             link: "/portfolio-governanca",
             buttonText: "Saiba Mais"
         },
@@ -65,7 +65,7 @@ const Services = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="font-playfair text-5xl md:text-6xl text-white leading-tight"
+                        className="font-playfair fluid-h2 text-white leading-tight"
                     >
                         Portfólio de <i className="font-light text-white/70">Atuação</i>
                     </motion.h2>

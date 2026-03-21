@@ -203,7 +203,7 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  transition: all var(--transition-base);
+  transition: background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
 .badge-institutional:hover {
@@ -218,7 +218,7 @@ p {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
-  transition: all var(--transition-base);
+  transition: background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
   position: relative;
   overflow: hidden;
 }
@@ -283,7 +283,7 @@ p {
   padding: 0.875rem 2rem;
   border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
   text-decoration: none;
   white-space: nowrap;
 }
@@ -317,7 +317,7 @@ p {
   padding: 0.875rem 2rem;
   border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
   text-decoration: none;
   white-space: nowrap;
   backdrop-filter: blur(8px);
@@ -347,7 +347,7 @@ p {
   padding: 0.875rem 2rem;
   border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: background var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
   text-decoration: none;
   white-space: nowrap;
   backdrop-filter: blur(12px);
@@ -620,6 +620,17 @@ section {
   font-weight: 500;
   cursor: pointer;
   transition: color var(--transition-fast);
+  /* Unifica display de <a> e <button> */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-block: 0.5rem;
+  white-space: nowrap;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  line-height: 1;
 }
 
 .nav-link-premium:hover {
@@ -644,13 +655,7 @@ a:focus-visible {
   border-radius: 4px;
 }
 
-/* Touch targets mínimos — 44px — para links de nav */
-.nav-link-premium {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  padding-block: 0.5rem;
-}
+/* Touch targets mínimos — 44px — já incluídos em .nav-link-premium acima */
 
 /* Cursor pointer em todos os elementos clicáveis */
 [role="button"],
@@ -684,6 +689,13 @@ article[aria-label] {
 
 .filmstrip-video {
   object-position: 50% 20%;
+}
+
+/* STORY 9.22 — Mobile: object-position top para não cortar rostos */
+@media (max-width: 767px) {
+  .filmstrip-video {
+    object-position: 50% top;
+  }
 }
 
 .ecosystem-pill {
@@ -720,3 +732,168 @@ article[aria-label] {
   font-size: 18px;
   line-height: 1;
 }
+
+/* ============================================================
+   EPIC 9 — Mobile-First Responsividade Total
+   ============================================================ */
+
+/* ── STORY 9.20: Breakpoints Customizados ── */
+/* Tokens de breakpoint para uso em media queries manuais:
+   xs:  320px  — Mobile Small (Galaxy S8, iPhone SE)
+   sm:  480px  — Mobile Large
+   md:  768px  — Tablet portrait
+   lg: 1024px  — Laptop / Tablet landscape
+   xl: 1280px  — Desktop
+  2xl: 1440px  — Desktop HD                                   */
+
+/* ── STORY 9.21: Ecossistema adaptativo (<768px) ── */
+/* No mobile, as pills ficam em grid 2 colunas sem setas  */
+@media (max-width: 767px) {
+  .ecosystem-flow-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .ecosystem-flow-mobile .ecosystem-arrow {
+    display: none; /* Remove setas no mobile — grid fala por si */
+  }
+
+  .ecosystem-flow-mobile .ecosystem-pill {
+    justify-content: center;
+    font-size: 9px;
+    padding: 6px 10px;
+    letter-spacing: 0.12em;
+  }
+}
+
+/* ── STORY 9.23: Tipografia Fluida com clamp() ── */
+/* Títulos: escalam suavemente de mobile (320px) a desktop (1440px) */
+.fluid-h1 {
+  font-size: clamp(2rem, 5vw + 0.5rem, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.fluid-h2 {
+  font-size: clamp(1.5rem, 3.5vw + 0.25rem, 3.5rem);
+  line-height: 1.1;
+}
+
+.fluid-h3 {
+  font-size: clamp(1.15rem, 2.5vw + 0.1rem, 2.25rem);
+  line-height: 1.2;
+}
+
+.fluid-body {
+  font-size: clamp(0.875rem, 1.2vw + 0.2rem, 1.125rem);
+  line-height: 1.7;
+}
+
+.fluid-caption {
+  font-size: clamp(0.65rem, 0.8vw + 0.1rem, 0.8rem);
+}
+
+/* ── Ajustes de padding de seção no mobile ── */
+@media (max-width: 767px) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* FilmStrip menor no mobile small */
+  .filmstrip-section-mobile {
+    height: 260px;
+  }
+
+  /* Cards de texto com padding reduzido */
+  .card-mobile-compact {
+    padding: 1.25rem;
+  }
+}
+
+/* ── Tablet (768px–1023px) ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ── Desktop HD (1440px+) ── */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1380px;
+  }
+}
+
+/* ============================================================
+   STORY 9.27 — Ajuste de Contraste WCAG
+   Garante ratio ≥ 4.5:1 para textos sobre fundos dourados
+   ============================================================ */
+
+/* Badge "Progresso" — texto dourado sobre bg dourado/20 */
+.badge-on-gold,
+span.text-primary.bg-primary\/20,
+span.text-primary[class*="bg-primary"] {
+  color: #7a5800 !important; /* bronze escuro — ratio ~7:1 sobre branco/cinza */
+}
+
+/* Status pill sobre fundo amarelo claro */
+.status-pill-dark {
+  color: #5a4000;
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+/* Textos brancos sobre fundos semi-transparentes — mínimo opacity 0.70 */
+.readable-on-dark {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ============================================================
+   ACESSIBILIDADE & POLISH GLOBAL — Web Interface Guidelines
+   ============================================================ */
+
+/* Skip link — WCAG 2.4.1: pular para conteúdo principal */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: var(--gold);
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.875rem;
+  border-radius: 0 0 4px 4px;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* text-wrap: balance em headings — evita widows em mobile */
+h1, h2, h3, h4,
+.fluid-h1, .fluid-h2, .fluid-h3 {
+  text-wrap: balance;
+}
+
+/* tabular-nums em números de registro e métricas */
+.font-mono,
+[class*="font-mono"],
+.site-footer__inst-item,
+.badge-institutional {
+  font-variant-numeric: tabular-nums;
+}
+
+/* touch-action: manipulation — elimina delay de 300ms no mobile */
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+/* Navbar scroll buttons — já normalizados via .nav-link-premium */

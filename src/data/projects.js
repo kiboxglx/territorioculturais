@@ -161,6 +161,7 @@ export const projects = [
         fallbackImage: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1200&auto=format&fit=crop",
         logo: null,
         logosImage: "/images/projects/cineclube-vemve-removebg-preview.png",
+        supportersImage: "/images/projects/apaidores-removebg-preview.png",
         incentiveLaw: "PNAB (Política Nacional Aldir Blanc)",
         status: "Realizado",
         category: "realized",
