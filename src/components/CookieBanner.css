@@ -1,0 +1,100 @@
+/* ============================================================
+   CookieBanner — LGPD Consent  |  Black & Gold Design System
+   ============================================================ */
+
+.cookie-banner {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    width: calc(100% - 2rem);
+    max-width: 860px;
+    animation: cookie-slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes cookie-slide-up {
+    from { opacity: 0; transform: translateX(-50%) translateY(24px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.cookie-banner__inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(10, 10, 10, 0.97);
+    border: 1px solid rgba(200, 150, 42, 0.30);
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(200,150,42,0.08);
+    backdrop-filter: blur(12px);
+    flex-wrap: wrap;
+}
+
+.cookie-banner__icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.cookie-banner__text {
+    flex: 1;
+    min-width: 0;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.60);
+}
+
+.cookie-banner__link {
+    color: #c8962a;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+}
+.cookie-banner__link:hover { color: #f0c419; }
+
+.cookie-banner__actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.cookie-banner__btn {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.cookie-banner__btn--decline {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.45);
+}
+.cookie-banner__btn--decline:hover {
+    border-color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.75);
+}
+
+.cookie-banner__btn--accept {
+    background: #c8962a;
+    border: 1px solid #c8962a;
+    color: #0a0a0a;
+}
+.cookie-banner__btn--accept:hover {
+    background: #f0c419;
+    border-color: #f0c419;
+    box-shadow: 0 0 16px rgba(200,150,42,0.45);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .cookie-banner__inner { flex-direction: column; align-items: flex-start; }
+    .cookie-banner__actions { width: 100%; justify-content: flex-end; }
+}
