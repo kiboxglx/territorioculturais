@@ -689,18 +689,26 @@ article[aria-label] {
 
 /* ── FilmStrip ─────────────────────────────────────────────── */
 .filmstrip-section {
-  height: 350px;
+  height: 210px;
+  overflow: hidden;
 }
 @media (min-width: 768px) {
   .filmstrip-section {
-    height: 450px;
+    height: 330px;
   }
 }
 
-/* Célula de cada vídeo */
+/* Viewport da fita — único ponto de overflow:hidden */
+.filmstrip-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Célula de cada vídeo — dimensões fixas e explícitas */
 .filmstrip-cell {
   width: 280px;
   height: 160px;
+  flex-shrink: 0;
 }
 @media (min-width: 768px) {
   .filmstrip-cell {
@@ -723,6 +731,7 @@ article[aria-label] {
     transparent 16px
   );
   opacity: 0.4;
+  flex-shrink: 0;
 }
 @media (min-width: 768px) {
   .filmstrip-holes {
@@ -739,16 +748,27 @@ article[aria-label] {
   }
 }
 
-/* Animação CSS da fita — 180 segundos, loop infinito */
+/* Animação CSS da fita
+   36 células × 500px = 18000px total
+   -50% = -9000px = exatamente metade (os 18 originais)
+   → loop seamless infinito */
 @keyframes filmroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .filmstrip-track {
+  display: flex;
+  /* largura explícita: 36 células mobile × 280px = 10080px */
+  width: calc(36 * 280px);
   animation: filmroll 180s linear infinite;
   will-change: transform;
-  width: max-content;
+}
+@media (min-width: 768px) {
+  .filmstrip-track {
+    /* largura explícita: 36 células desktop × 500px = 18000px */
+    width: calc(36 * 500px);
+  }
 }
 
 /* Respeita preferência de movimento reduzido */
@@ -758,16 +778,6 @@ article[aria-label] {
   }
 }
 
-.filmstrip-video {
-  object-position: 50% 20%;
-}
-
-/* Mobile: object-position top para não cortar rostos */
-@media (max-width: 767px) {
-  .filmstrip-video {
-    object-position: 50% top;
-  }
-}
 
 .ecosystem-pill {
   display: inline-flex;
