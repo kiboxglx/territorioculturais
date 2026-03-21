@@ -687,11 +687,82 @@ article[aria-label] {
   }
 }
 
+/* ── FilmStrip ─────────────────────────────────────────────── */
+.filmstrip-section {
+  height: 350px;
+}
+@media (min-width: 768px) {
+  .filmstrip-section {
+    height: 450px;
+  }
+}
+
+/* Célula de cada vídeo */
+.filmstrip-cell {
+  width: 280px;
+  height: 160px;
+}
+@media (min-width: 768px) {
+  .filmstrip-cell {
+    width: 500px;
+    height: 280px;
+  }
+}
+
+/* Perfurações */
+.filmstrip-holes {
+  width: 100%;
+  height: 12px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 4px,
+    #c8962a 4px,
+    #c8962a 12px,
+    transparent 12px,
+    transparent 16px
+  );
+  opacity: 0.4;
+}
+@media (min-width: 768px) {
+  .filmstrip-holes {
+    height: 16px;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 6px,
+      #c8962a 6px,
+      #c8962a 18px,
+      transparent 18px,
+      transparent 24px
+    );
+  }
+}
+
+/* Animação CSS da fita — 180 segundos, loop infinito */
+@keyframes filmroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.filmstrip-track {
+  animation: filmroll 180s linear infinite;
+  will-change: transform;
+  width: max-content;
+}
+
+/* Respeita preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .filmstrip-track {
+    animation: none;
+  }
+}
+
 .filmstrip-video {
   object-position: 50% 20%;
 }
 
-/* STORY 9.22 — Mobile: object-position top para não cortar rostos */
+/* Mobile: object-position top para não cortar rostos */
 @media (max-width: 767px) {
   .filmstrip-video {
     object-position: 50% top;

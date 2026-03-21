@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
 
 const labels = [
     "Criar", "Comunicar", "Circular", "Formar",
@@ -9,110 +8,112 @@ const labels = [
     "Memória", "Raiz",
 ];
 
-// Vídeos em ordem numérica derivados dos labels — sem risco de mismatch
-const timelineVideos = labels.map((year, i) => ({
-    year,
+const timelineVideos = labels.map((label, i) => ({
+    label,
     webm: `/videos fita/webm/${i + 1}.webm`,
     mp4:  `/videos fita/mp4/${i + 1}.mp4`,
-    description: `Registro cultural ${i + 1} — Territórios Culturais`,
 }));
 
-const FilmStrip = () => {
-    const track = [...timelineVideos, ...timelineVideos];
-    const reduceMotion = useReducedMotion();
-    const stripRef = useRef(null);
+// Duplica para loop contínuo
+const track = [...timelineVideos, ...timelineVideos];
 
-    // Quando a fita entrar na viewport, força play em todos os vídeos
+// Componente de vídeo individual com lazy play
+const FilmVideo = ({ webm, mp4, label }) => {
+    const videoRef = useRef(null);
+    const wrapRef = useRef(null);
+
     useEffect(() => {
-        const container = stripRef.current;
-        if (!container) return;
+        const video = videoRef.current;
+        const wrap  = wrapRef.current;
+        if (!video || !wrap) return;
 
-        const observer = new IntersectionObserver(
+        const obs = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    container.querySelectorAll('video').forEach(v => {
-                        v.play().catch(() => {});
-                    });
+                    video.play().catch(() => {});
+                    obs.disconnect();
                 }
             },
             { threshold: 0.1 }
         );
-
-        observer.observe(container);
-        return () => observer.disconnect();
+        obs.observe(wrap);
+        return () => obs.disconnect();
     }, []);
 
     return (
-        <section
-            ref={stripRef}
-            className="relative overflow-hidden bg-charcoal h-[350px] md:h-[450px] flex items-center justify-center z-10"
-            aria-label="Carrossel visual de impacto: Película de registros cinematográficos"
+        <div
+            ref={wrapRef}
+            className="filmstrip-cell shrink-0 bg-black relative group border-r border-amber-900/20"
+            role="img"
+            aria-label={label}
         >
-            {/* Sombreamento nas bordas */}
-            <div className="absolute top-0 w-full h-12 bg-linear-to-b from-charcoal to-transparent z-20 pointer-events-none" />
-            <div className="absolute bottom-0 w-full h-12 bg-linear-to-t from-charcoal to-transparent z-20 pointer-events-none" />
+            <video
+                ref={videoRef}
+                loop
+                muted
+                playsInline
+                preload="none"
+                className="w-full h-full object-cover opacity-50 transition-[opacity] duration-700 group-hover:opacity-80"
+                style={{ filter: 'sepia(0.4) contrast(1.1) brightness(0.75) saturate(0.6)' }}
+                aria-hidden="true"
+            >
+                <source src={webm} type="video/webm" />
+                <source src={mp4}  type="video/mp4"  />
+            </video>
+            <div className="absolute inset-0 pointer-events-none mix-blend-multiply"
+                 style={{ background: 'rgba(180,110,20,0.35)' }} />
+            <div className="absolute inset-0 border border-black/40 pointer-events-none" />
+            <div className="absolute bottom-2 right-3 z-30">
+                <span className="text-gold font-display font-bold text-xl md:text-2xl italic tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                    {label}
+                </span>
+            </div>
+        </div>
+    );
+};
+
+const FilmStrip = () => {
+    // Respeita prefers-reduced-motion via CSS (ver index.css)
+    return (
+        <section
+            className="filmstrip-section relative overflow-hidden bg-charcoal flex items-center justify-center z-10"
+            aria-label="Película de registros cinematográficos — Territórios Culturais"
+        >
+            {/* Sombras de borda */}
+            <div className="absolute top-0 w-full h-12 bg-gradient-to-b from-charcoal to-transparent z-20 pointer-events-none" />
+            <div className="absolute bottom-0 w-full h-12 bg-gradient-to-t from-charcoal to-transparent z-20 pointer-events-none" />
 
             {/* Película */}
             <div
                 className="w-[110%] absolute left-[-5%] shadow-[0_0_50px_rgba(0,0,0,1)] flex flex-col justify-center z-0"
                 style={{ background: 'linear-gradient(to bottom, #1a0f00, #2a1a05, #1a0f00)' }}
             >
-                {/* Perfurações superiores */}
-                <div className="w-full h-3 md:h-4 bg-[linear-gradient(90deg,transparent_0%,transparent_20%,#c8962a_20%,#c8962a_80%,transparent_80%,transparent_100%)] bg-size-[16px_100%] md:bg-size-[24px_100%] opacity-40" />
+                {/* Perfurações topo */}
+                <div className="filmstrip-holes" />
 
-                {/* Faixa deslizante */}
-                <div className="flex overflow-hidden relative z-20">
-                    <motion.div
-                        className="flex"
-                        animate={reduceMotion ? { x: '0%' } : { x: ["0%", "-50%"] }}
-                        transition={reduceMotion ? {} : { repeat: Infinity, duration: 180, ease: "linear" }}
-                        style={{ width: "fit-content" }}
-                    >
+                {/* Faixa — animação CSS pura */}
+                <div className="overflow-hidden relative z-20">
+                    <div className="filmstrip-track flex">
                         {track.map((item, i) => (
-                            <div
+                            <FilmVideo
                                 key={i}
-                                className="w-[280px] h-[160px] md:w-[500px] md:h-[280px] shrink-0 bg-black relative group border-r border-amber-900/20"
-                                role="img"
-                                aria-label={`Registro ${item.year}: ${item.description}`}
-                            >
-                                <video
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    preload="metadata"
-                                    className="w-full h-full object-cover filmstrip-video opacity-50 transition-[opacity] duration-700 group-hover:opacity-80"
-                                    style={{ filter: 'sepia(0.4) contrast(1.1) brightness(0.75) saturate(0.6)' }}
-                                    aria-hidden="true"
-                                >
-                                    <source src={item.webm} type="video/webm" />
-                                    <source src={item.mp4}  type="video/mp4"  />
-                                </video>
-
-                                {/* Overlay âmbar envelhecido */}
-                                <div className="absolute inset-0 pointer-events-none mix-blend-multiply" style={{ background: 'rgba(180,110,20,0.35)' }} />
-                                {/* Linhas de película */}
-                                <div className="absolute inset-0 pointer-events-none opacity-5" style={{ backgroundImage: 'repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,200,80,0.03) 2px,rgba(255,200,80,0.03) 4px)' }} />
-                                <div className="absolute inset-0 border border-black/40 pointer-events-none" />
-
-                                {/* Label */}
-                                <div className="absolute bottom-2 right-3 z-30">
-                                    <span className="text-gold group-hover:text-gold-soft font-display font-bold text-xl md:text-2xl italic tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                                        {item.year}
-                                    </span>
-                                </div>
-                            </div>
+                                webm={item.webm}
+                                mp4={item.mp4}
+                                label={item.label}
+                            />
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
 
-                {/* Perfurações inferiores */}
-                <div className="w-full h-3 md:h-4 bg-[linear-gradient(90deg,transparent_0%,transparent_20%,#c8962a_20%,#c8962a_80%,transparent_80%,transparent_100%)] bg-size-[16px_100%] md:bg-size-[24px_100%] opacity-40" />
+                {/* Perfurações base */}
+                <div className="filmstrip-holes" />
             </div>
 
-            {/* Vinheta + overlay âmbar */}
-            <div className="absolute inset-0 pointer-events-none z-20" style={{ background: 'radial-gradient(ellipse at center, transparent 30%, rgba(20,10,0,0.85) 100%)' }} />
-            <div className="absolute inset-0 pointer-events-none z-[21] mix-blend-color" style={{ background: 'rgba(160,90,10,0.15)' }} />
+            {/* Vinheta */}
+            <div className="absolute inset-0 pointer-events-none z-20"
+                 style={{ background: 'radial-gradient(ellipse at center, transparent 30%, rgba(20,10,0,0.85) 100%)' }} />
+            <div className="absolute inset-0 pointer-events-none z-[21] mix-blend-color"
+                 style={{ background: 'rgba(160,90,10,0.15)' }} />
         </section>
     );
 };
