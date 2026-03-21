@@ -168,6 +168,14 @@ export const projects = [
         governance: "Prestação de contas integral via PNAB/SECULT. 12 mostras gratuitas com entrada aberta ao público.",
         locationLabel: "📍 Patos de Minas - MG (Campus UNIPAM)",
         city: "patos-de-minas",
+        sponsors: [
+            { label: "PNAB · Aldir Blanc", mod: "pnab" },
+            { label: "Ministério da Cultura", mod: "minc" },
+            { label: "Governo Federal", mod: "" },
+            { label: "Prefeitura Patos de Minas", mod: "prefeitura" },
+            { label: "FEPAM", mod: "" },
+            { label: "UNIPAM", mod: "" },
+        ],
         seoKeywords: ["Cineclube Vemvê", "Cineclube Patos de Minas", "Inclusão Social", "Cultura Norte de Minas"],
         impactMetrics: {
             jobs: 15,
@@ -209,6 +217,12 @@ export const projects = [
         governance: "Projeto pedagógico alinhado à BNCC. Prestação de contas integral via LPG/SECULT.",
         locationLabel: "📍 Patos de Minas - MG",
         city: "patos-de-minas",
+        sponsors: [
+            { label: "Lei Paulo Gustavo", mod: "lpg" },
+            { label: "Ministério da Cultura", mod: "minc" },
+            { label: "Governo Federal", mod: "" },
+            { label: "Prefeitura Patos de Minas", mod: "prefeitura" },
+        ],
         seoKeywords: ["Luz Imagem Educação", "Cinema na Escola", "Educação Audiovisual", "Patos de Minas"],
         impactMetrics: {
             jobs: 10,
@@ -250,6 +264,13 @@ export const projects = [
         governance: "Produção de Rafael Caldas. Prestação de contas integral via Edital Paulo Gustavo / SECULT. 100% de transparência na execução municipal.",
         locationLabel: "📍 Patos de Minas - MG",
         city: "patos-de-minas",
+        sponsors: [
+            { label: "Lei Paulo Gustavo", mod: "lpg" },
+            { label: "Ministério da Cultura", mod: "minc" },
+            { label: "Governo Federal", mod: "" },
+            { label: "Prefeitura Patos de Minas", mod: "prefeitura" },
+            { label: "Balaio de Arte & Cultura", mod: "" },
+        ],
         seoKeywords: ["Cine Território", "Lei Paulo Gustavo Patos de Minas", "Cinema Comunitário", "Formação de Público"],
         impactMetrics: {
             jobs: 45,

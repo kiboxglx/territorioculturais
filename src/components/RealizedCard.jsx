@@ -24,7 +24,7 @@ const RealizedCard = ({ project }) => {
     const mainImg = assetData.main || project.heroImage;
     const fallbackImg = assetData.fallback || project.fallbackImage;
     const seoAlt = assetData.alt || `${project.title} — ${project.locationLabel?.replace('📍 ', '')}`;
-    const sponsors = SPONSOR_MAP[project.incentiveLaw] || [];
+    const sponsors = project.sponsors || SPONSOR_MAP[project.incentiveLaw] || [];
 
     return (
         <article

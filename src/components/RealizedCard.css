@@ -168,58 +168,58 @@
   gap: 5px;
   padding: 5px 9px;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
   font-family: var(--font-mono, monospace);
   font-size: 7.5px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.65);
   white-space: nowrap;
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .sponsor-badge:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .sponsor-badge--lpg {
-  border-color: rgba(0, 130, 200, 0.3);
-  color: rgba(120, 200, 255, 0.75);
-  background: rgba(0, 130, 200, 0.07);
+  border-color: rgba(0, 130, 200, 0.4);
+  color: rgba(120, 200, 255, 0.9);
+  background: rgba(0, 130, 200, 0.1);
 }
 
 .sponsor-badge--lpg:hover {
-  background: rgba(0, 130, 200, 0.12);
-  border-color: rgba(0, 130, 200, 0.5);
-  color: rgba(160, 220, 255, 0.9);
+  background: rgba(0, 130, 200, 0.18);
+  border-color: rgba(0, 130, 200, 0.6);
+  color: rgba(160, 220, 255, 1);
 }
 
 .sponsor-badge--pnab {
-  border-color: rgba(220, 60, 30, 0.3);
-  color: rgba(255, 140, 110, 0.75);
-  background: rgba(220, 60, 30, 0.07);
+  border-color: rgba(220, 60, 30, 0.4);
+  color: rgba(255, 140, 110, 0.9);
+  background: rgba(220, 60, 30, 0.1);
 }
 
 .sponsor-badge--pnab:hover {
-  background: rgba(220, 60, 30, 0.12);
-  border-color: rgba(220, 60, 30, 0.5);
-  color: rgba(255, 170, 140, 0.9);
+  background: rgba(220, 60, 30, 0.18);
+  border-color: rgba(220, 60, 30, 0.6);
+  color: rgba(255, 170, 140, 1);
 }
 
 .sponsor-badge--minc {
-  border-color: rgba(0, 160, 100, 0.3);
-  color: rgba(100, 220, 160, 0.75);
-  background: rgba(0, 160, 100, 0.07);
+  border-color: rgba(0, 160, 100, 0.4);
+  color: rgba(100, 220, 160, 0.9);
+  background: rgba(0, 160, 100, 0.1);
 }
 
 .sponsor-badge--prefeitura {
-  border-color: rgba(255, 200, 0, 0.25);
-  color: rgba(255, 210, 80, 0.65);
-  background: rgba(255, 200, 0, 0.05);
+  border-color: rgba(255, 200, 0, 0.35);
+  color: rgba(255, 210, 80, 0.85);
+  background: rgba(255, 200, 0, 0.08);
 }
 
 .realized-card__cta {
