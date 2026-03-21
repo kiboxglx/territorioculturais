@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-
+import { Analytics } from '@vercel/analytics/react'
 /**
  * INTEGRAÇÃO @AXE-CORE/REACT (WCAG 2.1)
  * Executado apenas em ambiente de desenvolvimento.
@@ -21,5 +21,6 @@ if (import.meta.env.DEV) {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
+    <Analytics />
   </React.StrictMode>,
 )
