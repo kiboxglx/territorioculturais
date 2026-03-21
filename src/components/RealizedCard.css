@@ -27,7 +27,7 @@
 
 .realized-card__image-wrap {
   position: relative;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
@@ -97,7 +97,7 @@
   flex-direction: column;
   justify-content: flex-end;
   flex: 1;
-  margin-top: -5rem;
+  margin-top: -3rem;
   position: relative;
   z-index: 10;
 }
