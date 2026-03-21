@@ -10,8 +10,8 @@ const labels = [
 
 const timelineVideos = labels.map((label, i) => ({
     label,
-    webm: `/videos fita/webm/${i + 1}.webm`,
-    mp4:  `/videos fita/mp4/${i + 1}.mp4`,
+    webm: `/videos-fita/webm/${i + 1}.webm`,
+    mp4:  `/videos-fita/mp4/${i + 1}.mp4`,
 }));
 
 // Componente de vídeo individual com lazy play via IntersectionObserver

@@ -148,8 +148,8 @@ const Hero = ({ onContactClick }) => {
                         objectPosition: 'center 20%',
                     }}
                 >
-                    <source src="/videos fita/webm/3.webm" type="video/webm" />
-                    <source src="/videos fita/mp4/3.mp4"  type="video/mp4"  />
+                    <source src="/videos-fita/webm/3.webm" type="video/webm" />
+                    <source src="/videos-fita/mp4/3.mp4"  type="video/mp4"  />
                 </video>
 
                 {/* Overlay multicamada — profundidade progressiva */}

@@ -16,7 +16,7 @@ export default defineConfig({
         '**/.bg-shell/**',
         '**/.gsd/**',
         '**/*.md',
-        '**/public/videos fita/**',
+        '**/public/videos-fita/**',
         '**/public/videoshome*',
         '**/public/events/**',
       ],
