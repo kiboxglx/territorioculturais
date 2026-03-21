@@ -208,6 +208,7 @@ export const projects = [
         heroImage: "/images/projects/luz-imagem-educacao.webp",
         fallbackImage: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
         logo: null,
+        logosImage: "/images/projects/luz-imagem-educacao_logo-removebg-preview.png",
         incentiveLaw: "LPG (Lei Paulo Gustavo)",
         status: "Realizado",
         category: "realized",
