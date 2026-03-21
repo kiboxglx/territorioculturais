@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { MapPin, ArrowRight, Expand } from 'lucide-react';
 import ProgressiveImage from './ProgressiveImage';
 import assetsManifest from '../data/assets-manifest.json';
 import './RealizedCard.css';
@@ -19,7 +20,7 @@ const SPONSOR_MAP = {
     ],
 };
 
-const RealizedCard = ({ project }) => {
+const RealizedCard = ({ project, onOpenModal }) => {
     const assetData = assetsManifest.projects[project.id] || {};
     const mainImg = assetData.main || project.heroImage;
     const fallbackImg = assetData.fallback || project.fallbackImage;
@@ -27,8 +28,9 @@ const RealizedCard = ({ project }) => {
     const sponsors = project.sponsors || SPONSOR_MAP[project.incentiveLaw] || [];
 
     return (
-        <article
-            className="realized-card"
+        <div
+            className="realized-card group"
+            role="article"
             aria-label={`Evento realizado: ${project.title}`}
         >
             <div className="realized-card__image-wrap">
@@ -40,23 +42,36 @@ const RealizedCard = ({ project }) => {
                     fetchPriority="auto"
                     sizes="(max-width: 768px) 300px, 340px"
                     className="w-full h-full"
+                    imgClassName="transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="realized-card__image-overlay" aria-hidden="true" />
-                <span className="realized-card__status-badge">{project.status}</span>
+
+                <div className="realized-card__overlay-primary" aria-hidden="true" />
+                <div className="realized-card__overlay-secondary" aria-hidden="true" />
+
+                {project.logo && (
+                    <div className="realized-card__logo-wrap">
+                        <img
+                            src={project.logo}
+                            alt={`Logo ${project.title}`}
+                            className="realized-card__logo"
+                        />
+                    </div>
+                )}
+
+                <div className="realized-card__expand-btn" aria-hidden="true">
+                    <Expand size={16} className="text-primary" />
+                </div>
             </div>
 
             <div className="realized-card__body">
-                <span className="realized-card__law-badge">{project.incentiveLaw}</span>
-
-                <div>
+                <div className="realized-card__header">
                     <h3 className="realized-card__title">{project.title}</h3>
-                    <div className="realized-card__location" style={{ marginTop: '6px' }}>
-                        <span className="material-symbols-outlined realized-card__location-icon" aria-hidden="true">location_on</span>
-                        {project.locationLabel?.replace('📍 ', '')}
+
+                    <div className="realized-card__location">
+                        <MapPin size={16} className="realized-card__location-icon" aria-hidden="true" />
+                        <span className="realized-card__location-text">{project.location || project.locationLabel?.replace('📍 ', '')}</span>
                     </div>
                 </div>
-
-                <p className="realized-card__description">{project.description}</p>
 
                 <div className="realized-card__divider" aria-hidden="true" />
 
@@ -76,16 +91,21 @@ const RealizedCard = ({ project }) => {
 
                 <div className="realized-card__divider" aria-hidden="true" />
 
-                <Link
-                    to={`/projeto/${project.slug}`}
-                    className="realized-card__cta"
-                    aria-label={`Ver case study de ${project.title}`}
-                >
-                    Ver Case Study
-                    <span className="material-symbols-outlined realized-card__cta-icon" aria-hidden="true">arrow_forward</span>
-                </Link>
+                <div className="realized-card__actions">
+                    <Link
+                        to={`/projeto/${project.slug}`}
+                        className="realized-card__cta group/btn"
+                        aria-label={`Ver case study de ${project.title}`}
+                    >
+                        <span>Saiba Mais</span>
+                        <ArrowRight size={14} className="realized-card__cta-icon text-primary" />
+                        <div className="realized-card__cta-glow" aria-hidden="true" />
+                    </Link>
+                </div>
             </div>
-        </article>
+
+            <div className="realized-card__bottom-glow" aria-hidden="true" />
+        </div>
     );
 };
 
