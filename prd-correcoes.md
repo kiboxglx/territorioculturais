@@ -1,45 +1,35 @@
-# PRD: Refatoração Territórios Culturais (Ralph Loop)
-**Status:** In Progress
-
-**System Rules (BMAD Developer Persona):**
-- NUNCA adicione comentários no código gerado. O código deve ser totalmente limpo.
-- Mantenha o CSS estritamente separado do HTML/JS.
-- Execute rigorosamente UMA story por iteração. 
-- Faça o git commit após cada story finalizada.
-- Ao finalizar, atualize este arquivo mudando o status de [ ] para [x].
+# PRD: Refatoração de Home e Portfólio de Autoridade
+**Status:** Concluído
+**Context:** BMAD Persona / GSD-2 Engine
 
 ## Stories (Tasks)
-### Epic 1: Limpeza da Home e UI
-- [x] STORY 1: Substituir as tags antigas ('Cinema', 'Moda', etc.) pelo fluxo do Ecossistema: 'CRIAR -> COMUNICAR', 'CIRCULAR -> FORMAR', 'ESTRUTURAR -> FINANCIAR', 'DESENVOLVER -> MONITORAR'.
-- [x] STORY 2: Remover o botão 'Mídia Kit 2026' da Home.
-- [x] STORY 3: Configurar o botão 'VER IMPACTO' para ancorar com scroll suave em `#destinos-estruturados`.
-- [x] STORY 4: Remover a seção 'Parceiros & Realizadores' (Logos institucionais) da página principal.
-- [x] STORY 5: Ajustar o CSS do vídeo da fita de cinema (FilmStrip) usando `object-position: top` (ou `50% 20%`) para descer o enquadramento e não cortar o rosto das pessoas.
 
-### Epic 2: Próximos Eventos (Atualização de Dados e Nomenclaturas)
-- [x] STORY 6: Remover a exibição de todas as datas dos próximos eventos.
-- [x] STORY 7: Atualizar o evento da Mostra. Remover o termo "1º". Nome exato deve ser "Mostra de Cinema Itinerante da Cordilheira do Espinhaço". Manter as cidades: "Ouro Branco, Serro, Porteirinha".
-- [x] STORY 8: Atualizar o evento do Vinho. Remover o termo "1º". Nome exato deve ser "Encontro Cultural da Uva e do Vinho 🍷". Alterar o local para "Norte de Minas - MG".
-- [x] STORY 9: Atualizar o evento de Enoturismo. Remover o termo "1º". Nome exato deve ser "Fórum Internacional de Enoturismo e Vitivinicultura do Mercosul". Alterar o local para "Norte de Minas - MG".
-- [x] STORY 10: Atualizar o evento de Cinema de Grão Mogol. Remover o termo "1º". Nome exato deve ser "Festival de Cinema de Grão Mogol". Manter o local como "Grão Mogol - MG".
+### Epic 1: Refatoração da Seção Hero (Ecossistema)
+- [x] STORY 1: Substituir as tags de categorias atuais ('Cinema', 'Enoturismo', etc.) pelo fluxo visual do Ecossistema.
+- [x] STORY 2: Implementar a sequência: 'CRIAR → COMUNICAR → CIRCULAR → FORMAR → ESTRUTURAR → FINANCIAR → DESENVOLVER'.
+- [x] STORY 3: Adicionar a tag 'MONITORAR' no fluxo principal — pills individuais com setas separadas, classe `ecosystem-pill` (CSS separado, sem inline style).
 
-### Epic 3: Eventos Realizados (Compliance e Releases)
-- [x] STORY 11: Remover a palavra 'sucesso' de todos os cards de eventos realizados.
-- [x] STORY 12: Descer o layout do card de eventos realizados na página principal para garantir que os logos das leis/patrocinadores fiquem 100% visíveis na home.
-- [x] STORY 13: Atualizar leis e locais dos três eventos para Patos de Minas. Configurar 'Cine Território' (LPG), 'Luz - Imagem - Educação' (LPG) e 'Cineclube Vemvê' (PNAB).
-- [x] STORY 14: Conferir contexto do projeto que esta na pagina e dos realeses (do arquivo PDF fornecido) nas páginas de detalhe ou expansão dos eventos 'Cine Território' e 'Cineclube Vemvê' C:\Users\CLIENTE\Desktop\PROJETOS\Territorio Culturais\public\events\Realese Cineclubê Vemvê.pdf
-C:\Users\CLIENTE\Desktop\PROJETOS\Territorio Culturais\public\events\RELEASE - Cine Território divulga programação.pdf.
+### Epic 2: Reestruturação do Portfólio (Eventos Realizados)
+- [x] STORY 4: Componente `RealizedCard.jsx` criado com CSS separado em `RealizedCard.css`. Eventos realizados migrados para layout vertical e alongado.
+- [x] STORY 5: Ordem de informação do card: Imagem de Destaque → Título → Local (Patos de Minas) → Badge de Lei (LPG/PNAB) → Resumo do Release.
+- [x] STORY 6: **Sponsor Integration:** Grid de badges tipográficos (Lei Paulo Gustavo, Aldir Blanc, Ministério da Cultura, Prefeitura Patos de Minas) na base de cada card. Visíveis diretamente sem hover. Campo `sponsors[]` por projeto em `projects.js`.
 
-### Epic 4: Card Completo - Eventos Realizados (Dados e Estrutura)
-- [x] STORY 13: Configurar Card "Cine Território". Local: "Patos de Minas - MG". Lei: "LPG (Lei Paulo Gustavo)". Conteúdo: Inserir resumo do release (Mostra com 24 produções, 10 cidades e Troféu Cine Território).
-- [x] STORY 14: Configurar Card "Cineclube Vemvê". Local: "Patos de Minas - MG (Campus UNIPAM)". Lei: "PNAB (Política Nacional Aldir Blanc)". Conteúdo: Inserir resumo das 12 mostras cinematográficas e 6 ciclos temáticos (Cinema Negro, Mineiro, etc.).
-- [x] STORY 15: Configurar Card "Luz - Imagem - Educação". Local: "Patos de Minas - MG". Lei: "LPG (Lei Paulo Gustavo)". Conteúdo: Inserir resumo de atividades educativas e formação de público.
+### Epic 3: Navegação e Limpeza
+- [x] STORY 7: Seção de parceiros da Home removida (`Hero.jsx`).
+- [x] STORY 8: Botão 'VER IMPACTO' ancorado em `#destinos-estruturados` com scroll suave.
+- [x] STORY 9: Componente `MidiaKitCTA` removido do `App.jsx`.
 
-### Epic 5: Reestruturação Visual - Card Longo (Sponsor Proof)
-- [x] STORY 16: Refatoração de UI/UX. No componente de 'Eventos Realizados', crie uma variante de 'Card Longo' (LongCard). 
-- [x] STORY 17: Layout do LongCard. O card deve ser verticalmente expandido, exibindo na seguinte ordem: 
-    1. Imagem/Thumbnail do evento.
-    2. Título, Local (Ícone + Texto), Badge de Lei (LPG/PNAB).
-    3. Resumo do Release (mínimo de 3 linhas de texto visíveis).
-    4. **NOVO: Grid de Patrocinadores (SponsorGrid).**
-- [x] STORY 18: Implementação do SponsorGrid. Localize o grid que contém as logos institucionais (LPG, Aldir Blanc, Prefeitura Patos de Minas) e insira-o **dentro do próprio LongCard**, logo abaixo do resumo do release. Ajuste o CSS para que os logos fiquem visíveis diretamente na Home, sem necessidade de hover ou clique
+### Epic 4: Dados dos Projetos Realizados
+- [x] STORY 13: Card Cine Território — lei `LPG (Lei Paulo Gustavo)`, local `Patos de Minas - MG`, descrição com resumo do release.
+- [x] STORY 14: Card Cineclube Vemvê — lei `PNAB (Política Nacional Aldir Blanc)`, local `Patos de Minas - MG (Campus UNIPAM)`, 6 ciclos temáticos.
+- [x] STORY 15: Card Luz-Imagem-Educação — lei `LPG (Lei Paulo Gustavo)`, local `Patos de Minas - MG`, 3 atividades educativas.
+
+### Epic 5: Estrutura Visual LongCard + SponsorGrid
+- [x] STORY 16: `RealizedCard.jsx` + `RealizedCard.css` criados. Componente LongCard vertical, CSS 100% separado, sem comentários.
+- [x] STORY 17: `ProjectShowcase.jsx` atualizado — `category === 'realized'` renderiza `RealizedCard`; demais renderizam `ProjectCard`.
+- [x] STORY 18: Campo `sponsors[]` por projeto em `projects.js`. Badges coloridos por tipo (azul=LPG, vermelho=PNAB, verde=Ministério, dourado=Prefeitura). Visíveis sem hover.
+
+### Refinamentos Pós-PRD
+- [x] Cards realizados alinhados visualmente ao `EventCard`: aspect ratio 3/2, gradiente duplo, conteúdo flutuante `-mt-5rem`, largura 340px/460px desktop.
+- [x] Fluxo do ecossistema adicionado também na seção `About.jsx` (Quem Somos).
+- [x] Hero migrado para `ecosystemSteps[]` individual com `ecosystem-pill` e `ecosystem-arrow` (sem inline style, BMAD compliant).
