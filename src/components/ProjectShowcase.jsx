@@ -41,7 +41,7 @@ const ProjectCard = ({ project }) => {
             {/* Badge de status dinâmico */}
             <div className="absolute top-4 right-4 z-20">
                 <span className={`text-[9px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full shadow-xl backdrop-blur-md border ${
-                    project.status === 'Realizado com Sucesso' 
+                    project.status === 'Realizado' 
                     ? 'bg-green-500/20 text-green-400 border-green-500/30' 
                     : 'bg-primary/20 text-primary border-primary/50'
                 }`}>
