@@ -2,17 +2,23 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const timelineVideos = [
-    { year: "2024", src: "/videoshome (1).MP4", description: "Cena de festival de cinema ao ar livre com grande público" },
-    { year: "Cine", src: "/videoshome (2).MP4", description: "Projeção de cinema em tela gigante em praça pública" },
-    { year: "Impacto", src: "/videoshome (3).MP4", description: "Bastidores de produção audiovisual e equipe técnica em ação" },
-    { year: "Cultura", src: "/videoshome (4).MP4", description: "Interação cultural entre artistas e comunidade local" },
-    { year: "2025", src: "/videoshome (5).MP4", description: "Panorama de evento cultural integrado à paisagem urbana" },
-    { year: "Vida", src: "/videoshome (6).MP4", description: "Close-up de expressões culturais e artísticas diversas" },
+    { year: "Criar",       src: "/events/IMG_4427.MP4",         description: "Registro do Cine Território — produção audiovisual" },
+    { year: "Comunicar",   src: "/events/IMG_4433.MP4",         description: "Registro do Cine Território — comunicação cultural" },
+    { year: "Circular",    src: "/events/IMG_4447.MP4",         description: "Registro do Cineclube Vemvê — circulação de cinema" },
+    { year: "Formar",      src: "/events/IMG_4466.MOV",         description: "Registro do Cineclube Vemvê — formação de público" },
+    { year: "Estruturar",  src: "/events/IMG_4467.MP4",         description: "Registro de evento cultural — estruturação territorial" },
+    { year: "Financiar",   src: "/events/IMG_4468.MP4",         description: "Registro de evento cultural — financiamento cultural" },
+    { year: "Desenvolver", src: "/events/IMG_4469.MP4",         description: "Registro de evento cultural — desenvolvimento cultural" },
+    { year: "Monitorar",   src: "/events/IMG_4470.MP4",         description: "Registro do Cine Território — monitoramento de impacto" },
+    { year: "Cine",        src: "/events/cine territorio1.MP4", description: "Cine Território — mostra competitiva" },
+    { year: "Território",  src: "/events/cineterritorio 2.MP4", description: "Cine Território — exibição em Patos de Minas" },
+    { year: "Vemvê",       src: "/events/cineterritorio 3.MP4", description: "Cineclube Vemvê — ciclos temáticos UNIPAM" },
+    { year: "2024",        src: "/events/124.MP4",              description: "Registros culturais — Patos de Minas" },
 ];
 
 const FilmStrip = () => {
     // Array longo suficiente para fazer loop invisível
-    const track = [...timelineVideos, ...timelineVideos, ...timelineVideos, ...timelineVideos];
+    const track = [...timelineVideos, ...timelineVideos];
 
     return (
         <section 
