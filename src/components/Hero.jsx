@@ -77,11 +77,9 @@ const circleItems = [
 /* ─────────────────────────────────────────────
    DADOS: Tags de Eixos de Atuação
 ───────────────────────────────────────────── */
-const axisTags = [
-    "CRIAR → COMUNICAR",
-    "CIRCULAR → FORMAR",
-    "ESTRUTURAR → FINANCIAR",
-    "DESENVOLVER → MONITORAR",
+const ecosystemSteps = [
+    'Criar', 'Comunicar', 'Circular', 'Formar',
+    'Estruturar', 'Financiar', 'Desenvolver', 'Monitorar',
 ];
 
 /* ─────────────────────────────────────────────
@@ -233,23 +231,18 @@ const Hero = ({ onContactClick }) => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.65 }}
-                        className="flex flex-wrap gap-2 mb-8"
-                        aria-label="Eixos de atuação"
+                        className="flex flex-wrap items-center gap-y-2 gap-x-0 mb-8"
+                        aria-label="Fluxo do ecossistema cultural"
                     >
-                        {axisTags.map((tag) => (
-                            <span
-                                key={tag}
-                                className="font-mono text-[0.6rem] font-bold uppercase tracking-widest border px-3 py-1"
-                                style={{
-                                    color: 'rgba(255,215,0,0.55)',
-                                    borderColor: 'rgba(255,215,0,0.18)',
-                                    background: 'rgba(255,215,0,0.04)',
-                                    borderRadius: '2px',
-                                    fontFamily: 'var(--font-mono)',
-                                }}
-                            >
-                                {tag}
-                            </span>
+                        {ecosystemSteps.map((step, i, arr) => (
+                            <React.Fragment key={step}>
+                                <span className="ecosystem-pill">{step}</span>
+                                {i < arr.length - 1 && (
+                                    <span className="ecosystem-arrow" aria-hidden="true">
+                                        <span className="material-symbols-outlined">arrow_right_alt</span>
+                                    </span>
+                                )}
+                            </React.Fragment>
                         ))}
                     </motion.div>
 
