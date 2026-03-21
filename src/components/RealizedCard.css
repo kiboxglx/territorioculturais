@@ -1,5 +1,6 @@
 .realized-card {
   position: relative;
+  width: 300px;
   background: #131F1F;
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 1rem;
@@ -12,6 +13,12 @@
   cursor: pointer;
   flex-shrink: 0;
   scroll-snap-align: center;
+}
+
+@media (min-width: 768px) {
+  .realized-card {
+    width: 380px;
+  }
 }
 
 .realized-card:hover {
