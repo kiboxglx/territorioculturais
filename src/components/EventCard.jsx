@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, MapPin, ArrowRight, Expand } from 'lucide-react';
+import { MapPin, ArrowRight, Expand } from 'lucide-react';
 
 const EventCard = ({ event, onOpenModal }) => {
     return (
@@ -39,11 +39,6 @@ const EventCard = ({ event, onOpenModal }) => {
             {/* Content Section */}
             <div className="p-8 grow flex flex-col justify-end -mt-32 relative z-10">
                 <div className="mb-6">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-primary mb-4">
-                        <Calendar size={12} strokeWidth={3} />
-                        <span className="text-[10px] font-bold uppercase tracking-widest">{event.date}</span>
-                    </div>
-                    
                     <h3 className="font-playfair text-2xl md:text-3xl text-white mb-3 group-hover:text-primary transition-colors leading-tight">
                         {event.title}
                     </h3>
