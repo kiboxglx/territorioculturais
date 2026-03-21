@@ -142,14 +142,16 @@
 .realized-card__divider {
   height: 1px;
   background: rgba(212, 168, 67, 0.1);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
 }
 
 .realized-card__sponsor-grid {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
 }
 
 .realized-card__sponsor-label {
