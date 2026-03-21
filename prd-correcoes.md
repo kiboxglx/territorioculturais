@@ -18,10 +18,10 @@
 
 ### Epic 2: Próximos Eventos (Atualização de Dados e Nomenclaturas)
 - [x] STORY 6: Remover a exibição de todas as datas dos próximos eventos.
-- [ ] STORY 7: Atualizar o evento da Mostra. Remover o termo "1º". Nome exato deve ser "Mostra de Cinema Itinerante da Cordilheira do Espinhaço". Manter as cidades: "Ouro Branco, Serro, Porteirinha".
-- [ ] STORY 8: Atualizar o evento do Vinho. Remover o termo "1º". Nome exato deve ser "Encontro Cultural da Uva e do Vinho 🍷". Alterar o local para "Norte de Minas - MG".
-- [ ] STORY 9: Atualizar o evento de Enoturismo. Remover o termo "1º". Nome exato deve ser "Fórum Internacional de Enoturismo e Vitivinicultura do Mercosul". Alterar o local para "Norte de Minas - MG".
-- [ ] STORY 10: Atualizar o evento de Cinema de Grão Mogol. Remover o termo "1º". Nome exato deve ser "Festival de Cinema de Grão Mogol". Manter o local como "Grão Mogol - MG".
+- [x] STORY 7: Atualizar o evento da Mostra. Remover o termo "1º". Nome exato deve ser "Mostra de Cinema Itinerante da Cordilheira do Espinhaço". Manter as cidades: "Ouro Branco, Serro, Porteirinha".
+- [x] STORY 8: Atualizar o evento do Vinho. Remover o termo "1º". Nome exato deve ser "Encontro Cultural da Uva e do Vinho 🍷". Alterar o local para "Norte de Minas - MG".
+- [x] STORY 9: Atualizar o evento de Enoturismo. Remover o termo "1º". Nome exato deve ser "Fórum Internacional de Enoturismo e Vitivinicultura do Mercosul". Alterar o local para "Norte de Minas - MG".
+- [x] STORY 10: Atualizar o evento de Cinema de Grão Mogol. Remover o termo "1º". Nome exato deve ser "Festival de Cinema de Grão Mogol". Manter o local como "Grão Mogol - MG".
 
 ### Epic 3: Eventos Realizados (Compliance e Releases)
 - [ ] STORY 11: Remover a palavra 'sucesso' de todos os cards de eventos realizados.
