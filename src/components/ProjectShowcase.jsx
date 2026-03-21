@@ -35,7 +35,7 @@ const ProjectCard = ({ project }) => {
 
     return (
         <article
-            className="w-[300px] md:w-[380px] h-[550px] snap-center bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 group hover:border-primary/50 transition-all duration-500 flex flex-col overflow-hidden relative shadow-2xl cursor-pointer"
+            className="w-[300px] md:w-[380px] min-h-[550px] snap-center bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 group hover:border-primary/50 transition-all duration-500 flex flex-col relative shadow-2xl cursor-pointer"
             aria-label={`Projeto: ${project.title} — ${project.status}`}
         >
             {/* Badge de status dinâmico */}
@@ -182,7 +182,7 @@ const ProjectShowcase = () => {
     return (
         <section
             id="impact-metrics"
-            className="snap-section bg-charcoal py-32 relative overflow-hidden"
+            className="snap-section bg-charcoal py-32 pb-40 relative overflow-hidden"
             aria-label="Projetos realizados pela Territórios Culturais"
         >
             <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
