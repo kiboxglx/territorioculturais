@@ -685,3 +685,38 @@ article[aria-label] {
 .filmstrip-video {
   object-position: 50% 20%;
 }
+
+.ecosystem-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 168, 67, 0.55);
+  background: rgba(212, 168, 67, 0.06);
+  color: rgba(212, 168, 67, 0.9);
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.ecosystem-pill:hover {
+  background: rgba(212, 168, 67, 0.14);
+  border-color: rgba(212, 168, 67, 0.85);
+  color: #D4A843;
+}
+
+.ecosystem-arrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 6px;
+  color: rgba(212, 168, 67, 0.4);
+}
+
+.ecosystem-arrow .material-symbols-outlined {
+  font-size: 18px;
+  line-height: 1;
+}

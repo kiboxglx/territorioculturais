@@ -60,6 +60,34 @@ const About = () => {
                     </motion.div>
                 </div>
 
+                {/* Fluxo do Ecossistema */}
+                <motion.div
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.35 }}
+                    className="mb-20"
+                >
+                    <p className="text-primary uppercase tracking-[0.4em] text-[10px] font-bold mb-6 font-manrope">
+                        Fluxo do Ecossistema
+                    </p>
+                    <div className="flex flex-wrap items-center gap-y-3 gap-x-0">
+                        {[
+                            'Criar','Comunicar','Circular','Formar',
+                            'Estruturar','Financiar','Desenvolver','Monitorar'
+                        ].map((step, i, arr) => (
+                            <React.Fragment key={step}>
+                                <span className="ecosystem-pill">{step}</span>
+                                {i < arr.length - 1 && (
+                                    <span className="ecosystem-arrow" aria-hidden="true">
+                                        <span className="material-symbols-outlined">arrow_right_alt</span>
+                                    </span>
+                                )}
+                            </React.Fragment>
+                        ))}
+                    </div>
+                </motion.div>
+
                 {/* Cards Comparativos: Público x Privado */}
                 <div className="grid lg:grid-cols-2 gap-8 mb-20 relative">
                     
