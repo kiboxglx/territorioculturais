@@ -40,9 +40,6 @@ const SponsorTier = ({ onContactClick, isModal = false }) => {
                             <h3 className="font-display text-3xl mb-1" style={{ color: style.color }}>
                                 {tier.tier}
                             </h3>
-                            <div className="text-white font-bold text-xl mb-4 font-mono">
-                                {tier.investment}
-                            </div>
                             <p className="text-white/60 text-xs leading-relaxed font-body">
                                 Foco em posicionamento estratégico e forte associação aos valores de sustentabilidade e cultura.
                             </p>
@@ -98,12 +95,6 @@ const SponsorTier = ({ onContactClick, isModal = false }) => {
 
                 {renderTiers()}
                 
-                <div className="mt-16 text-center">
-                    <p className="text-[10px] text-white/30 uppercase tracking-widest font-mono">
-                        * Valores referenciais sujeitos a adequação de escopo territorial. 
-                        Todos os incentivos fiscais (Rouanet, ICMS) são aplicáveis.
-                    </p>
-                </div>
             </div>
         </section>
     );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Calendar, MapPin, Award, ShieldCheck, PieChart, Landmark, Info } from 'lucide-react';
+import { X, MapPin, Award, ShieldCheck, PieChart, Landmark, Info } from 'lucide-react';
 import SponsorTier from './SponsorTier';
 import ESGImpact from './ESGImpact';
 import InvestorDataRoom from './InvestorDataRoom';
@@ -94,21 +94,12 @@ const DetailedEventModal = ({ isOpen, onClose, event }) => {
                                                 <div className="absolute inset-0 bg-linear-to-t from-charcoal via-charcoal/0 to-transparent opacity-60" />
                                             </div>
                                             
-                                            <div className="grid grid-cols-2 gap-4">
-                                                <div className="bg-white/5 p-4 rounded-xl border border-white/5">
-                                                    <div className="flex items-center gap-2 text-primary mb-2">
-                                                        <Calendar size={14} />
-                                                        <span className="text-[10px] uppercase font-bold tracking-widest text-primary">Data</span>
-                                                    </div>
-                                                    <p className="text-white text-sm font-medium">{event.date}</p>
+                                            <div className="bg-white/5 p-4 rounded-xl border border-white/5">
+                                                <div className="flex items-center gap-2 text-accent-gold mb-2">
+                                                    <MapPin size={14} />
+                                                    <span className="text-[10px] uppercase font-bold tracking-widest text-accent-gold">Local</span>
                                                 </div>
-                                                <div className="bg-white/5 p-4 rounded-xl border border-white/5">
-                                                    <div className="flex items-center gap-2 text-accent-gold mb-2">
-                                                        <MapPin size={14} />
-                                                        <span className="text-[10px] uppercase font-bold tracking-widest text-accent-gold">Local</span>
-                                                    </div>
-                                                    <p className="text-white text-sm font-medium">{event.location}</p>
-                                                </div>
+                                                <p className="text-white text-sm font-medium">{event.location}</p>
                                             </div>
                                         </div>
 

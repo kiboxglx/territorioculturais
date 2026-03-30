@@ -4,7 +4,6 @@
       "id": 1,
       "name": "Mostra de Cinema Itinerante da Cordilheira do Espinhaço",
       "pronac": "259675",
-      "approvedValue": "R$ 542.000,00",
       "status": "Aberto para Captação",
       "law": "Lei Rouanet"
     },
@@ -12,7 +11,6 @@
       "id": 2,
       "name": "1º Fórum Internacional de Enoturismo",
       "pronac": "FDC-2025",
-      "approvedValue": "R$ 400.000,00",
       "status": "Planejamento Estratégico",
       "law": "Investimento Direto / ESG"
     },
@@ -20,7 +18,6 @@
       "id": 3,
       "name": "Acessa Cultura - Patos de Minas",
       "pronac": "LPG-PM-2025",
-      "approvedValue": "R$ 100.000,00",
       "status": "Em Aprovação",
       "law": "Lei Paulo Gustavo / Fomento"
     }
@@ -28,7 +25,6 @@
   "sponsorTiers": [
     {
       "tier": "Master",
-      "investment": "R$ 500.000,00",
       "benefits": [
         "Naming Rights (Ex: Mostra Espinhaço / Fórum Enoturismo)",
         "20 convites VIP para a cerimônia de abertura",
@@ -40,7 +36,6 @@
     },
     {
       "tier": "Ouro",
-      "investment": "R$ 250.000,00",
       "benefits": [
         "Logo em destaque no backdrop oficial",
         "Ativação de marca na praça/espaço público",
@@ -52,7 +47,6 @@
     },
     {
       "tier": "Prata",
-      "investment": "R$ 100.000,00",
       "benefits": [
         "Inserção publicitária em plataformas digitais",
         "6 convites VIP para o evento",

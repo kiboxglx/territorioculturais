@@ -60,7 +60,7 @@ const InvestorDataRoom = ({ isModal = false }) => {
                             <tr className="bg-white/5 text-white/40 border-b border-white/5 uppercase tracking-widest text-[9px]">
                                 <th className="px-6 py-4 font-bold">Projeto</th>
                                 <th className="px-6 py-4 font-bold">PRONAC / Registro</th>
-                                <th className="px-6 py-4 font-bold">Valor Aprovado</th>
+                                <th className="px-6 py-4 font-bold">Lei</th>
                                 <th className="px-6 py-4 font-bold">Status</th>
                             </tr>
                         </thead>
@@ -69,7 +69,7 @@ const InvestorDataRoom = ({ isModal = false }) => {
                                 <tr key={proj.id} className="hover:bg-white/2 transition-colors">
                                     <td className="px-6 py-4 font-semibold text-white">{proj.name}</td>
                                     <td className="px-6 py-4 font-mono text-accent-gold">{proj.pronac}</td>
-                                    <td className="px-6 py-4 text-white/80">{proj.approvedValue}</td>
+                                    <td className="px-6 py-4 text-white/80">{proj.law}</td>
                                     <td className="px-6 py-4">
                                         <span className={`px-2 py-0.5 rounded-full text-[9px] uppercase font-bold tracking-tighter ${
                                             proj.status.includes('Aberto') ? 'bg-primary/20 text-primary' : 
