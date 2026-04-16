@@ -33,18 +33,30 @@ const UpcomingEvents = () => {
                     </p>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    className="flex gap-6 md:gap-8 overflow-x-auto snap-x snap-mandatory pb-6 -mx-8 px-8 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                    role="region"
+                    aria-label="Carrossel de próximos eventos"
+                >
                     {upcomingEvents && upcomingEvents.map((event, index) => (
                         <motion.div
                             key={event.id}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.15 }}
+                            className="snap-start shrink-0 w-[82%] sm:w-[60%] md:w-[45%] lg:w-[32%] xl:w-[28%]"
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ delay: index * 0.1 }}
                         >
                             <EventCard event={event} onOpenModal={handleOpenModal} />
                         </motion.div>
                     ))}
+                </div>
+
+                {/* Scroll hint */}
+                <div className="mt-4 flex items-center justify-center gap-2 text-[10px] text-white/30 uppercase tracking-[0.3em] font-mono">
+                    <span className="h-px w-8 bg-white/20" />
+                    <span aria-hidden="true">← arraste para o lado →</span>
+                    <span className="h-px w-8 bg-white/20" />
                 </div>
 
                 {/* Optional Footer CTA */}
